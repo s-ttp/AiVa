@@ -1,0 +1,60 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Single source of dependency versions (referenced as "catalog:" in package.json).
+# Pinned 2026-10-14: each is the latest stable release published at least 14 days
+# earlier that also satisfies every peer range in the graph:
+#   - typescript 5.9.3: 7.x is the native port without the compiler API that
+#     typescript-eslint (<6.1.0) and openapi-typescript (^5) require.
+#   - eslint-plugin-jsx-a11y-x: maintained fork of eslint-plugin-jsx-a11y, which
+#     does not support ESLint 10 (ESLint 9 is end-of-life).
+#   - @types/node 22.x: matches the Node 22 runtime.
+#   - @playwright/test 1.63.0 (1.64.0 is younger than 14 days); browsers are
+#     installed by `playwright install` or taken from PLAYWRIGHT_CHROMIUM_PATH.
+# Added 2026-10-25, same rule, for /live attachments read in the browser:
+#   - pdfjs-dist 6.4.299 (Apache-2.0): PDF text layer only.
+#   - fflate 0.8.3 (MIT): unzips .xlsx for a small reader; not the npm `xlsx`
+#     package (0.18.5 is unmaintained there, with CVE-2023-30533 and CVE-2024-22363).
+catalog:
+  "@axe-core/playwright": 4.13.0
+  "@eslint/js": 10.0.1
+  "@fontsource-variable/inter": 5.3.0
+  "@playwright/test": 1.63.0
+  "@tailwindcss/vite": 4.3.3
+  "@testing-library/dom": 10.4.2
+  "@testing-library/jest-dom": 7.0.1
+  "@testing-library/react": 16.3.3
+  "@testing-library/user-event": 14.6.7
+  "@types/node": 22.20.4
+  "@types/react": 19.3.0
+  "@types/react-dom": 19.3.0
+  "@vitejs/plugin-react": 6.1.1
+  eslint: 10.11.0
+  eslint-plugin-jsx-a11y-x: 0.2.0
+  eslint-plugin-react-hooks: 7.1.1
+  eslint-plugin-react-refresh: 0.5.7
+  fflate: 0.8.3
+  globals: 17.12.0
+  jsdom: 30.1.1
+  lucide-react: 1.49.0
+  openapi-fetch: 0.17.0
+  openapi-typescript: 7.13.0
+  pdfjs-dist: 6.4.299
+  react: 19.3.0
+  react-dom: 19.3.0
+  react-markdown: 10.1.0
+  react-router: 8.4.0
+  remark-gfm: 4.0.1
+  tailwindcss: 4.3.3
+  typescript: 5.9.3
+  typescript-eslint: 8.71.0
+  vite: 8.3.1
+  vitest: 5.0.2
+
+# Supply-chain guard: never resolve a (transitive) version younger than 14 days.
+minimumReleaseAge: 20160
+
+# pdfjs-dist's native canvas renders pages; only the text layer is read, so it is never installed.
+ignoredOptionalDependencies:
+  - '@napi-rs/canvas'

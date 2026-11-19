@@ -1,0 +1,163 @@
+# Synthetic reference tenant: GulfConnect Telecom (GCT). Fictional; no real data.
+tenant:
+  id: gct
+  name: GulfConnect Telecom (fictional)
+  currency: USD
+
+cost_centers:
+  - {id: cc-care, code: CC-100, name: Customer Care}
+  - {id: cc-fraud, code: FR-200, name: Fraud & Risk}
+  - {id: cc-network, code: NO-300, name: Network Operations}
+  - {id: cc-it, code: IT-400, name: IT & Engineering}
+  - {id: cc-finance, code: FI-500, name: Finance & Strategy}
+  - {id: cc-public-demo, code: DM-900, name: Public demo}
+
+departments:
+  - {id: customer-care, name: Customer Care, business_function: support, cost_center_id: cc-care}
+  - {id: fraud-risk, name: Fraud & Risk, business_function: fraud, cost_center_id: cc-fraud}
+  - {id: network-ops, name: Network Operations, business_function: network, cost_center_id: cc-network}
+  - {id: it-engineering, name: IT & Engineering, business_function: it, cost_center_id: cc-it}
+  - {id: finance, name: Finance & Strategy, business_function: finance, cost_center_id: cc-finance}
+  # Attribution for the public demo's visitors (ADR-0019). Runs still budget against their application.
+  - {id: public-demo, name: Public demo, business_function: it, cost_center_id: cc-public-demo}
+
+# Trusted networks use private (RFC 1918) and documentation (RFC 5737) ranges only. An application that
+# takes calls from the internet says so with `internet_callers: true` instead (ADR-0027).
+trusted_networks:
+  - {id: net-care-campus, name: Customer Care campus, cidr: 10.20.0.0/16}
+  - {id: net-fraud-soc, name: Fraud operations centre, cidr: 10.30.10.0/24}
+  - {id: net-noc, name: Network operations centre, cidr: 10.50.0.0/16}
+  - {id: net-eng-vpn, name: Engineering VPN, cidr: 10.40.0.0/16}
+  - {id: net-finance-hq, name: Finance HQ, cidr: 10.60.0.0/16}
+  - {id: net-test-console, name: AiVa Test Console (simulated ingress), cidr: 192.0.2.0/24}
+
+# Grants: an application may only use the tasks, models and tools (config/tools.yaml) listed here.
+# Policies can only restrict.
+applications:
+  - id: gct-support-chatbot
+    name: Customer Support Chatbot
+    department_id: customer-care
+    trusted_network_ids: [net-care-campus, net-test-console]
+    allowed_tasks: [qa, summarization, rag, generation]
+    allowed_models: [gct-qwen-finetuned, gemini-flash-lite, deepseek-v4-1-flash, claude-flagship]
+    classification_floor: internal
+    cache_sharing: per_user  # customer-facing: cached answers never cross end users (LLD §11)
+  - id: gct-coding-assistant
+    name: Coding Assistant
+    department_id: it-engineering
+    trusted_network_ids: [net-eng-vpn, net-test-console]
+    internet_callers: true  # SDK and API keys (ADR-0027, owner decision 2026-10-26)
+    allowed_tasks: [coding, qa]
+    allowed_models: [gct-qwen-finetuned, gemini-flash-lite, deepseek-v4-1-flash, claude-flagship]
+    classification_floor: internal
+  - id: gct-fraud-investigator
+    name: Fraud Investigation Assistant
+    department_id: fraud-risk
+    trusted_network_ids: [net-fraud-soc, net-test-console]
+    allowed_tasks: [analysis, summarization, qa]
+    allowed_models: [gct-qwen-finetuned, gemini-flash-lite, deepseek-v4-1-flash, claude-flagship]
+    classification_floor: confidential
+  - id: gct-knowledge-portal
+    name: Enterprise Knowledge Portal
+    department_id: it-engineering
+    trusted_network_ids: [net-eng-vpn, net-care-campus, net-test-console]
+    internet_callers: true  # SDK and API keys (ADR-0027, owner decision 2026-10-26)
+    allowed_tasks: [rag, qa, summarization]
+    allowed_models: [gct-qwen-finetuned, gemini-flash-lite, deepseek-v4-1-flash, claude-flagship]
+    classification_floor: internal
+  - id: gct-noc-assistant
+    name: Network Operations Intelligence
+    department_id: network-ops
+    trusted_network_ids: [net-noc, net-test-console]
+    allowed_tasks: [analysis, summarization, qa]
+    allowed_models: [gct-qwen-finetuned, gemini-flash-lite, deepseek-v4-1-flash, claude-flagship]
+    classification_floor: internal
+  - id: gct-incident-agent
+    name: Service Incident Agent
+    department_id: network-ops
+    trusted_network_ids: [net-noc, net-test-console]
+    allowed_tasks: [agentic, analysis]
+    allowed_models: [gct-qwen-finetuned, gemini-flash-lite, deepseek-v4-1-flash, claude-flagship]
+    allowed_tools: [incident.lookup, network.site_status, kb.search, ticket.create, notification.draft, notification.send]
+    classification_floor: internal
+  - id: gct-doc-copilot
+    name: Confidential Document Copilot
+    department_id: finance
+    trusted_network_ids: [net-finance-hq, net-test-console]
+    allowed_tasks: [generation, summarization]
+    allowed_models: [gct-qwen-finetuned, gemini-flash-lite, deepseek-v4-1-flash, claude-flagship]
+    classification_floor: internal
+  # The live demo's cost-optimized inference API (owner decision): public data only, so no sovereign GPU is
+  # needed and the router picks the cheapest API model that qualifies.
+  - id: gct-public-web-assistant
+    name: Public Web Assistant
+    department_id: customer-care
+    trusted_network_ids: [net-test-console]
+    allowed_tasks: [qa, summarization, generation]
+    allowed_models: [gemini-flash-lite, deepseek-v4-1-flash, claude-flagship]
+    classification_floor: public
+  # The live demo's market research (augmented search): internal data, API models only, at least DeepSeek's
+  # quality (the use case runs at the high tier).
+  - id: gct-market-intelligence
+    name: Market Intelligence Assistant
+    department_id: finance
+    trusted_network_ids: [net-test-console]
+    allowed_tasks: [rag, qa, summarization, analysis]
+    allowed_models: [deepseek-v4-1-flash, claude-flagship]
+    # Governed live web search for use case 5 (ADR-0022), the only application granted it.
+    allowed_tools: [web.search]
+    classification_floor: internal
+  # SDK and API use with keys issued in the admin console (ADR-0027, owner decision 2026-10-26). It takes
+  # calls from the internet, and its $5 monthly cap bounds a leaked or demo key. The sovereign model keeps
+  # confidential requests on their path; policy still decides every request.
+  - id: gct-api-sandbox
+    name: API Sandbox
+    department_id: it-engineering
+    trusted_network_ids: [net-test-console]
+    internet_callers: true
+    allowed_tasks: [qa, summarization, rag, generation, analysis, coding]
+    allowed_models: [gct-qwen-finetuned, gemini-flash-lite, deepseek-v4-1-flash, claude-flagship]
+    classification_floor: internal
+
+# Demo users. Real identities never appear; reports show HMAC pseudonyms.
+users:
+  - {id: u-platform-admin, display_name: Platform Administrator (demo), roles: [platform_admin]}
+  - {id: u-tenant-admin, display_name: Tenant Administrator (demo), roles: [tenant_admin]}
+  - {id: u-finance, display_name: Finance Analyst (demo), roles: [finance_analyst], department_id: finance}
+  - {id: u-care-manager, display_name: Customer Care Manager (demo), roles: [department_manager], department_id: customer-care}
+  - {id: u-noc-manager, display_name: NOC Manager (demo), roles: [department_manager], department_id: network-ops}
+  - {id: u-auditor, display_name: Security Auditor (demo), roles: [security_auditor]}
+  - {id: u-support-owner, display_name: Support Chatbot Owner (demo), roles: [application_owner], department_id: customer-care, owned_application_ids: [gct-support-chatbot]}
+  - {id: u-tester, display_name: AiVa Tester (demo), roles: [tester]}
+  # The public demo's visitor (ADR-0019). Only POST /v1/auth/public/session issues its tokens, each with a
+  # session id from which that visitor's own pseudonym is derived. Never listed for sign-in.
+  - {id: u-public-visitor, display_name: Public visitor (demo), roles: [public_visitor], department_id: public-demo}
+
+# Budgets in USD. Alerts at 80% and 95%; hard cap at 100% (LLD §12, §21.9, §22.10).
+budgets:
+  - {scope_type: tenant, scope_id: gct, period: monthly, cap_usd: "2000.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  - {scope_type: application, scope_id: gct-support-chatbot, period: monthly, cap_usd: "400.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  - {scope_type: application, scope_id: gct-coding-assistant, period: monthly, cap_usd: "300.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  - {scope_type: application, scope_id: gct-fraud-investigator, period: monthly, cap_usd: "200.00", alert_thresholds: [0.8, 0.95], on_exhaustion: approval_required}
+  - {scope_type: application, scope_id: gct-knowledge-portal, period: monthly, cap_usd: "250.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  - {scope_type: application, scope_id: gct-noc-assistant, period: monthly, cap_usd: "250.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  - {scope_type: application, scope_id: gct-incident-agent, period: monthly, cap_usd: "200.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  - {scope_type: application, scope_id: gct-doc-copilot, period: monthly, cap_usd: "200.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  - {scope_type: application, scope_id: gct-public-web-assistant, period: monthly, cap_usd: "50.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  - {scope_type: application, scope_id: gct-market-intelligence, period: monthly, cap_usd: "50.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  # A hard cap: a leaked or demo key cannot spend more than $5 a month (ADR-0027).
+  - {scope_type: application, scope_id: gct-api-sandbox, period: monthly, cap_usd: "5.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  # Default cap for each agent workflow (every run sharing one workflow_id, LLD §12). Cooperative: the
+  # request cap and application budgets stay the hard limits. On exhaustion a budget owner can approve one
+  # bounded, single-use exception (ADR-0014). Values from FinOps.
+  - {scope_type: workflow, scope_id: default, period: workflow, cap_usd: "1.00", alert_thresholds: [0.8, 0.95], on_exhaustion: approval_required}
+  # Per-request ceiling on the worst-case envelope. Over it, re-plan within the policy-eligible set to a
+  # cheaper model (never across the confidentiality boundary); block only when no eligible route fits.
+  - {scope_type: request, scope_id: default, period: request, cap_usd: "2.00", alert_thresholds: [], on_exhaustion: lower_cost_route}
+  # Public demo (ADR-0019): every public visitor's live runs together, API plus estimated GPU cost, reserved
+  # before every billable stage. Without this row public live runs are refused. Value from the owner.
+  - {scope_type: public_demo, scope_id: gct, period: daily, cap_usd: "10.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}
+  # Internet key calls (ADR-0027): the estimated GPU cost of their live runs on the in-house endpoints, which
+  # no API budget sees, across the three internet applications. Without this row their live runs are
+  # refused. Value from the owner (2026-10-26), adjustable.
+  - {scope_type: internet_gpu, scope_id: gct, period: monthly, cap_usd: "5.00", alert_thresholds: [0.8, 0.95], on_exhaustion: block}

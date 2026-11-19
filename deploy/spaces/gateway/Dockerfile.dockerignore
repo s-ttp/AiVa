@@ -1,0 +1,14 @@
+# BuildKit ignore file for `docker build -f deploy/spaces/gateway/Dockerfile .` (repository-root context).
+**
+!pyproject.toml
+!uv.lock
+!gateway/
+!context-lab/pyproject.toml
+!config/
+!policies/
+!data/synthetic/kb/gct_kb.jsonl
+!deploy/spaces/gateway/
+!deploy/spaces/shared/gateway-proxy.sh
+!deploy/spaces/shared/aiva-http.conf
+**/__pycache__
+gateway/tests

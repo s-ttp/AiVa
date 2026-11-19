@@ -1,0 +1,163 @@
+{
+  "u-tester": {
+    "kind": "user",
+    "tenant_id": "gct",
+    "user_id": "u-tester",
+    "display_name": "AiVa Tester (demo)",
+    "application_id": null,
+    "department_id": null,
+    "roles": [
+      "tester"
+    ],
+    "permissions": [
+      "catalog:read",
+      "chat:live",
+      "chat:test",
+      "demo:wake",
+      "demo:compare",
+      "evaluations:run",
+      "runs:read"
+    ]
+  },
+  "u-auditor": {
+    "kind": "user",
+    "tenant_id": "gct",
+    "user_id": "u-auditor",
+    "display_name": "Security Auditor (demo)",
+    "application_id": null,
+    "department_id": null,
+    "roles": [
+      "security_auditor"
+    ],
+    "permissions": [
+      "approvals:read",
+      "catalog:read",
+      "policies:read",
+      "reports:export",
+      "reports:identity",
+      "reports:read",
+      "runs:read",
+      "credentials:read"
+    ]
+  },
+  "u-platform-admin": {
+    "kind": "user",
+    "tenant_id": "gct",
+    "user_id": "u-platform-admin",
+    "display_name": "Platform Administrator (demo)",
+    "application_id": null,
+    "department_id": null,
+    "roles": [
+      "platform_admin"
+    ],
+    "permissions": [
+      "approvals:decide",
+      "approvals:read",
+      "budgets:read",
+      "budgets:write",
+      "catalog:read",
+      "chat:live",
+      "demo:wake",
+      "demo:compare",
+      "evaluations:run",
+      "policies:publish",
+      "policies:read",
+      "policies:write",
+      "reports:export",
+      "reports:read",
+      "runs:read",
+      "credentials:manage",
+      "credentials:read"
+    ]
+  },
+  "u-finance": {
+    "kind": "user",
+    "tenant_id": "gct",
+    "user_id": "u-finance",
+    "display_name": "Finance Analyst (demo)",
+    "application_id": null,
+    "department_id": "finance",
+    "roles": [
+      "finance_analyst"
+    ],
+    "permissions": [
+      "approvals:decide",
+      "approvals:read",
+      "budgets:read",
+      "budgets:write",
+      "catalog:read",
+      "reports:export",
+      "reports:read"
+    ]
+  },
+  "u-tenant-admin": {
+    "kind": "user",
+    "tenant_id": "gct",
+    "user_id": "u-tenant-admin",
+    "display_name": "Tenant Administrator (demo)",
+    "application_id": null,
+    "department_id": null,
+    "roles": [
+      "tenant_admin"
+    ],
+    "permissions": [
+      "approvals:decide",
+      "approvals:read",
+      "budgets:read",
+      "budgets:write",
+      "catalog:read",
+      "chat:live",
+      "demo:wake",
+      "demo:compare",
+      "evaluations:run",
+      "policies:publish",
+      "policies:read",
+      "policies:write",
+      "reports:export",
+      "reports:identity",
+      "reports:read",
+      "runs:read",
+      "credentials:manage",
+      "credentials:read"
+    ]
+  },
+  "u-support-owner": {
+    "kind": "user",
+    "tenant_id": "gct",
+    "user_id": "u-support-owner",
+    "display_name": "Support Chatbot Owner (demo)",
+    "application_id": null,
+    "department_id": "customer-care",
+    "roles": [
+      "application_owner"
+    ],
+    "permissions": [
+      "approvals:decide",
+      "approvals:read",
+      "budgets:read",
+      "catalog:read",
+      "reports:read",
+      "runs:read",
+      "credentials:read"
+    ]
+  },
+  "u-public-visitor": {
+    "kind": "user",
+    "tenant_id": "gct",
+    "user_id": "u-public-visitor",
+    "display_name": "Public visitor (demo)",
+    "application_id": null,
+    "department_id": "public-demo",
+    "roles": [
+      "public_visitor"
+    ],
+    "permissions": [
+      "catalog:read",
+      "chat:live",
+      "chat:test",
+      "policies:read",
+      "reports:read",
+      "runs:read"
+    ]
+  }
+}

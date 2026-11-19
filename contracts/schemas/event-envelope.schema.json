@@ -1,0 +1,259 @@
+{
+  "$defs": {
+    "Classification": {
+      "description": "Data classification, ordered from least to most restrictive (LLD \u00a77, \u00a721.3).",
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted",
+        "sovereign-only"
+      ],
+      "title": "Classification",
+      "type": "string"
+    },
+    "EventCost": {
+      "additionalProperties": false,
+      "properties": {
+        "api_micros": {
+          "default": 0,
+          "title": "Api Micros",
+          "type": "integer"
+        },
+        "avoided_micros": {
+          "default": 0,
+          "title": "Avoided Micros",
+          "type": "integer"
+        },
+        "currency": {
+          "default": "USD",
+          "title": "Currency",
+          "type": "string"
+        },
+        "gpu_estimated_micros": {
+          "default": 0,
+          "title": "Gpu Estimated Micros",
+          "type": "integer"
+        },
+        "rate_card_version": {
+          "title": "Rate Card Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rate_card_version"
+      ],
+      "title": "EventCost",
+      "type": "object"
+    },
+    "EventTokenUsage": {
+      "additionalProperties": false,
+      "properties": {
+        "cached_input_tokens": {
+          "default": 0,
+          "title": "Cached Input Tokens",
+          "type": "integer"
+        },
+        "cim_input_tokens": {
+          "default": 0,
+          "title": "Cim Input Tokens",
+          "type": "integer"
+        },
+        "cim_output_tokens": {
+          "default": 0,
+          "title": "Cim Output Tokens",
+          "type": "integer"
+        },
+        "input_tokens": {
+          "default": 0,
+          "title": "Input Tokens",
+          "type": "integer"
+        },
+        "output_tokens": {
+          "default": 0,
+          "title": "Output Tokens",
+          "type": "integer"
+        }
+      },
+      "title": "EventTokenUsage",
+      "type": "object"
+    },
+    "ExecutionPath": {
+      "enum": [
+        "cache-return",
+        "sovereign-direct",
+        "local-fast",
+        "cim-assisted",
+        "none"
+      ],
+      "title": "ExecutionPath",
+      "type": "string"
+    },
+    "PolicyAction": {
+      "enum": [
+        "allow",
+        "deny",
+        "approval_required"
+      ],
+      "title": "PolicyAction",
+      "type": "string"
+    },
+    "Provenance": {
+      "description": "Where a number or output came from (ADR-0006).",
+      "enum": [
+        "measured",
+        "estimated",
+        "simulated",
+        "replayed",
+        "synthetic"
+      ],
+      "title": "Provenance",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "application_id": {
+      "title": "Application Id",
+      "type": "string"
+    },
+    "classification_confidence": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Classification Confidence"
+    },
+    "classifier_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Classifier Version"
+    },
+    "cost": {
+      "$ref": "#/$defs/EventCost"
+    },
+    "data_designation": {
+      "title": "Data Designation",
+      "type": "string"
+    },
+    "event_type": {
+      "description": "e.g. 'run.completed', 'policy.denied', 'budget.threshold'.",
+      "title": "Event Type",
+      "type": "string"
+    },
+    "execution_path": {
+      "$ref": "#/$defs/ExecutionPath"
+    },
+    "model_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Id"
+    },
+    "occurred_at": {
+      "format": "date-time",
+      "title": "Occurred At",
+      "type": "string"
+    },
+    "policy_decision": {
+      "$ref": "#/$defs/PolicyAction"
+    },
+    "policy_version": {
+      "title": "Policy Version",
+      "type": "string"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "sensitivity": {
+      "$ref": "#/$defs/Classification"
+    },
+    "task_category": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Task Category"
+    },
+    "taxonomy_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Taxonomy Version"
+    },
+    "tenant_id": {
+      "title": "Tenant Id",
+      "type": "string"
+    },
+    "token_usage": {
+      "$ref": "#/$defs/EventTokenUsage"
+    },
+    "trace_id": {
+      "title": "Trace Id",
+      "type": "string"
+    },
+    "user_pseudonym": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "User Pseudonym"
+    }
+  },
+  "required": [
+    "event_type",
+    "occurred_at",
+    "trace_id",
+    "run_id",
+    "tenant_id",
+    "application_id",
+    "policy_decision",
+    "policy_version",
+    "sensitivity",
+    "execution_path",
+    "token_usage",
+    "cost",
+    "provenance",
+    "data_designation"
+  ],
+  "title": "EventEnvelope",
+  "type": "object"
+}

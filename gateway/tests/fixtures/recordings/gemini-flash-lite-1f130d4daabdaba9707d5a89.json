@@ -1,0 +1,34 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:streamGenerateContent?alt=sse",
+    "body": {
+      "contents": [
+        {
+          "parts": [
+            {
+              "text": "What does a synthetic GCT Traveller 10 roaming bundle include?"
+            }
+          ],
+          "role": "user"
+        }
+      ],
+      "systemInstruction": {
+        "parts": [
+          {
+            "text": "Answer in at most two sentences. All data is synthetic and fictional."
+          }
+        ],
+        "role": "user"
+      },
+      "generationConfig": {
+        "maxOutputTokens": 300
+      }
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "content_type": "text/event-stream",
+    "body": "data: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"A synthetic GCT Traveller \"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 30,\"candidatesTokenCount\": 5,\"totalTokenCount\": 35,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 30}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"ljrXaq25DoziytMPgPO_0A4\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"10 roaming bundle includes 10 GB of data and 100\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 30,\"candidatesTokenCount\": 21,\"totalTokenCount\": 51,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 30}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"ljrXaq25DoziytMPgPO_0A4\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" minutes of calls, valid for 7 days across 50 countries. It also offers unlimited incoming calls and free incoming SMS.\"}],\"role\": \"model\"},\"finishReason\": \"STOP\",\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 30,\"candidatesTokenCount\": 47,\"totalTokenCount\": 77,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 30}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"ljrXaq25DoziytMPgPO_0A4\"}\r\n\r\n"
+  }
+}

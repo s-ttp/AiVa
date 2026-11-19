@@ -1,0 +1,13 @@
+{
+    "error": {
+        "code": "PUBLIC_SESSION_LIMITED",
+        "message": "Too many demo sessions were started recently. Try again later.",
+        "remediation": "Keep using the session you have, or try again later.",
+        "rule_ids": [],
+        "retryable": true,
+        "run_id": null,
+        "details": {
+            "retry_after_seconds": 2926
+        }
+    }
+}

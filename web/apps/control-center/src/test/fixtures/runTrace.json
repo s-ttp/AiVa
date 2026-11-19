@@ -1,0 +1,218 @@
+{
+  "run_id": "run_01M4WVJ0AXSD9JF8VNXHA3A4QF",
+  "trace_id": "8890c1e44cf90ec84e545060aaa11493",
+  "spans": [
+    {
+      "span_id": "0b6b808866e8326b",
+      "parent_span_id": null,
+      "name": "aiva.chat",
+      "status": "unset",
+      "started_at": "2026-10-14T09:23:08.254597Z",
+      "duration_ms": 9.191955,
+      "attributes": {
+        "aiva.run_id": "run_01M4WVJ0AXSD9JF8VNXHA3A4QF",
+        "aiva.status": "completed",
+        "aiva.execution_path": "sovereign-direct"
+      }
+    },
+    {
+      "span_id": "91ac42dad6650ce0",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "ingress",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.254697Z",
+      "duration_ms": 0.053453,
+      "attributes": {
+        "aiva.stage": "ingress",
+        "aiva.scenario_id": "fraud-management",
+        "aiva.source_mode": "simulated",
+        "aiva.stage.status": "executed",
+        "aiva.identity_mode": "simulated",
+        "aiva.message_count": 1,
+        "aiva.application_id": "gct-fraud-investigator",
+        "aiva.evidence_count": 0,
+        "aiva.original_context_tokens": 22
+      }
+    },
+    {
+      "span_id": "f84d7010a3d7b1a0",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "policy",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.254799Z",
+      "duration_ms": 5.38422,
+      "attributes": {
+        "aiva.stage": "policy",
+        "aiva.stage.status": "executed",
+        "aiva.dlp.finding_types": [],
+        "aiva.dlp.scanner_version": "pattern-dlp-v1",
+        "aiva.dlp.injection_detected": false,
+        "aiva.dlp.evidence_injection_indicators": []
+      }
+    },
+    {
+      "span_id": "9ae5e6d7d2a7add6",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "cache",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.260262Z",
+      "duration_ms": 0.072801,
+      "attributes": {
+        "aiva.stage": "cache",
+        "aiva.cache.hit": false,
+        "aiva.cache.type": "exact",
+        "aiva.stage.status": "executed"
+      }
+    },
+    {
+      "span_id": "2162f26ce08f4f66",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "rlcd1",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.260357Z",
+      "duration_ms": 0.035449,
+      "attributes": {
+        "aiva.stage": "rlcd1",
+        "aiva.rlcd.version": "heuristic-v0",
+        "aiva.stage.status": "executed",
+        "aiva.rlcd.complexity": "simple",
+        "aiva.rlcd.task_category": "analysis",
+        "aiva.rlcd.local_fast_eligible": false
+      }
+    },
+    {
+      "span_id": "80aafc24853a45f1",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "retrieval",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.260426Z",
+      "duration_ms": 0.007938,
+      "attributes": {
+        "aiva.stage": "retrieval",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "CIM bypassed by mandatory sovereignty policy"
+      }
+    },
+    {
+      "span_id": "e292193375a94aa2",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "cim",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.260448Z",
+      "duration_ms": 0.006282,
+      "attributes": {
+        "aiva.stage": "cim",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "CIM bypassed by mandatory sovereignty policy"
+      }
+    },
+    {
+      "span_id": "56d5c53574ad6418",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "context_guard",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.260466Z",
+      "duration_ms": 0.005335,
+      "attributes": {
+        "aiva.stage": "context_guard",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "CIM bypassed by mandatory sovereignty policy"
+      }
+    },
+    {
+      "span_id": "0afe3c2471aeb34e",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "rlcd2",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.260493Z",
+      "duration_ms": 0.0426,
+      "attributes": {
+        "aiva.stage": "rlcd2",
+        "aiva.rlcd.reasons": [
+          "quality tier standard requires rank >= 1",
+          "lowest blended price among qualified models: gct-qwen-finetuned"
+        ],
+        "aiva.rlcd.version": "heuristic-v0",
+        "aiva.stage.status": "executed",
+        "aiva.rlcd.eligible": [
+          "gct-qwen-finetuned"
+        ],
+        "aiva.rlcd.model_id": "gct-qwen-finetuned"
+      }
+    },
+    {
+      "span_id": "ff27085a6518302e",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "quota",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.260550Z",
+      "duration_ms": 0.058199,
+      "attributes": {
+        "aiva.stage": "quota",
+        "aiva.stage.status": "executed",
+        "aiva.quota.provenance": "simulated",
+        "aiva.quota.reservation_id": "res_01M4WVJ0B4TS1QC2QFBJSFGGFM",
+        "aiva.quota.reserved_micros": 0
+      }
+    },
+    {
+      "span_id": "d3180bf866c6e29e",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "preflight",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.260627Z",
+      "duration_ms": 2.759987,
+      "attributes": {
+        "aiva.stage": "preflight",
+        "aiva.stage.status": "executed",
+        "aiva.preflight.egress": "allow",
+        "aiva.preflight.input_tokens": 22
+      }
+    },
+    {
+      "span_id": "e35a8fb96b06a29a",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "inference",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.263456Z",
+      "duration_ms": 0.110775,
+      "attributes": {
+        "aiva.stage": "inference",
+        "aiva.stage.status": "executed",
+        "aiva.inference.status": "ok",
+        "aiva.inference.model_id": "gct-qwen-finetuned",
+        "aiva.inference.provenance": "simulated"
+      }
+    },
+    {
+      "span_id": "b4424683d720a173",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "assurance",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.263593Z",
+      "duration_ms": 0.117517,
+      "attributes": {
+        "aiva.stage": "assurance",
+        "aiva.stage.status": "executed",
+        "aiva.assurance.passed": true,
+        "aiva.assurance.output_dlp": "clean",
+        "aiva.assurance.finding_types": []
+      }
+    },
+    {
+      "span_id": "a6566bff5bfa69f6",
+      "parent_span_id": "0b6b808866e8326b",
+      "name": "reconciliation",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.263735Z",
+      "duration_ms": 0.041737,
+      "attributes": {
+        "aiva.stage": "reconciliation",
+        "aiva.status": "completed",
+        "aiva.stage.status": "executed",
+        "aiva.reconciliation.api_cost_micros": 0,
+        "aiva.reconciliation.released_micros": 0
+      }
+    }
+  ]
+}

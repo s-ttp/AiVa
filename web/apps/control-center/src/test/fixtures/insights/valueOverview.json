@@ -1,0 +1,358 @@
+{
+  "metadata": {
+    "window": {
+      "from": "2026-10-13",
+      "to": "2026-10-19",
+      "timezone": "UTC"
+    },
+    "filters": {},
+    "scope": {
+      "level": "tenant",
+      "department_id": null,
+      "application_ids": [],
+      "user_identities": "pseudonymous",
+      "users_visible": true
+    },
+    "generated_at": "2026-10-19T09:16:05.624654Z",
+    "aggregates_as_of": "2026-10-19T09:15:54.990794Z",
+    "granularity": "day",
+    "taxonomy_versions": [
+      "tax-2026.10.1"
+    ],
+    "classifier_versions": [
+      "heuristic-v0"
+    ],
+    "rate_card_versions": [
+      "rc-2026-10-15"
+    ],
+    "pricing_snapshot": "rc-2026-10-15",
+    "data_designation": "synthetic",
+    "attribution": "Usage is attributed to the UTC hour its run started."
+  },
+  "usage": {
+    "request_count": 145,
+    "provenance": "synthetic",
+    "tokens": {
+      "input_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 8555,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 8555,
+        "provenance": "simulated"
+      },
+      "output_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 9977,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 9977,
+        "provenance": "simulated"
+      },
+      "upstream_input_tokens": 5654,
+      "upstream_output_tokens": 3648,
+      "cim_input_tokens": 2538,
+      "cim_output_tokens": 5569,
+      "retry_input_tokens": 100,
+      "retry_output_tokens": 214,
+      "baseline_input_tokens": 263,
+      "baseline_output_tokens": 546,
+      "other_input_tokens": 0,
+      "other_output_tokens": 0,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "spend": {
+      "api": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 20125,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 20125,
+        "provenance": "simulated"
+      },
+      "upstream_micros": 6970,
+      "cim_micros": 0,
+      "retry_micros": 1183,
+      "baseline_comparison_micros": 11972,
+      "adjustment_micros": 0,
+      "tool_call_micros": 0,
+      "other_micros": 0,
+      "gpu_estimated": {
+        "value": 1,
+        "provenance": "simulated"
+      }
+    },
+    "avoided": {
+      "calls": 44,
+      "tokens": 3964,
+      "micros": 2246,
+      "provenance": "simulated"
+    }
+  },
+  "outcomes": {
+    "success": 134,
+    "quality_fail": 0,
+    "policy_denied": 7,
+    "quota_denied": 0,
+    "approval_required": 2,
+    "timeout": 0,
+    "error": 2
+  },
+  "flow": {
+    "requests": 145,
+    "stopped": [
+      {
+        "bucket": "policy_denied",
+        "count": 7
+      },
+      {
+        "bucket": "approval_required",
+        "count": 2
+      },
+      {
+        "bucket": "quota_denied",
+        "count": 0
+      },
+      {
+        "bucket": "not_routed",
+        "count": 2
+      }
+    ],
+    "routed": [
+      {
+        "bucket": "cache",
+        "count": 44
+      },
+      {
+        "bucket": "sovereign",
+        "count": 13
+      },
+      {
+        "bucket": "local_fast",
+        "count": 32
+      },
+      {
+        "bucket": "cim_packaged",
+        "count": 39
+      },
+      {
+        "bucket": "full_context",
+        "count": 6
+      }
+    ],
+    "provenance": "synthetic"
+  },
+  "packing": {
+    "packed_runs": 39,
+    "passages_retrieved": 24,
+    "passages_kept": 24,
+    "model_input_tokens": {
+      "measured": 0,
+      "estimated": 0,
+      "simulated": 2984,
+      "replayed": 0,
+      "synthetic": 0,
+      "total": 2984,
+      "provenance": "simulated"
+    },
+    "provenance": "synthetic"
+  },
+  "cache_hit_rate": {
+    "numerator": 44,
+    "denominator": 145,
+    "value": 0.30344827586206896
+  },
+  "quality_pass_rate": {
+    "numerator": 90,
+    "denominator": 90,
+    "value": 1.0
+  },
+  "cost_variance": {
+    "reserved_micros": 6338932,
+    "committed_micros": 20125,
+    "variance_micros": 6318807,
+    "provenance": "simulated"
+  },
+  "savings": {
+    "frontier_model_id": "claude-flagship",
+    "pricing_snapshot": "rc-2026-10-15",
+    "quality_adjusted": false,
+    "steps": [
+      {
+        "step": "frontier_baseline",
+        "amount_micros": 141660,
+        "provenance": "simulated"
+      },
+      {
+        "step": "cache",
+        "amount_micros": -46096,
+        "provenance": "simulated"
+      },
+      {
+        "step": "context",
+        "amount_micros": 4692,
+        "provenance": "simulated"
+      },
+      {
+        "step": "routing",
+        "amount_micros": -92103,
+        "provenance": "simulated"
+      },
+      {
+        "step": "prompt_cache",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "cim_overhead",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "retries",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "tool_calls",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "adjustments",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "local_gpu",
+        "amount_micros": 1,
+        "provenance": "simulated"
+      },
+      {
+        "step": "net",
+        "amount_micros": 8154,
+        "provenance": "simulated"
+      }
+    ],
+    "net_savings_micros": 133506,
+    "measurement_cost": {
+      "value": 11972,
+      "provenance": "simulated"
+    },
+    "provenance": "simulated"
+  },
+  "baseline": {
+    "frontier_model_id": "claude-flagship",
+    "frontier_model_name": "Claude Opus 5.5",
+    "runs": 13,
+    "baseline": {
+      "value": 11972,
+      "provenance": "simulated"
+    },
+    "actual": {
+      "value": 204,
+      "provenance": "simulated"
+    },
+    "savings": {
+      "value": 11768,
+      "provenance": "simulated"
+    },
+    "quality_passed_runs": 13,
+    "quality_failed_runs": 0,
+    "quality_gated_savings": {
+      "value": 11768,
+      "provenance": "simulated"
+    },
+    "baseline_quality": "not_graded"
+  },
+  "trend": [
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-16T00:00:00Z",
+      "request_count": 145,
+      "input_tokens": 8555,
+      "output_tokens": 9977,
+      "cim_tokens": 8107,
+      "retry_tokens": 314,
+      "baseline_tokens": 809,
+      "api_micros": 20125,
+      "gpu_estimated_micros": 1,
+      "avoided_micros": 2246
+    },
+    {
+      "bucket": "2026-10-17T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-18T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-19T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    }
+  ]
+}

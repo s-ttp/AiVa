@@ -1,0 +1,279 @@
+{
+    "run_id": "run_01M50J29HZJRS8Z26WNMKE0V0T",
+    "trace_id": "a88621e49d4ebebf943f28f774616679",
+    "status": "failed",
+    "outcome": "error",
+    "selected_model": null,
+    "execution_path": "none",
+    "cim_invoked": false,
+    "response": null,
+    "usage": {
+        "original_context_tokens": 22,
+        "constructed_context_tokens": 0,
+        "upstream_submitted_input_tokens": 0,
+        "upstream_output_tokens": 0,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cim_input_tokens": 0,
+        "cim_output_tokens": 0,
+        "retry_tokens": 0,
+        "provenance": "measured"
+    },
+    "cost": {
+        "upstream_micros": 0,
+        "cim_micros": 0,
+        "baseline_micros": 0,
+        "gpu_estimated_micros": 0,
+        "gpu_estimated_provenance": null,
+        "total_api_micros": 0,
+        "currency": "USD",
+        "rate_card_version": "rc-2026-10-15",
+        "provenance": "measured"
+    },
+    "policy": {
+        "action": "deny",
+        "policy_version": "",
+        "bundle_hash": "",
+        "matched_rule_ids": [],
+        "declared_classification": "confidential",
+        "effective_classification": "internal",
+        "allowed_models": [],
+        "denied_candidates": [],
+        "reasons": []
+    },
+    "identity": {
+        "application_id": "gct-fraud-investigator",
+        "identity_mode": "simulated",
+        "source_mode": "simulated",
+        "matched_network_id": null
+    },
+    "routing": null,
+    "cache": {
+        "checked": false,
+        "hit": false,
+        "cache_type": null,
+        "upstream_call": false
+    },
+    "cim": {
+        "state": "not-reached",
+        "message": "Not reached.",
+        "cim_revision": null,
+        "sufficiency": "not-applicable"
+    },
+    "budget": {
+        "reservation_id": null,
+        "reserved_micros": 0,
+        "committed_micros": 0,
+        "released_micros": 0,
+        "provenance": "measured"
+    },
+    "assurance": {
+        "passed": false,
+        "output_dlp": "not-run",
+        "checks": []
+    },
+    "approval": {
+        "approval_id": null,
+        "status": null,
+        "expires_at": null,
+        "rule_ids": [],
+        "satisfied_by": null
+    },
+    "data_designation": "synthetic",
+    "execution_mode": null,
+    "error": {
+        "code": "EXECUTION_MODE_UNAVAILABLE",
+        "message": "This gateway is not configured for live runs.",
+        "remediation": "Run in replay mode, or use a gateway configured for live inference.",
+        "rule_ids": [],
+        "retryable": false,
+        "run_id": "run_01M50J29HZJRS8Z26WNMKE0V0T",
+        "details": {}
+    },
+    "trace": [
+        {
+            "span_id": "e050e97194fe6184",
+            "parent_span_id": null,
+            "name": "aiva.chat",
+            "status": "unset",
+            "started_at": "2026-10-15T19:54:13.953552Z",
+            "duration_ms": 0.659288,
+            "attributes": {
+                "aiva.run_id": "run_01M50J29HZJRS8Z26WNMKE0V0T",
+                "aiva.status": "failed",
+                "aiva.execution_path": "none"
+            }
+        },
+        {
+            "span_id": "a4e14513acc6a0f5",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "ingress",
+            "status": "executed",
+            "started_at": "2026-10-15T19:54:13.953645Z",
+            "duration_ms": 0.067284,
+            "attributes": {
+                "aiva.stage": "ingress",
+                "aiva.stage.status": "executed",
+                "aiva.error.code": "EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "f8a60b116d8a6f23",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "policy",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.953795Z",
+            "duration_ms": 0.014257,
+            "attributes": {
+                "aiva.stage": "policy",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "b19f71cb297a66fc",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "cache",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.953837Z",
+            "duration_ms": 0.010759,
+            "attributes": {
+                "aiva.stage": "cache",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "36a0922450d7b955",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "rlcd1",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.953870Z",
+            "duration_ms": 0.01829,
+            "attributes": {
+                "aiva.stage": "rlcd1",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "83502bf8b8748750",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "retrieval",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.953911Z",
+            "duration_ms": 0.008913,
+            "attributes": {
+                "aiva.stage": "retrieval",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "55d4ef6b132cba85",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "cim",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.953938Z",
+            "duration_ms": 0.008043,
+            "attributes": {
+                "aiva.stage": "cim",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "27b4790d3c7cb77d",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "context_guard",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.953970Z",
+            "duration_ms": 0.010894,
+            "attributes": {
+                "aiva.stage": "context_guard",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "85c43ffec14d94c0",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "rlcd2",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.953996Z",
+            "duration_ms": 0.00736,
+            "attributes": {
+                "aiva.stage": "rlcd2",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "9839fd002cba83bd",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "quota",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.954018Z",
+            "duration_ms": 0.007385,
+            "attributes": {
+                "aiva.stage": "quota",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "691efa91146473db",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "preflight",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.954078Z",
+            "duration_ms": 0.012357,
+            "attributes": {
+                "aiva.stage": "preflight",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "02c7f64294afa914",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "inference",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.954113Z",
+            "duration_ms": 0.008851,
+            "attributes": {
+                "aiva.stage": "inference",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "c764471c54ffd8da",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "assurance",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:54:13.954140Z",
+            "duration_ms": 0.007362,
+            "attributes": {
+                "aiva.stage": "assurance",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Stopped: EXECUTION_MODE_UNAVAILABLE"
+            }
+        },
+        {
+            "span_id": "0eb864ce264a7e96",
+            "parent_span_id": "e050e97194fe6184",
+            "name": "reconciliation",
+            "status": "executed",
+            "started_at": "2026-10-15T19:54:13.954170Z",
+            "duration_ms": 0.029744,
+            "attributes": {
+                "aiva.stage": "reconciliation",
+                "aiva.stage.status": "executed",
+                "aiva.reconciliation.api_cost_micros": 0,
+                "aiva.reconciliation.released_micros": 0,
+                "aiva.status": "failed"
+            }
+        }
+    ]
+}

@@ -1,0 +1,331 @@
+{
+    "run_id": "run_01M50GVJP2N54Q676GJPMGZ7E4",
+    "trace_id": "1019b2f089431a46c9add547406399a1",
+    "status": "completed",
+    "outcome": "success",
+    "selected_model": "gct-qwen-finetuned",
+    "execution_path": "local-fast",
+    "cim_invoked": false,
+    "response": {
+        "role": "assistant",
+        "content": "[Simulated response from GCT Sovereign Qwen] This placeholder stands in for a live model call; no provider was contacted. The request carried 1 messages (about 15 tokens).",
+        "finish_reason": "stop",
+        "provenance": "simulated"
+    },
+    "usage": {
+        "original_context_tokens": 15,
+        "constructed_context_tokens": 15,
+        "upstream_submitted_input_tokens": 15,
+        "upstream_output_tokens": 43,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cim_input_tokens": 0,
+        "cim_output_tokens": 0,
+        "retry_tokens": 0,
+        "provenance": "simulated"
+    },
+    "cost": {
+        "upstream_micros": 0,
+        "cim_micros": 0,
+        "baseline_micros": 0,
+        "gpu_estimated_micros": 0,
+        "gpu_estimated_provenance": "simulated",
+        "total_api_micros": 0,
+        "currency": "USD",
+        "rate_card_version": "rc-2026-10-15",
+        "provenance": "simulated"
+    },
+    "policy": {
+        "action": "allow",
+        "policy_version": "1",
+        "bundle_hash": "2732ba762cda07130c5942cd8281b4c06e6207eb02942a36f639d25dfa2bf16d",
+        "matched_rule_ids": [
+            "GCT-OUT-004"
+        ],
+        "declared_classification": "internal",
+        "effective_classification": "internal",
+        "allowed_models": [
+            "claude-flagship",
+            "deepseek-v4-1-flash",
+            "gct-qwen-finetuned",
+            "gemini-flash-lite"
+        ],
+        "denied_candidates": [],
+        "reasons": []
+    },
+    "identity": {
+        "application_id": "gct-support-chatbot",
+        "identity_mode": "simulated",
+        "source_mode": "simulated",
+        "matched_network_id": "net-test-console"
+    },
+    "routing": {
+        "rlcd_version": "heuristic-v0",
+        "task_category": "qa",
+        "complexity": "simple",
+        "confidence": null,
+        "context_strategy": "full",
+        "reasons": [
+            "task=qa",
+            "complexity=simple (15 estimated tokens)",
+            "context sufficient without CIM",
+            "RLCD model unavailable: heuristic assessment",
+            "quality tier standard requires rank >= 1",
+            "lowest blended price among qualified models: gct-qwen-finetuned"
+        ]
+    },
+    "cache": {
+        "checked": true,
+        "hit": false,
+        "cache_type": "exact",
+        "upstream_call": true
+    },
+    "cim": {
+        "state": "skipped-sufficient",
+        "message": "CIM skipped: context sufficient",
+        "cim_revision": null,
+        "sufficiency": "not-applicable"
+    },
+    "budget": {
+        "reservation_id": "res_01M50GVJPMKSJJJ5HKYVXF2HHF",
+        "reserved_micros": 0,
+        "committed_micros": 0,
+        "released_micros": 0,
+        "provenance": "measured"
+    },
+    "assurance": {
+        "passed": true,
+        "output_dlp": "clean",
+        "checks": [
+            "non-empty-output",
+            "output-dlp"
+        ]
+    },
+    "approval": {
+        "approval_id": null,
+        "status": null,
+        "expires_at": null,
+        "rule_ids": [],
+        "satisfied_by": null
+    },
+    "data_designation": "synthetic",
+    "error": null,
+    "trace": [
+        {
+            "span_id": "ddd1ffdde1721879",
+            "parent_span_id": null,
+            "name": "aiva.chat",
+            "status": "unset",
+            "started_at": "2026-10-15T19:33:05.347576Z",
+            "duration_ms": 44.932537,
+            "attributes": {
+                "aiva.run_id": "run_01M50GVJP2N54Q676GJPMGZ7E4",
+                "aiva.status": "completed",
+                "aiva.execution_path": "local-fast"
+            }
+        },
+        {
+            "span_id": "c0986cd027b796b3",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "ingress",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.347660Z",
+            "duration_ms": 0.072305,
+            "attributes": {
+                "aiva.stage": "ingress",
+                "aiva.stage.status": "executed",
+                "aiva.application_id": "gct-support-chatbot",
+                "aiva.identity_mode": "simulated",
+                "aiva.source_mode": "simulated",
+                "aiva.message_count": 1,
+                "aiva.evidence_count": 0,
+                "aiva.original_context_tokens": 15,
+                "aiva.scenario_id": "customer-support"
+            }
+        },
+        {
+            "span_id": "acabf3acd217428a",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "policy",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.347781Z",
+            "duration_ms": 13.620321,
+            "attributes": {
+                "aiva.stage": "policy",
+                "aiva.stage.status": "executed",
+                "aiva.dlp.finding_types": [],
+                "aiva.dlp.scanner_version": "presidio-2.2.364+en_core_web_md-3.8.0+telecom-v1+ner-filter-v3+tenant-vocabulary-v2+injection-heuristics-v2",
+                "aiva.dlp.injection_detected": false,
+                "aiva.dlp.evidence_injection_indicators": []
+            }
+        },
+        {
+            "span_id": "bc589f0cce18ed2a",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "cache",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.361510Z",
+            "duration_ms": 0.957761,
+            "attributes": {
+                "aiva.stage": "cache",
+                "aiva.stage.status": "executed",
+                "aiva.cache.type": "exact+semantic",
+                "aiva.cache.scope_rule": "Scoped to the end user: personal request",
+                "aiva.cache.semantic_eligible": false,
+                "aiva.cache.hit": false
+            }
+        },
+        {
+            "span_id": "6632af6472cfc63a",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "rlcd1",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.362566Z",
+            "duration_ms": 0.179943,
+            "attributes": {
+                "aiva.stage": "rlcd1",
+                "aiva.stage.status": "executed",
+                "aiva.rlcd.version": "heuristic-v0",
+                "aiva.rlcd.task_category": "qa",
+                "aiva.rlcd.complexity": "simple",
+                "aiva.rlcd.local_fast_eligible": true
+            }
+        },
+        {
+            "span_id": "5ebe655399a01394",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "retrieval",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:33:05.362831Z",
+            "duration_ms": 0.019112,
+            "attributes": {
+                "aiva.stage": "retrieval",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "CIM skipped: context sufficient"
+            }
+        },
+        {
+            "span_id": "4c758d7c10d1b839",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "cim",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:33:05.362886Z",
+            "duration_ms": 0.015543,
+            "attributes": {
+                "aiva.stage": "cim",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "CIM skipped: context sufficient"
+            }
+        },
+        {
+            "span_id": "b457368a0f1af546",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "context_guard",
+            "status": "skipped",
+            "started_at": "2026-10-15T19:33:05.362931Z",
+            "duration_ms": 0.013261,
+            "attributes": {
+                "aiva.stage": "context_guard",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "CIM skipped: context sufficient"
+            }
+        },
+        {
+            "span_id": "861949395c0c449b",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "rlcd2",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.362998Z",
+            "duration_ms": 0.089174,
+            "attributes": {
+                "aiva.stage": "rlcd2",
+                "aiva.stage.status": "executed",
+                "aiva.rlcd.version": "heuristic-v0",
+                "aiva.rlcd.model_id": "gct-qwen-finetuned",
+                "aiva.rlcd.eligible": [
+                    "gct-qwen-finetuned"
+                ],
+                "aiva.rlcd.reasons": [
+                    "quality tier standard requires rank >= 1",
+                    "lowest blended price among qualified models: gct-qwen-finetuned"
+                ]
+            }
+        },
+        {
+            "span_id": "eb33adbb108e437e",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "quota",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.363197Z",
+            "duration_ms": 12.715817,
+            "attributes": {
+                "aiva.stage": "quota",
+                "aiva.stage.status": "executed",
+                "aiva.quota.reservation_id": "res_01M50GVJPMKSJJJ5HKYVXF2HHF",
+                "aiva.quota.reserved_micros": 0,
+                "aiva.quota.provenance": "measured",
+                "aiva.quota.lower_cost_route": false
+            }
+        },
+        {
+            "span_id": "a23dd11f36e2850b",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "preflight",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.376313Z",
+            "duration_ms": 5.40017,
+            "attributes": {
+                "aiva.stage": "preflight",
+                "aiva.stage.status": "executed",
+                "aiva.preflight.input_token_bound": 137,
+                "aiva.preflight.input_tokens": 15,
+                "aiva.preflight.egress": "allow"
+            }
+        },
+        {
+            "span_id": "552744d41202505f",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "inference",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.381786Z",
+            "duration_ms": 0.127985,
+            "attributes": {
+                "aiva.stage": "inference",
+                "aiva.stage.status": "executed",
+                "aiva.inference.model_id": "gct-qwen-finetuned",
+                "aiva.inference.status": "ok",
+                "aiva.inference.provenance": "simulated"
+            }
+        },
+        {
+            "span_id": "bb770a7957b6948c",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "assurance",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.381950Z",
+            "duration_ms": 8.772459,
+            "attributes": {
+                "aiva.stage": "assurance",
+                "aiva.stage.status": "executed",
+                "aiva.assurance.passed": true,
+                "aiva.assurance.output_dlp": "clean",
+                "aiva.assurance.finding_types": []
+            }
+        },
+        {
+            "span_id": "0328a09ef171a0ca",
+            "parent_span_id": "ddd1ffdde1721879",
+            "name": "reconciliation",
+            "status": "executed",
+            "started_at": "2026-10-15T19:33:05.390805Z",
+            "duration_ms": 1.67518,
+            "attributes": {
+                "aiva.stage": "reconciliation",
+                "aiva.stage.status": "executed",
+                "aiva.reconciliation.api_cost_micros": 0,
+                "aiva.reconciliation.released_micros": 0,
+                "aiva.status": "completed"
+            }
+        }
+    ]
+}

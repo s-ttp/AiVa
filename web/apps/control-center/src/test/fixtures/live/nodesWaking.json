@@ -1,0 +1,221 @@
+{
+  "checked_at": "2026-10-20T09:00:00Z",
+  "nodes": [
+    {
+      "id": "gateway",
+      "kind": "gateway",
+      "state": "ready",
+      "display_name": "Policy layer",
+      "detail": null,
+      "about": {
+        "summary": "Every request passes policy, DLP and budget checks before any model is called.",
+        "facts": [
+          {
+            "key": "policy",
+            "value": "OPA bundle a590542c79f7"
+          },
+          {
+            "key": "screening",
+            "value": "DLP and prompt-injection checks"
+          },
+          {
+            "key": "limits",
+            "value": "$2.00 max per request, reserved before any paid call"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rlcd",
+      "kind": "router",
+      "state": "ready",
+      "display_name": "RLCD ModernBERT",
+      "detail": null,
+      "about": {
+        "summary": "Fine-tuned classifier that routes each request to the lowest-cost model good enough, within policy.",
+        "facts": [
+          {
+            "key": "model",
+            "value": "ModernBERT-base, fully fine-tuned (4 heads)"
+          },
+          {
+            "key": "evaluation",
+            "value": "Accuracy 0.879 to 0.991 on synthetic labels; overstates real traffic"
+          },
+          {
+            "key": "hosting",
+            "value": "Inside the AiVa gateway process, CPU Upgrade (8 vCPU, 32 GB)"
+          },
+          {
+            "key": "limits",
+            "value": "Not loaded on this gateway: the heuristic router serves instead"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gct-qwen-finetuned",
+      "kind": "model",
+      "state": "waking",
+      "display_name": "GCT Sovereign Qwen",
+      "detail": "Endpoint starting",
+      "about": {
+        "summary": "GCT's fine-tuned sovereign model, the only model that answers confidential and restricted requests.",
+        "facts": [
+          {
+            "key": "model",
+            "value": "Qwen3-32B + GCT LoRA"
+          },
+          {
+            "key": "evaluation",
+            "value": "Held-out test pass rate 0.924 (base Qwen3-32B: 0.604)"
+          },
+          {
+            "key": "hosting",
+            "value": "HF Inference Endpoint, 1x NVIDIA A100 80GB; POC hosted in aws-us-east-1"
+          },
+          {
+            "key": "data_handling",
+            "value": "Confidential data stays on this model; it never falls back"
+          }
+        ]
+      }
+    },
+    {
+      "id": "enterprise-cim",
+      "kind": "model",
+      "state": "waking",
+      "display_name": "Enterprise CIM",
+      "detail": "Endpoint starting",
+      "about": {
+        "summary": "Fine-tuned context model that sends the answering model only the evidence it needs, checked by the Context Guard.",
+        "facts": [
+          {
+            "key": "model",
+            "value": "Qwen3-4B + CIM v7 LoRA"
+          },
+          {
+            "key": "evaluation",
+            "value": "Context Guard pass rate 0.988 (CIM v1: 0.761), fact recall 0.981"
+          },
+          {
+            "key": "hosting",
+            "value": "HF Inference Endpoint, 1x NVIDIA L4 24GB, aws-us-east-1"
+          },
+          {
+            "key": "data_handling",
+            "value": "Never sees confidential data: such requests bypass it"
+          }
+        ]
+      }
+    },
+    {
+      "id": "claude-flagship",
+      "kind": "model",
+      "state": "ready",
+      "display_name": "Claude Opus 5.5",
+      "detail": null,
+      "about": {
+        "summary": "Anthropic's Claude Opus 5.5, the frontier model and the baseline AiVa compares against.",
+        "facts": [
+          {
+            "key": "model",
+            "value": "claude-opus-5-5"
+          },
+          {
+            "key": "price",
+            "value": "$4.00 in / $20.00 out per 1M tokens"
+          },
+          {
+            "key": "context_window",
+            "value": "1,000,000 tokens"
+          },
+          {
+            "key": "data_handling",
+            "value": "Internal or public data only; never confidential"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gemini-flash-lite",
+      "kind": "model",
+      "state": "ready",
+      "display_name": "Gemini Flash-Lite",
+      "detail": null,
+      "about": {
+        "summary": "Google's Gemini 2.5 Flash-Lite, an external model.",
+        "facts": [
+          {
+            "key": "model",
+            "value": "gemini-2.5-flash-lite"
+          },
+          {
+            "key": "price",
+            "value": "$0.10 in / $0.40 out per 1M tokens"
+          },
+          {
+            "key": "context_window",
+            "value": "1,048,576 tokens"
+          },
+          {
+            "key": "data_handling",
+            "value": "Internal or public data only; never confidential"
+          }
+        ]
+      }
+    },
+    {
+      "id": "deepseek-v4-1-flash",
+      "kind": "model",
+      "state": "unavailable",
+      "display_name": "DeepSeek V4.1 Flash",
+      "detail": "No API key configured",
+      "about": {
+        "summary": "DeepSeek V4.1 Flash, an external model.",
+        "facts": [
+          {
+            "key": "model",
+            "value": "deepseek-ai/DeepSeek-V4.1-Flash"
+          },
+          {
+            "key": "price",
+            "value": "$0.20 in / $0.60 out per 1M tokens"
+          },
+          {
+            "key": "context_window",
+            "value": "1,048,576 tokens"
+          },
+          {
+            "key": "data_handling",
+            "value": "Internal or public data only; never confidential"
+          }
+        ]
+      }
+    },
+    {
+      "id": "web-search",
+      "kind": "tool",
+      "state": "unavailable",
+      "display_name": "Web search (Tavily)",
+      "detail": "No search key configured",
+      "about": {
+        "summary": "Governed live web search for market research: screened public results become evidence.",
+        "facts": [
+          {
+            "key": "hosting",
+            "value": "Tavily, an external service outside the GCT trust boundary"
+          },
+          {
+            "key": "screening",
+            "value": "Results screened for prompt injection and personal data; flagged ones dropped"
+          },
+          {
+            "key": "data_handling",
+            "value": "Only the question is sent, after DLP; public information only"
+          }
+        ]
+      }
+    }
+  ]
+}

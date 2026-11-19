@@ -1,0 +1,68 @@
+/*
+ * AiVa Insights chart marks. The series colours are @aiva/ui tokens
+ * (--aiva-viz-1 … --aiva-viz-4, --aiva-viz-total, --aiva-viz-muted,
+ * --aiva-viz-grid in tokens.css), validated for colour-vision deficiency in
+ * light and dark. Slots 3 and 4 sit below 3:1 on white, so every chart ships a
+ * legend and a data table. Text never takes a series colour.
+ */
+
+.aiva-viz-slot-1 { background-color: var(--aiva-viz-1); }
+.aiva-viz-slot-2 { background-color: var(--aiva-viz-2); }
+.aiva-viz-slot-3 { background-color: var(--aiva-viz-3); }
+.aiva-viz-slot-4 { background-color: var(--aiva-viz-4); }
+.aiva-viz-total { background-color: var(--aiva-viz-total); }
+.aiva-viz-muted { background-color: var(--aiva-viz-muted); }
+
+/* Bars: at most 16px thick, 4px rounded data end, square at the baseline. */
+.aiva-viz-bar {
+  block-size: 1rem;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
+  min-inline-size: 0;
+}
+
+/* Stacked segments: the 2px surface gap comes from the flex gap; the top segment gets the rounded end. */
+.aiva-viz-segment { min-block-size: 1px; inline-size: 100%; }
+.aiva-viz-segment:last-child { border-start-start-radius: 4px; border-start-end-radius: 4px; }
+
+.aiva-viz-active .aiva-viz-segment,
+.aiva-viz-bar.aiva-viz-active { filter: brightness(1.12); }
+
+.aiva-viz-gridline {
+  position: absolute;
+  inset-inline: 0;
+  border-block-start: 1px solid var(--aiva-viz-grid);
+}
+
+.aiva-viz-swatch {
+  display: inline-block;
+  inline-size: 0.75rem;
+  block-size: 0.75rem;
+  border-radius: 2px;
+}
+
+.aiva-viz-key {
+  display: inline-block;
+  inline-size: 0.75rem;
+  block-size: 2px;
+}
+
+.aiva-viz-tooltip {
+  position: absolute;
+  z-index: 10;
+  min-inline-size: 10rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--aiva-border-subtle);
+  border-radius: 8px;
+  background: var(--aiva-surface-card);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--aiva-brand-navy) 12%, transparent);
+  font-size: var(--aiva-font-size-secondary);
+  pointer-events: none;
+}
+
+@media (forced-colors: active) {
+  .aiva-viz-slot-1, .aiva-viz-slot-2, .aiva-viz-slot-3, .aiva-viz-slot-4, .aiva-viz-total {
+    forced-color-adjust: none;
+    border: 1px solid CanvasText;
+  }
+}

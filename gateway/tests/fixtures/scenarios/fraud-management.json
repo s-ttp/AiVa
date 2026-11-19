@@ -1,0 +1,47 @@
+{
+  "scenario_id": "fraud-management",
+  "request": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Investigate synthetic SIM-swap alert FR-2026-0412 and summarise the evidence timeline. Recommend next steps for the analyst."
+      }
+    ],
+    "scenario_id": "fraud-management",
+    "data_classification": "confidential",
+    "routing": {
+      "tags": [
+        "fraud-investigation",
+        "claude-preferred"
+      ],
+      "preferred_model": "claude-flagship"
+    },
+    "max_output_tokens": 500,
+    "evidence": [
+      {
+        "id": "FR-2026-0412/ev-3",
+        "text": "event_timestamp: 2026-10-12T09:14:05Z\nevent_type: sim_swap_completed\nsource_id: crm-retail-17\nnote: New SIM activated in a retail store."
+      },
+      {
+        "id": "FR-2026-0412/ev-1",
+        "text": "event_timestamp: 2026-10-12T08:55:41Z\nevent_type: password_reset\nsource_id: app-auth\nnote: Account password reset from a new device."
+      },
+      {
+        "id": "FR-2026-0412/ev-5",
+        "text": "event_timestamp: 2026-10-12T09:31:22Z\nevent_type: otp_requested\nsource_id: bank-gw\nnote: One-time passcode requested by a partner bank."
+      },
+      {
+        "id": "FR-2026-0412/ev-2",
+        "text": "event_timestamp: 2026-10-12T09:02:10Z\nevent_type: sim_swap_requested\nsource_id: crm-retail-17\nnote: SIM replacement requested in store."
+      },
+      {
+        "id": "FR-2026-0412/ev-4",
+        "text": "event_timestamp: 2026-10-12T09:20:48Z\nevent_type: imei_change\nsource_id: network-hlr\nnote: Line attached on a device never seen before."
+      },
+      {
+        "id": "FR-2026-0412/ev-6",
+        "text": "event_timestamp: 2026-10-12T09:44:03Z\nevent_type: call_forwarding_set\nsource_id: network-hlr\nnote: Unconditional call forwarding enabled."
+      }
+    ]
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "policy_version": "2",
+  "bundle_hash": "28a889a6e26a659a47bcaa49ba91e5937dd4245e219aa2fe521e0d835105f7b5",
+  "models": [
+    {
+      "id": "claude-flagship",
+      "display_name": "Claude Opus 5.5",
+      "role": "upstream",
+      "provider": "anthropic",
+      "provider_model_id": "claude-opus-5-5",
+      "revision": "claude-opus-5-5",
+      "region": null,
+      "sovereign": false,
+      "external": true,
+      "enabled": true,
+      "application_ids": [
+        "gct-coding-assistant",
+        "gct-doc-copilot",
+        "gct-fraud-investigator",
+        "gct-incident-agent",
+        "gct-knowledge-portal",
+        "gct-noc-assistant",
+        "gct-support-chatbot"
+      ],
+      "catalog_configured": true,
+      "context_window": 1000000,
+      "provider_route": null,
+      "adapter": null,
+      "rate_card": {
+        "id": "rc-claude-opus-5-5",
+        "version": "rc-2026-10-14",
+        "currency": "USD",
+        "input_micros_per_mtok": 4000000,
+        "output_micros_per_mtok": 20000000,
+        "cached_input_micros_per_mtok": 200000,
+        "gpu_micros_per_hour": null,
+        "effective_from": "2026-10-14",
+        "source": "Anthropic API list price for claude-opus-5-5 (model table dated 2026-10-06)"
+      }
+    },
+    {
+      "id": "deepseek-v4-1-flash",
+      "display_name": "DeepSeek V4.1 Flash",
+      "role": "upstream",
+      "provider": "hf-router",
+      "provider_model_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "revision": "5254448103b6254fc646dacbca1cbbf20e9216c1",
+      "region": null,
+      "sovereign": false,
+      "external": true,
+      "enabled": true,
+      "application_ids": [
+        "gct-coding-assistant",
+        "gct-doc-copilot",
+        "gct-fraud-investigator",
+        "gct-incident-agent",
+        "gct-knowledge-portal",
+        "gct-noc-assistant",
+        "gct-support-chatbot"
+      ],
+      "catalog_configured": true,
+      "context_window": 1048576,
+      "provider_route": "deepinfra",
+      "adapter": null,
+      "rate_card": {
+        "id": "rc-deepseek-v4-1-flash",
+        "version": "rc-2026-10-14",
+        "currency": "USD",
+        "input_micros_per_mtok": 200000,
+        "output_micros_per_mtok": 600000,
+        "cached_input_micros_per_mtok": 200000,
+        "gpu_micros_per_hour": null,
+        "effective_from": "2026-10-14",
+        "source": "HF Inference Providers router listing, provider deepinfra, fetched 2026-10-14 (no cached-input discount assumed)"
+      }
+    },
+    {
+      "id": "enterprise-cim",
+      "display_name": "Enterprise CIM",
+      "role": "cim",
+      "provider": "hf-endpoint",
+      "provider_model_id": "Qwen/Qwen3-4B-Instruct-2507",
+      "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+      "region": "aws-us-east-1",
+      "sovereign": false,
+      "external": false,
+      "enabled": true,
+      "application_ids": [],
+      "catalog_configured": true,
+      "context_window": 32768,
+      "provider_route": null,
+      "adapter": "enterprise-cim-lora",
+      "rate_card": {
+        "id": "rc-enterprise-cim",
+        "version": "rc-2026-10-14",
+        "currency": "USD",
+        "input_micros_per_mtok": 0,
+        "output_micros_per_mtok": 0,
+        "cached_input_micros_per_mtok": 0,
+        "gpu_micros_per_hour": 800000,
+        "effective_from": "2026-10-14",
+        "source": "POC convention ($0 token price); GPU estimate = HF endpoint 1x L4, AWS us-east-1"
+      }
+    },
+    {
+      "id": "gct-qwen-finetuned",
+      "display_name": "GCT Sovereign Qwen",
+      "role": "upstream",
+      "provider": "hf-endpoint",
+      "provider_model_id": "Qwen/Qwen3-32B",
+      "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+      "region": "aws-us-east-1",
+      "sovereign": true,
+      "external": false,
+      "enabled": true,
+      "application_ids": [
+        "gct-coding-assistant",
+        "gct-doc-copilot",
+        "gct-fraud-investigator",
+        "gct-incident-agent",
+        "gct-knowledge-portal",
+        "gct-noc-assistant",
+        "gct-support-chatbot"
+      ],
+      "catalog_configured": true,
+      "context_window": 32768,
+      "provider_route": null,
+      "adapter": "gct-qwen-lora",
+      "rate_card": {
+        "id": "rc-gct-qwen-local",
+        "version": "rc-2026-10-14",
+        "currency": "USD",
+        "input_micros_per_mtok": 0,
+        "output_micros_per_mtok": 0,
+        "cached_input_micros_per_mtok": 0,
+        "gpu_micros_per_hour": 1800000,
+        "effective_from": "2026-10-14",
+        "source": "POC convention ($0 token price); GPU estimate = HF endpoint 1x L40S, AWS us-east-1"
+      }
+    },
+    {
+      "id": "gemini-flash-lite",
+      "display_name": "Gemini Flash-Lite",
+      "role": "upstream",
+      "provider": "google",
+      "provider_model_id": "gemini-3.5-flash-lite",
+      "revision": "3.5-flash-lite-07-2026",
+      "region": null,
+      "sovereign": false,
+      "external": true,
+      "enabled": true,
+      "application_ids": [
+        "gct-coding-assistant",
+        "gct-doc-copilot",
+        "gct-fraud-investigator",
+        "gct-incident-agent",
+        "gct-knowledge-portal",
+        "gct-noc-assistant",
+        "gct-support-chatbot"
+      ],
+      "catalog_configured": true,
+      "context_window": 1048576,
+      "provider_route": null,
+      "adapter": null,
+      "rate_card": {
+        "id": "rc-gemini-3-5-flash-lite",
+        "version": "rc-2026-10-14",
+        "currency": "USD",
+        "input_micros_per_mtok": 300000,
+        "output_micros_per_mtok": 2500000,
+        "cached_input_micros_per_mtok": 30000,
+        "gpu_micros_per_hour": null,
+        "effective_from": "2026-10-14",
+        "source": "ai.google.dev/gemini-api/docs/pricing (paid tier, standard), fetched 2026-10-14"
+      }
+    }
+  ],
+  "policy_allowlists": [
+    {
+      "policy_id": "GCT-CONF-001",
+      "title": "Confidential, restricted and sovereign-only data stays on the sovereign path",
+      "match": {
+        "classification_any": [
+          "confidential",
+          "restricted",
+          "sovereign-only"
+        ],
+        "application_any": null,
+        "task_any": null,
+        "tags_any": null,
+        "dlp_findings_any": null,
+        "injection_detected": null,
+        "source_cidr_any": null,
+        "environment_any": null,
+        "evidence_injection_detected": null,
+        "tool_any": null,
+        "tool_access_any": null,
+        "tool_egress_any": null
+      },
+      "allowed_models": [
+        "gct-qwen-finetuned"
+      ],
+      "execution_path": "sovereign-direct",
+      "external_providers": "deny",
+      "cim": "bypass"
+    }
+  ],
+  "invariants": [
+    "Confidential, restricted and sovereign-only data uses only sovereign models (AIPEL-INV-001).",
+    "Confidential, restricted and sovereign-only data never reaches CIM or external providers.",
+    "Confidential, restricted and sovereign-only data never reaches an external tool (AIPEL-INV-002).",
+    "Routing mode local-only excludes external models and tools."
+  ]
+}

@@ -1,0 +1,13 @@
+# LLD §7 reference policy: confidential data takes the sovereign direct path.
+policy_id: GCT-CONF-001
+title: Confidential, restricted and sovereign-only data stays on the sovereign path
+priority: 1000
+match:
+  classification_any: [confidential, restricted, sovereign-only]
+enforce:
+  execution_path: sovereign-direct
+  allowed_models: [gct-qwen-finetuned]
+  cim: bypass
+  external_providers: deny
+  output_dlp: required
+  audit_level: enhanced

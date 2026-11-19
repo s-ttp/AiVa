@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "window": {
+      "from": "2026-10-09",
+      "to": "2026-10-15",
+      "timezone": "UTC"
+    },
+    "filters": {
+      "application_id": "gct-fraud-investigator"
+    },
+    "scope": {
+      "level": "tenant",
+      "department_id": null,
+      "application_ids": [],
+      "user_identities": "pseudonymous"
+    },
+    "generated_at": "2026-10-15T06:20:39.196724Z",
+    "aggregates_as_of": "2026-10-15T06:20:23.716343Z",
+    "granularity": "day",
+    "taxonomy_versions": [
+      "tax-2026.10.1"
+    ],
+    "classifier_versions": [
+      "heuristic-v0"
+    ],
+    "rate_card_versions": [
+      "rc-2026-10-14"
+    ],
+    "pricing_snapshot": "rc-2026-10-14",
+    "data_designation": "synthetic",
+    "attribution": "Usage is attributed to the UTC hour its run started."
+  },
+  "runs": [
+    {
+      "run_id": "run_01M4Z3FWDAE0E20RKR9A30KGBT",
+      "trace_id": "e00615cd176cb1aeb93c5a98b9151966",
+      "created_at": "2026-10-15T06:20:16.170668Z",
+      "application_id": "gct-fraud-investigator",
+      "department_id": "fraud-risk",
+      "principal": "usr_f60efc7504e3e124",
+      "task_category": "analysis",
+      "sensitivity": "confidential",
+      "execution_path": "sovereign-direct",
+      "outcome": "success",
+      "model_id": "gct-qwen-finetuned",
+      "input_tokens": 111,
+      "output_tokens": 43,
+      "api_micros": 0,
+      "provenance": "simulated",
+      "data_designation": "synthetic"
+    },
+    {
+      "run_id": "run_01M4Z3FVWJ33S3N14XMR6XZF1F",
+      "trace_id": "8c5601bd7ce4c4e1d1c0301fbd211020",
+      "created_at": "2026-10-15T06:20:15.634724Z",
+      "application_id": "gct-fraud-investigator",
+      "department_id": "fraud-risk",
+      "principal": "usr_f60efc7504e3e124",
+      "task_category": "analysis",
+      "sensitivity": "confidential",
+      "execution_path": "sovereign-direct",
+      "outcome": "success",
+      "model_id": "gct-qwen-finetuned",
+      "input_tokens": 111,
+      "output_tokens": 43,
+      "api_micros": 0,
+      "provenance": "simulated",
+      "data_designation": "synthetic"
+    },
+    {
+      "run_id": "run_01M4Z3FVN6EYF7ZA73FRXAZEJ1",
+      "trace_id": "1fe9acec81ca9fba41c990167011a621",
+      "created_at": "2026-10-15T06:20:15.398397Z",
+      "application_id": "gct-fraud-investigator",
+      "department_id": "fraud-risk",
+      "principal": "usr_f60efc7504e3e124",
+      "task_category": "analysis",
+      "sensitivity": "confidential",
+      "execution_path": "sovereign-direct",
+      "outcome": "success",
+      "model_id": "gct-qwen-finetuned",
+      "input_tokens": 111,
+      "output_tokens": 43,
+      "api_micros": 0,
+      "provenance": "simulated",
+      "data_designation": "synthetic"
+    },
+    {
+      "run_id": "run_01M4Z3FV963S30FC8K8F6F5T4X",
+      "trace_id": "8673863026defb77c1235a4044e79aab",
+      "created_at": "2026-10-15T06:20:15.014351Z",
+      "application_id": "gct-fraud-investigator",
+      "department_id": "fraud-risk",
+      "principal": "usr_baf85083f917b98f",
+      "task_category": "analysis",
+      "sensitivity": "confidential",
+      "execution_path": "sovereign-direct",
+      "outcome": "success",
+      "model_id": "gct-qwen-finetuned",
+      "input_tokens": 111,
+      "output_tokens": 43,
+      "api_micros": 0,
+      "provenance": "simulated",
+      "data_designation": "synthetic"
+    },
+    {
+      "run_id": "run_01M4Z3FTQVGQD3GVH44CCRKRYJ",
+      "trace_id": "c86f575d442ae068019d3100afe10399",
+      "created_at": "2026-10-15T06:20:14.459068Z",
+      "application_id": "gct-fraud-investigator",
+      "department_id": "fraud-risk",
+      "principal": "usr_baf85083f917b98f",
+      "task_category": "analysis",
+      "sensitivity": "confidential",
+      "execution_path": "sovereign-direct",
+      "outcome": "success",
+      "model_id": "gct-qwen-finetuned",
+      "input_tokens": 111,
+      "output_tokens": 43,
+      "api_micros": 0,
+      "provenance": "simulated",
+      "data_designation": "synthetic"
+    }
+  ],
+  "page": {
+    "next_cursor": null,
+    "limit": 25,
+    "total_rows": 5
+  }
+}

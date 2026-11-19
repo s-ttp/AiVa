@@ -1,0 +1,313 @@
+{
+  "run_id": "run_01M4WZK6JN0N00JYZ1KY0GPCD5",
+  "trace_id": "e38b06ed58ce031bdb99ff6cf3cad9b2",
+  "status": "blocked",
+  "outcome": "quota_denied",
+  "selected_model": "gct-qwen-finetuned",
+  "execution_path": "local-fast",
+  "cim_invoked": false,
+  "response": null,
+  "usage": {
+    "original_context_tokens": 19,
+    "constructed_context_tokens": 19,
+    "upstream_submitted_input_tokens": 0,
+    "upstream_output_tokens": 0,
+    "cached_input_tokens": 0,
+    "reasoning_tokens": 0,
+    "cim_input_tokens": 0,
+    "cim_output_tokens": 0,
+    "retry_tokens": 0,
+    "provenance": "measured"
+  },
+  "cost": {
+    "upstream_micros": 0,
+    "cim_micros": 0,
+    "baseline_micros": 0,
+    "gpu_estimated_micros": 0,
+    "total_api_micros": 0,
+    "currency": "USD",
+    "rate_card_version": "rc-2026-10-14",
+    "provenance": "measured"
+  },
+  "policy": {
+    "action": "allow",
+    "policy_version": "1",
+    "bundle_hash": "086fe8a9df228d8d9f8554b29a383dacfb00afb9dbaccc7e1d30bb205c26625d",
+    "matched_rule_ids": [
+      "GCT-OUT-004"
+    ],
+    "declared_classification": "internal",
+    "effective_classification": "internal",
+    "allowed_models": [
+      "claude-flagship",
+      "deepseek-v4-1-flash",
+      "gct-qwen-finetuned",
+      "gemini-flash-lite"
+    ],
+    "denied_candidates": [],
+    "reasons": []
+  },
+  "identity": {
+    "application_id": "gct-support-chatbot",
+    "identity_mode": "simulated",
+    "source_mode": "simulated",
+    "matched_network_id": "net-test-console"
+  },
+  "routing": {
+    "rlcd_version": "heuristic-v0",
+    "task_category": "qa",
+    "complexity": "simple",
+    "confidence": null,
+    "context_strategy": "full",
+    "reasons": [
+      "task=qa",
+      "complexity=simple (19 estimated tokens)",
+      "context sufficient without CIM",
+      "quality tier standard requires rank >= 1",
+      "lowest blended price among qualified models: gct-qwen-finetuned"
+    ]
+  },
+  "cache": {
+    "checked": true,
+    "hit": false,
+    "cache_type": "exact",
+    "upstream_call": false
+  },
+  "cim": {
+    "state": "skipped-sufficient",
+    "message": "CIM skipped: context sufficient",
+    "cim_revision": null,
+    "sufficiency": "not-applicable"
+  },
+  "budget": {
+    "reservation_id": null,
+    "reserved_micros": 0,
+    "committed_micros": 0,
+    "released_micros": 0,
+    "provenance": "measured"
+  },
+  "assurance": {
+    "passed": false,
+    "output_dlp": "not-run",
+    "checks": []
+  },
+  "data_designation": "synthetic",
+  "error": {
+    "code": "QUOTA_EXCEEDED",
+    "message": "The daily application budget does not cover this request.",
+    "remediation": "Ask a budget owner to raise the cap or retry in the next period.",
+    "rule_ids": [
+      "bud-application-gct-support-chatbot-daily"
+    ],
+    "retryable": false,
+    "run_id": "run_01M4WZK6JN0N00JYZ1KY0GPCD5",
+    "details": {}
+  },
+  "trace": [
+    {
+      "span_id": "6cf06bfcc7b8ca13",
+      "parent_span_id": null,
+      "name": "aiva.chat",
+      "status": "unset",
+      "started_at": "2026-10-14T10:33:41.717818Z",
+      "duration_ms": 6.907952,
+      "attributes": {
+        "aiva.run_id": "run_01M4WZK6JN0N00JYZ1KY0GPCD5",
+        "aiva.status": "blocked",
+        "aiva.execution_path": "local-fast"
+      }
+    },
+    {
+      "span_id": "efd2efd909646c5d",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "ingress",
+      "status": "executed",
+      "started_at": "2026-10-14T10:33:41.717877Z",
+      "duration_ms": 0.022781,
+      "attributes": {
+        "aiva.stage": "ingress",
+        "aiva.stage.status": "executed",
+        "aiva.application_id": "gct-support-chatbot",
+        "aiva.identity_mode": "simulated",
+        "aiva.source_mode": "simulated",
+        "aiva.message_count": 1,
+        "aiva.evidence_count": 0,
+        "aiva.original_context_tokens": 19,
+        "aiva.scenario_id": "customer-support"
+      }
+    },
+    {
+      "span_id": "5a48bdfff39f3f97",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "policy",
+      "status": "executed",
+      "started_at": "2026-10-14T10:33:41.717926Z",
+      "duration_ms": 4.538238,
+      "attributes": {
+        "aiva.stage": "policy",
+        "aiva.stage.status": "executed",
+        "aiva.dlp.finding_types": [],
+        "aiva.dlp.scanner_version": "pattern-dlp-v1",
+        "aiva.dlp.injection_detected": false,
+        "aiva.dlp.evidence_injection_indicators": []
+      }
+    },
+    {
+      "span_id": "740cb72270009a0a",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "cache",
+      "status": "executed",
+      "started_at": "2026-10-14T10:33:41.722546Z",
+      "duration_ms": 0.094293,
+      "attributes": {
+        "aiva.stage": "cache",
+        "aiva.stage.status": "executed",
+        "aiva.cache.type": "exact",
+        "aiva.cache.hit": false
+      }
+    },
+    {
+      "span_id": "278efb0ad37302eb",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "rlcd1",
+      "status": "executed",
+      "started_at": "2026-10-14T10:33:41.722670Z",
+      "duration_ms": 0.036791,
+      "attributes": {
+        "aiva.stage": "rlcd1",
+        "aiva.stage.status": "executed",
+        "aiva.rlcd.version": "heuristic-v0",
+        "aiva.rlcd.task_category": "qa",
+        "aiva.rlcd.complexity": "simple",
+        "aiva.rlcd.local_fast_eligible": true
+      }
+    },
+    {
+      "span_id": "47f0175f3e43924b",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "retrieval",
+      "status": "skipped",
+      "started_at": "2026-10-14T10:33:41.722740Z",
+      "duration_ms": 0.006809,
+      "attributes": {
+        "aiva.stage": "retrieval",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "CIM skipped: context sufficient"
+      }
+    },
+    {
+      "span_id": "f158c7ee83e071b9",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "cim",
+      "status": "skipped",
+      "started_at": "2026-10-14T10:33:41.722761Z",
+      "duration_ms": 0.00664,
+      "attributes": {
+        "aiva.stage": "cim",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "CIM skipped: context sufficient"
+      }
+    },
+    {
+      "span_id": "746556e53570c2eb",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "context_guard",
+      "status": "skipped",
+      "started_at": "2026-10-14T10:33:41.722781Z",
+      "duration_ms": 0.005652,
+      "attributes": {
+        "aiva.stage": "context_guard",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "CIM skipped: context sufficient"
+      }
+    },
+    {
+      "span_id": "73a9659e8c4a45c0",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "rlcd2",
+      "status": "executed",
+      "started_at": "2026-10-14T10:33:41.722806Z",
+      "duration_ms": 0.032035,
+      "attributes": {
+        "aiva.stage": "rlcd2",
+        "aiva.stage.status": "executed",
+        "aiva.rlcd.version": "heuristic-v0",
+        "aiva.rlcd.model_id": "gct-qwen-finetuned",
+        "aiva.rlcd.eligible": [
+          "gct-qwen-finetuned"
+        ],
+        "aiva.rlcd.reasons": [
+          "quality tier standard requires rank >= 1",
+          "lowest blended price among qualified models: gct-qwen-finetuned"
+        ]
+      }
+    },
+    {
+      "span_id": "ce4c3e52e6e1e414",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "quota",
+      "status": "executed",
+      "started_at": "2026-10-14T10:33:41.722853Z",
+      "duration_ms": 1.624365,
+      "attributes": {
+        "aiva.stage": "quota",
+        "aiva.stage.status": "executed",
+        "aiva.stage.halted": "Budget reservation denied"
+      }
+    },
+    {
+      "span_id": "3858446413b4d32b",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "preflight",
+      "status": "skipped",
+      "started_at": "2026-10-14T10:33:41.724600Z",
+      "duration_ms": 0.016458,
+      "attributes": {
+        "aiva.stage": "preflight",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Budget reservation denied"
+      }
+    },
+    {
+      "span_id": "0c795df8f8cf7f82",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "inference",
+      "status": "skipped",
+      "started_at": "2026-10-14T10:33:41.724639Z",
+      "duration_ms": 0.008004,
+      "attributes": {
+        "aiva.stage": "inference",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Budget reservation denied"
+      }
+    },
+    {
+      "span_id": "a7ed30c49830c3a5",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "assurance",
+      "status": "skipped",
+      "started_at": "2026-10-14T10:33:41.724663Z",
+      "duration_ms": 0.006525,
+      "attributes": {
+        "aiva.stage": "assurance",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Budget reservation denied"
+      }
+    },
+    {
+      "span_id": "e6b2d0c6d2473b05",
+      "parent_span_id": "6cf06bfcc7b8ca13",
+      "name": "reconciliation",
+      "status": "executed",
+      "started_at": "2026-10-14T10:33:41.724697Z",
+      "duration_ms": 0.019431,
+      "attributes": {
+        "aiva.stage": "reconciliation",
+        "aiva.stage.status": "executed",
+        "aiva.reconciliation.api_cost_micros": 0,
+        "aiva.reconciliation.released_micros": 0,
+        "aiva.status": "blocked"
+      }
+    }
+  ]
+}

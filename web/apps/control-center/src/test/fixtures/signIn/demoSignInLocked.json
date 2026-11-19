@@ -1,0 +1,13 @@
+{
+    "error": {
+        "code": "DEMO_SIGN_IN_LOCKED",
+        "message": "Too many sign-in attempts. Try again in 15 minutes.",
+        "remediation": "Wait, then sign in with the demo passcode.",
+        "rule_ids": [],
+        "retryable": true,
+        "run_id": null,
+        "details": {
+            "retry_after_seconds": 900
+        }
+    }
+}

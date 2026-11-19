@@ -1,0 +1,1687 @@
+{
+  "metadata": {
+    "window": {
+      "from": "2026-10-09",
+      "to": "2026-10-15",
+      "timezone": "UTC"
+    },
+    "filters": {},
+    "scope": {
+      "level": "tenant",
+      "department_id": null,
+      "application_ids": [],
+      "user_identities": "pseudonymous"
+    },
+    "generated_at": "2026-10-15T06:20:38.796686Z",
+    "aggregates_as_of": "2026-10-15T06:20:23.716343Z",
+    "granularity": "day",
+    "taxonomy_versions": [
+      "tax-2026.10.1"
+    ],
+    "classifier_versions": [
+      "heuristic-v0"
+    ],
+    "rate_card_versions": [
+      "rc-2026-10-14"
+    ],
+    "pricing_snapshot": "rc-2026-10-14",
+    "data_designation": "synthetic",
+    "attribution": "Usage is attributed to the UTC hour its run started."
+  },
+  "group_by": "user",
+  "rows": [
+    {
+      "group": "usr_6b1f93d1ac824cac",
+      "label": "usr_6b1f93d1ac824cac",
+      "usage": {
+        "request_count": 8,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 401,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 401,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 1022,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 1022,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 147,
+          "upstream_output_tokens": 299,
+          "cim_input_tokens": 169,
+          "cim_output_tokens": 554,
+          "retry_input_tokens": 22,
+          "retry_output_tokens": 43,
+          "baseline_input_tokens": 63,
+          "baseline_output_tokens": 126,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 4993,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 4993,
+            "provenance": "simulated"
+          },
+          "upstream_micros": 2106,
+          "cim_micros": 0,
+          "retry_micros": 115,
+          "baseline_comparison_micros": 2772,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 4993,
+        "denominator": 18105,
+        "value": 0.27578017122341897
+      }
+    },
+    {
+      "group": "usr_442c3f0342e2a94b",
+      "label": "usr_442c3f0342e2a94b",
+      "usage": {
+        "request_count": 13,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 385,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 385,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 1010,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 1010,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 211,
+          "upstream_output_tokens": 470,
+          "cim_input_tokens": 119,
+          "cim_output_tokens": 413,
+          "retry_input_tokens": 19,
+          "retry_output_tokens": 43,
+          "baseline_input_tokens": 36,
+          "baseline_output_tokens": 84,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 4766,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 4766,
+            "provenance": "simulated"
+          },
+          "upstream_micros": 2828,
+          "cim_micros": 0,
+          "retry_micros": 114,
+          "baseline_comparison_micros": 1824,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 1,
+          "tokens": 63,
+          "micros": 0,
+          "provenance": "simulated"
+        }
+      },
+      "spend_share": {
+        "numerator": 4766,
+        "denominator": 18105,
+        "value": 0.2632421982877658
+      }
+    },
+    {
+      "group": "usr_f0cd87f99c08bc67",
+      "label": "usr_f0cd87f99c08bc67",
+      "usage": {
+        "request_count": 6,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 201,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 201,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 544,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 544,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 105,
+          "upstream_output_tokens": 256,
+          "cim_input_tokens": 57,
+          "cim_output_tokens": 204,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 39,
+          "baseline_output_tokens": 84,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 3698,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 3698,
+            "provenance": "simulated"
+          },
+          "upstream_micros": 1862,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 1836,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 3698,
+        "denominator": 18105,
+        "value": 0.20425296879315105
+      }
+    },
+    {
+      "group": "usr_de9eeb8631f01c69",
+      "label": "usr_de9eeb8631f01c69",
+      "usage": {
+        "request_count": 3,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 156,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 156,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 380,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 380,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 24,
+          "upstream_output_tokens": 43,
+          "cim_input_tokens": 66,
+          "cim_output_tokens": 210,
+          "retry_input_tokens": 42,
+          "retry_output_tokens": 85,
+          "baseline_input_tokens": 24,
+          "baseline_output_tokens": 42,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 1890,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 1890,
+            "provenance": "simulated"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 954,
+          "baseline_comparison_micros": 936,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 1890,
+        "denominator": 18105,
+        "value": 0.1043910521955261
+      }
+    },
+    {
+      "group": "usr_0a7583d6ca5c76a8",
+      "label": "usr_0a7583d6ca5c76a8",
+      "usage": {
+        "request_count": 5,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 124,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 124,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 299,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 299,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 75,
+          "upstream_output_tokens": 172,
+          "cim_input_tokens": 0,
+          "cim_output_tokens": 0,
+          "retry_input_tokens": 17,
+          "retry_output_tokens": 43,
+          "baseline_input_tokens": 32,
+          "baseline_output_tokens": 84,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 1808,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 1808,
+            "provenance": "simulated"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 1808,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 1,
+            "provenance": "simulated"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 1808,
+        "denominator": 18105,
+        "value": 0.09986191659762497
+      }
+    },
+    {
+      "group": "usr_db0cf2d34f557c9f",
+      "label": "usr_db0cf2d34f557c9f",
+      "usage": {
+        "request_count": 7,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 187,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 187,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 479,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 479,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 129,
+          "upstream_output_tokens": 301,
+          "cim_input_tokens": 38,
+          "cim_output_tokens": 136,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 20,
+          "baseline_output_tokens": 42,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 950,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 950,
+            "provenance": "simulated"
+          },
+          "upstream_micros": 30,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 920,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 950,
+        "denominator": 18105,
+        "value": 0.05247169290251312
+      }
+    },
+    {
+      "group": "usr_e50f97728fee44ef",
+      "label": "usr_e50f97728fee44ef",
+      "usage": {
+        "request_count": 4,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 1040,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 1040,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 1195,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 1195,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 618,
+          "upstream_output_tokens": 172,
+          "cim_input_tokens": 422,
+          "cim_output_tokens": 1023,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    },
+    {
+      "group": "usr_96a1a08500c50e6b",
+      "label": "usr_96a1a08500c50e6b",
+      "usage": {
+        "request_count": 3,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 684,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 684,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 957,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 957,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 426,
+          "upstream_output_tokens": 129,
+          "cim_input_tokens": 258,
+          "cim_output_tokens": 828,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    },
+    {
+      "group": "usr_1a5700157c627f2a",
+      "label": "usr_1a5700157c627f2a",
+      "usage": {
+        "request_count": 2,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 456,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 456,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 637,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 637,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 284,
+          "upstream_output_tokens": 86,
+          "cim_input_tokens": 172,
+          "cim_output_tokens": 551,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    },
+    {
+      "group": "usr_8cde9e873ec2f318",
+      "label": "usr_8cde9e873ec2f318",
+      "usage": {
+        "request_count": 2,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 261,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 261,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 299,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 299,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 155,
+          "upstream_output_tokens": 43,
+          "cim_input_tokens": 106,
+          "cim_output_tokens": 256,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    },
+    {
+      "group": "usr_f60efc7504e3e124",
+      "label": "usr_f60efc7504e3e124",
+      "usage": {
+        "request_count": 3,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 333,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 333,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 129,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 129,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 333,
+          "upstream_output_tokens": 129,
+          "cim_input_tokens": 0,
+          "cim_output_tokens": 0,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    },
+    {
+      "group": "usr_baf85083f917b98f",
+      "label": "usr_baf85083f917b98f",
+      "usage": {
+        "request_count": 2,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 222,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 222,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 86,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 86,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 222,
+          "upstream_output_tokens": 86,
+          "cim_input_tokens": 0,
+          "cim_output_tokens": 0,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    },
+    {
+      "group": "usr_c9c84c49003f6114",
+      "label": "usr_c9c84c49003f6114",
+      "usage": {
+        "request_count": 1,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 48,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 48,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 115,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 115,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 24,
+          "upstream_output_tokens": 43,
+          "cim_input_tokens": 24,
+          "cim_output_tokens": 72,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    },
+    {
+      "group": "usr_92bc61813bb460c1",
+      "label": "usr_92bc61813bb460c1",
+      "usage": {
+        "request_count": 1,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 22,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 22,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 43,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 43,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 22,
+          "upstream_output_tokens": 43,
+          "cim_input_tokens": 0,
+          "cim_output_tokens": 0,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    }
+  ],
+  "totals": {
+    "request_count": 60,
+    "provenance": "synthetic",
+    "tokens": {
+      "input_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 4520,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 4520,
+        "provenance": "simulated"
+      },
+      "output_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 7195,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 7195,
+        "provenance": "simulated"
+      },
+      "upstream_input_tokens": 2775,
+      "upstream_output_tokens": 2272,
+      "cim_input_tokens": 1431,
+      "cim_output_tokens": 4247,
+      "retry_input_tokens": 100,
+      "retry_output_tokens": 214,
+      "baseline_input_tokens": 214,
+      "baseline_output_tokens": 462,
+      "other_input_tokens": 0,
+      "other_output_tokens": 0,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "spend": {
+      "api": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 18105,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 18105,
+        "provenance": "simulated"
+      },
+      "upstream_micros": 6826,
+      "cim_micros": 0,
+      "retry_micros": 1183,
+      "baseline_comparison_micros": 10096,
+      "adjustment_micros": 0,
+      "tool_call_micros": 0,
+      "other_micros": 0,
+      "gpu_estimated": {
+        "value": 1,
+        "provenance": "simulated"
+      }
+    },
+    "avoided": {
+      "calls": 1,
+      "tokens": 63,
+      "micros": 0,
+      "provenance": "simulated"
+    }
+  },
+  "series": [
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "usr_6b1f93d1ac824cac",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "usr_442c3f0342e2a94b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "usr_f0cd87f99c08bc67",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "usr_de9eeb8631f01c69",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "usr_0a7583d6ca5c76a8",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "usr_db0cf2d34f557c9f",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "usr_e50f97728fee44ef",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "usr_96a1a08500c50e6b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "usr_6b1f93d1ac824cac",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "usr_442c3f0342e2a94b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "usr_f0cd87f99c08bc67",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "usr_de9eeb8631f01c69",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "usr_0a7583d6ca5c76a8",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "usr_db0cf2d34f557c9f",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "usr_e50f97728fee44ef",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "usr_96a1a08500c50e6b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "usr_6b1f93d1ac824cac",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "usr_442c3f0342e2a94b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "usr_f0cd87f99c08bc67",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "usr_de9eeb8631f01c69",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "usr_0a7583d6ca5c76a8",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "usr_db0cf2d34f557c9f",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "usr_e50f97728fee44ef",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "usr_96a1a08500c50e6b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "usr_6b1f93d1ac824cac",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "usr_442c3f0342e2a94b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "usr_f0cd87f99c08bc67",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "usr_de9eeb8631f01c69",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "usr_0a7583d6ca5c76a8",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "usr_db0cf2d34f557c9f",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "usr_e50f97728fee44ef",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "usr_96a1a08500c50e6b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "usr_6b1f93d1ac824cac",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "usr_442c3f0342e2a94b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "usr_f0cd87f99c08bc67",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "usr_de9eeb8631f01c69",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "usr_0a7583d6ca5c76a8",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "usr_db0cf2d34f557c9f",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "usr_e50f97728fee44ef",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "usr_96a1a08500c50e6b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "usr_6b1f93d1ac824cac",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "usr_442c3f0342e2a94b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "usr_f0cd87f99c08bc67",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "usr_de9eeb8631f01c69",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "usr_0a7583d6ca5c76a8",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "usr_db0cf2d34f557c9f",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "usr_e50f97728fee44ef",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "usr_96a1a08500c50e6b",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "usr_6b1f93d1ac824cac",
+      "request_count": 8,
+      "input_tokens": 401,
+      "output_tokens": 1022,
+      "cim_tokens": 723,
+      "retry_tokens": 65,
+      "api_micros": 4993
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "usr_442c3f0342e2a94b",
+      "request_count": 13,
+      "input_tokens": 385,
+      "output_tokens": 1010,
+      "cim_tokens": 532,
+      "retry_tokens": 62,
+      "api_micros": 4766
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "usr_f0cd87f99c08bc67",
+      "request_count": 6,
+      "input_tokens": 201,
+      "output_tokens": 544,
+      "cim_tokens": 261,
+      "retry_tokens": 0,
+      "api_micros": 3698
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "usr_de9eeb8631f01c69",
+      "request_count": 3,
+      "input_tokens": 156,
+      "output_tokens": 380,
+      "cim_tokens": 276,
+      "retry_tokens": 127,
+      "api_micros": 1890
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "usr_0a7583d6ca5c76a8",
+      "request_count": 5,
+      "input_tokens": 124,
+      "output_tokens": 299,
+      "cim_tokens": 0,
+      "retry_tokens": 60,
+      "api_micros": 1808
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "usr_db0cf2d34f557c9f",
+      "request_count": 7,
+      "input_tokens": 187,
+      "output_tokens": 479,
+      "cim_tokens": 174,
+      "retry_tokens": 0,
+      "api_micros": 950
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "usr_e50f97728fee44ef",
+      "request_count": 4,
+      "input_tokens": 1040,
+      "output_tokens": 1195,
+      "cim_tokens": 1445,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "usr_96a1a08500c50e6b",
+      "request_count": 3,
+      "input_tokens": 684,
+      "output_tokens": 957,
+      "cim_tokens": 1086,
+      "retry_tokens": 0,
+      "api_micros": 0
+    }
+  ],
+  "page": {
+    "next_cursor": null,
+    "limit": 100,
+    "total_rows": 14
+  }
+}

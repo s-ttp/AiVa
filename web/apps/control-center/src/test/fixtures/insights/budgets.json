@@ -1,0 +1,202 @@
+{
+  "budgets": [
+    {
+      "scope_type": "application",
+      "scope_id": "gct-coding-assistant",
+      "period": "monthly",
+      "cap_micros": 300000000,
+      "alert_thresholds": [
+        0.8,
+        0.95
+      ],
+      "on_exhaustion": "block",
+      "id": "bud-application-gct-coding-assistant-monthly",
+      "period_key": "2026-10",
+      "spent_micros": 6883,
+      "reserved_micros": 0,
+      "remaining_micros": 299993117,
+      "forecast_micros": 14958,
+      "forecast_provenance": "estimated",
+      "thresholds_crossed": [],
+      "provenance": "simulated"
+    },
+    {
+      "scope_type": "application",
+      "scope_id": "gct-doc-copilot",
+      "period": "monthly",
+      "cap_micros": 200000000,
+      "alert_thresholds": [
+        0.8,
+        0.95
+      ],
+      "on_exhaustion": "block",
+      "id": "bud-application-gct-doc-copilot-monthly",
+      "period_key": "2026-10",
+      "spent_micros": 0,
+      "reserved_micros": 0,
+      "remaining_micros": 200000000,
+      "forecast_micros": 0,
+      "forecast_provenance": "estimated",
+      "thresholds_crossed": [],
+      "provenance": "measured"
+    },
+    {
+      "scope_type": "application",
+      "scope_id": "gct-fraud-investigator",
+      "period": "monthly",
+      "cap_micros": 200000000,
+      "alert_thresholds": [
+        0.8,
+        0.95
+      ],
+      "on_exhaustion": "approval_required",
+      "id": "bud-application-gct-fraud-investigator-monthly",
+      "period_key": "2026-10",
+      "spent_micros": 0,
+      "reserved_micros": 0,
+      "remaining_micros": 200000000,
+      "forecast_micros": 0,
+      "forecast_provenance": "estimated",
+      "thresholds_crossed": [],
+      "provenance": "measured"
+    },
+    {
+      "scope_type": "application",
+      "scope_id": "gct-incident-agent",
+      "period": "monthly",
+      "cap_micros": 200000000,
+      "alert_thresholds": [
+        0.8,
+        0.95
+      ],
+      "on_exhaustion": "block",
+      "id": "bud-application-gct-incident-agent-monthly",
+      "period_key": "2026-10",
+      "spent_micros": 0,
+      "reserved_micros": 0,
+      "remaining_micros": 200000000,
+      "forecast_micros": 0,
+      "forecast_provenance": "estimated",
+      "thresholds_crossed": [],
+      "provenance": "measured"
+    },
+    {
+      "scope_type": "application",
+      "scope_id": "gct-knowledge-portal",
+      "period": "monthly",
+      "cap_micros": 250000000,
+      "alert_thresholds": [
+        0.8,
+        0.95
+      ],
+      "on_exhaustion": "block",
+      "id": "bud-application-gct-knowledge-portal-monthly",
+      "period_key": "2026-10",
+      "spent_micros": 0,
+      "reserved_micros": 0,
+      "remaining_micros": 250000000,
+      "forecast_micros": 0,
+      "forecast_provenance": "estimated",
+      "thresholds_crossed": [],
+      "provenance": "measured"
+    },
+    {
+      "scope_type": "application",
+      "scope_id": "gct-noc-assistant",
+      "period": "monthly",
+      "cap_micros": 250000000,
+      "alert_thresholds": [
+        0.8,
+        0.95
+      ],
+      "on_exhaustion": "block",
+      "id": "bud-application-gct-noc-assistant-monthly",
+      "period_key": "2026-10",
+      "spent_micros": 0,
+      "reserved_micros": 0,
+      "remaining_micros": 250000000,
+      "forecast_micros": 0,
+      "forecast_provenance": "estimated",
+      "thresholds_crossed": [],
+      "provenance": "measured"
+    },
+    {
+      "scope_type": "application",
+      "scope_id": "gct-support-chatbot",
+      "period": "monthly",
+      "cap_micros": 400000000,
+      "alert_thresholds": [
+        0.8,
+        0.95
+      ],
+      "on_exhaustion": "block",
+      "id": "bud-application-gct-support-chatbot-monthly",
+      "period_key": "2026-10",
+      "spent_micros": 11222,
+      "reserved_micros": 0,
+      "remaining_micros": 399988778,
+      "forecast_micros": 24388,
+      "forecast_provenance": "estimated",
+      "thresholds_crossed": [],
+      "provenance": "simulated"
+    },
+    {
+      "scope_type": "request",
+      "scope_id": "default",
+      "period": "request",
+      "cap_micros": 2000000,
+      "alert_thresholds": [],
+      "on_exhaustion": "lower_cost_route",
+      "id": "bud-request-default-request",
+      "period_key": null,
+      "spent_micros": 0,
+      "reserved_micros": 0,
+      "remaining_micros": 2000000,
+      "forecast_micros": null,
+      "forecast_provenance": null,
+      "thresholds_crossed": [],
+      "provenance": "measured"
+    },
+    {
+      "scope_type": "tenant",
+      "scope_id": "gct",
+      "period": "monthly",
+      "cap_micros": 2000000000,
+      "alert_thresholds": [
+        0.8,
+        0.95
+      ],
+      "on_exhaustion": "block",
+      "id": "bud-tenant-gct-monthly",
+      "period_key": "2026-10",
+      "spent_micros": 18105,
+      "reserved_micros": 0,
+      "remaining_micros": 1999981895,
+      "forecast_micros": 39346,
+      "forecast_provenance": "estimated",
+      "thresholds_crossed": [],
+      "provenance": "simulated"
+    },
+    {
+      "scope_type": "workflow",
+      "scope_id": "default",
+      "period": "workflow",
+      "cap_micros": 1000000,
+      "alert_thresholds": [
+        0.8,
+        0.95
+      ],
+      "on_exhaustion": "approval_required",
+      "id": "bud-workflow-default-workflow",
+      "period_key": null,
+      "spent_micros": 0,
+      "reserved_micros": 0,
+      "remaining_micros": 1000000,
+      "forecast_micros": null,
+      "forecast_provenance": null,
+      "thresholds_crossed": [],
+      "provenance": "measured"
+    }
+  ],
+  "last_reconciliation": null
+}

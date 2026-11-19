@@ -1,0 +1,58 @@
+[
+  {
+    "user_id": "u-auditor",
+    "display_name": "Security Auditor (demo)",
+    "roles": [
+      "security_auditor"
+    ]
+  },
+  {
+    "user_id": "u-care-manager",
+    "display_name": "Customer Care Manager (demo)",
+    "roles": [
+      "department_manager"
+    ]
+  },
+  {
+    "user_id": "u-finance",
+    "display_name": "Finance Analyst (demo)",
+    "roles": [
+      "finance_analyst"
+    ]
+  },
+  {
+    "user_id": "u-noc-manager",
+    "display_name": "NOC Manager (demo)",
+    "roles": [
+      "department_manager"
+    ]
+  },
+  {
+    "user_id": "u-platform-admin",
+    "display_name": "Platform Administrator (demo)",
+    "roles": [
+      "platform_admin"
+    ]
+  },
+  {
+    "user_id": "u-support-owner",
+    "display_name": "Support Chatbot Owner (demo)",
+    "roles": [
+      "application_owner"
+    ]
+  },
+  {
+    "user_id": "u-tenant-admin",
+    "display_name": "Tenant Administrator (demo)",
+    "roles": [
+      "tenant_admin"
+    ]
+  },
+  {
+    "user_id": "u-tester",
+    "display_name": "AiVa Tester (demo)",
+    "roles": [
+      "tester"
+    ]
+  }
+]

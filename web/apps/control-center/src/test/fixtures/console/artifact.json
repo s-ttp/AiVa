@@ -1,0 +1,88 @@
+{
+  "artifact_id": "art_01M4XB7Q2H8N5V3C9D1E6F0G4K",
+  "run_id": "run_01M4WVJ0AXSD9JF8VNXHA3A4QF",
+  "trace_id": "8890c1e44cf90ec84e545060aaa11493",
+  "tenant_id": "gct",
+  "application_id": "gct-doc-copilot",
+  "document_type": "pptx",
+  "file_name": "q3-network-capex-board-summary.pptx",
+  "media_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  "size_bytes": 31842,
+  "sha256": "9f2c1e7a4b8d0c3f5a6e2d1b7c9f0a3e8d4b6c2a1f5e7d9c0b3a8f6e4d2c1b0a",
+  "status": "ready",
+  "classification": "confidential",
+  "execution_path": "sovereign-direct",
+  "selected_model": "gct-qwen-finetuned",
+  "provenance": "simulated",
+  "generator_version": "aiva-artifacts-1",
+  "checks": [
+    {
+      "name": "structure",
+      "status": "passed",
+      "detail": "Document structure verified",
+      "failures": []
+    },
+    {
+      "name": "figures",
+      "status": "passed",
+      "detail": "Critical figures preserved",
+      "failures": []
+    },
+    {
+      "name": "numbers",
+      "status": "passed",
+      "detail": "No altered or invented numbers",
+      "failures": []
+    },
+    {
+      "name": "citations",
+      "status": "passed",
+      "detail": "Every source cited",
+      "failures": []
+    },
+    {
+      "name": "editability",
+      "status": "passed",
+      "detail": "Editable Office document",
+      "failures": []
+    },
+    {
+      "name": "output_dlp",
+      "status": "not-run",
+      "detail": "Output DLP",
+      "failures": []
+    },
+    {
+      "name": "sandbox_render",
+      "status": "passed",
+      "detail": "Rendered in an isolated, network-less sandbox",
+      "failures": []
+    }
+  ],
+  "figures": [
+    {
+      "figure_id": "capex-total",
+      "preserved": true,
+      "occurrences": 2,
+      "locations": [
+        "slide 2",
+        "slide 3"
+      ]
+    }
+  ],
+  "citations": [
+    {
+      "source_id": "capex-plan-q3",
+      "cited": true
+    }
+  ],
+  "outline": {
+    "sections": 5,
+    "paragraphs": 14,
+    "tables": 1,
+    "editable": true
+  },
+  "access_policy": "owner-only",
+  "data_designation": "synthetic",
+  "created_at": "2026-10-14T13:50:00Z"
+}

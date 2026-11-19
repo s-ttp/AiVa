@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+dist/
+.vite/
+*.tsbuildinfo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Local data
+.data/
+dump.rdb
+*.log
+.DS_Store
+
+# ML & Data build outputs and generator cache (pushed to private HF datasets, never committed)
+data/synthetic/build/
+data/synthetic/.cache/

@@ -1,0 +1,307 @@
+{
+    "window": {
+        "from": "2026-10-09",
+        "to": "2026-10-15",
+        "timezone": "UTC"
+    },
+    "scope": {
+        "level": "tenant",
+        "department_id": null,
+        "application_ids": [],
+        "user_identities": "pseudonymous",
+        "users_visible": false
+    },
+    "options": {
+        "department_id": [
+            {
+                "value": "customer-care",
+                "label": "Customer Care"
+            },
+            {
+                "value": "finance",
+                "label": "Finance & Strategy"
+            },
+            {
+                "value": "fraud-risk",
+                "label": "Fraud & Risk"
+            },
+            {
+                "value": "it-engineering",
+                "label": "IT & Engineering"
+            },
+            {
+                "value": "network-ops",
+                "label": "Network Operations"
+            }
+        ],
+        "application_id": [
+            {
+                "value": "gct-coding-assistant",
+                "label": "Coding Assistant"
+            },
+            {
+                "value": "gct-doc-copilot",
+                "label": "Confidential Document Copilot"
+            },
+            {
+                "value": "gct-fraud-investigator",
+                "label": "Fraud Investigation Assistant"
+            },
+            {
+                "value": "gct-incident-agent",
+                "label": "Service Incident Agent"
+            },
+            {
+                "value": "gct-knowledge-portal",
+                "label": "Enterprise Knowledge Portal"
+            },
+            {
+                "value": "gct-noc-assistant",
+                "label": "Network Operations Intelligence"
+            },
+            {
+                "value": "gct-support-chatbot",
+                "label": "Customer Support Chatbot"
+            }
+        ],
+        "user": [],
+        "model_id": [
+            {
+                "value": "claude-flagship",
+                "label": "Claude Opus 5.5"
+            },
+            {
+                "value": "deepseek-v4-1-flash",
+                "label": "DeepSeek V4.1 Flash"
+            },
+            {
+                "value": "enterprise-cim",
+                "label": "Enterprise CIM"
+            },
+            {
+                "value": "gct-qwen-finetuned",
+                "label": "GCT Sovereign Qwen"
+            },
+            {
+                "value": "gemini-flash-lite",
+                "label": "Gemini Flash-Lite"
+            }
+        ],
+        "provider": [
+            {
+                "value": "anthropic",
+                "label": "anthropic"
+            },
+            {
+                "value": "google",
+                "label": "google"
+            },
+            {
+                "value": "hf-endpoint",
+                "label": "hf-endpoint"
+            },
+            {
+                "value": "hf-router",
+                "label": "hf-router"
+            }
+        ],
+        "business_function": [
+            {
+                "value": "finance",
+                "label": "finance"
+            },
+            {
+                "value": "fraud",
+                "label": "fraud"
+            },
+            {
+                "value": "it",
+                "label": "it"
+            },
+            {
+                "value": "network",
+                "label": "network"
+            },
+            {
+                "value": "support",
+                "label": "support"
+            }
+        ],
+        "task_category": [
+            {
+                "value": "agentic",
+                "label": "agentic"
+            },
+            {
+                "value": "analysis",
+                "label": "analysis"
+            },
+            {
+                "value": "coding",
+                "label": "coding"
+            },
+            {
+                "value": "generation",
+                "label": "generation"
+            },
+            {
+                "value": "qa",
+                "label": "qa"
+            },
+            {
+                "value": "rag",
+                "label": "rag"
+            },
+            {
+                "value": "summarization",
+                "label": "summarization"
+            },
+            {
+                "value": "unclassified",
+                "label": "unclassified"
+            }
+        ],
+        "intent": [
+            {
+                "value": "automation-script",
+                "label": "automation-script"
+            },
+            {
+                "value": "billing-dispute",
+                "label": "billing-dispute"
+            },
+            {
+                "value": "board-pack",
+                "label": "board-pack"
+            },
+            {
+                "value": "incident-triage",
+                "label": "incident-triage"
+            },
+            {
+                "value": "none",
+                "label": "none"
+            },
+            {
+                "value": "policy-lookup",
+                "label": "policy-lookup"
+            },
+            {
+                "value": "roaming-inquiry",
+                "label": "roaming-inquiry"
+            },
+            {
+                "value": "sim-swap",
+                "label": "sim-swap"
+            }
+        ],
+        "complexity": [
+            {
+                "value": "simple",
+                "label": "simple"
+            },
+            {
+                "value": "unclassified",
+                "label": "unclassified"
+            }
+        ],
+        "sensitivity": [
+            {
+                "value": "confidential",
+                "label": "confidential"
+            },
+            {
+                "value": "internal",
+                "label": "internal"
+            }
+        ],
+        "language": [
+            {
+                "value": "english",
+                "label": "english"
+            }
+        ],
+        "execution_path": [
+            {
+                "value": "cache-return",
+                "label": "cache-return"
+            },
+            {
+                "value": "cim-assisted",
+                "label": "cim-assisted"
+            },
+            {
+                "value": "local-fast",
+                "label": "local-fast"
+            },
+            {
+                "value": "none",
+                "label": "none"
+            },
+            {
+                "value": "sovereign-direct",
+                "label": "sovereign-direct"
+            }
+        ],
+        "source_policy": [
+            {
+                "value": "net-care-campus",
+                "label": "net-care-campus"
+            },
+            {
+                "value": "net-eng-vpn",
+                "label": "net-eng-vpn"
+            },
+            {
+                "value": "net-finance-hq",
+                "label": "net-finance-hq"
+            },
+            {
+                "value": "net-fraud-soc",
+                "label": "net-fraud-soc"
+            },
+            {
+                "value": "net-noc",
+                "label": "net-noc"
+            },
+            {
+                "value": "net-test-console",
+                "label": "net-test-console"
+            },
+            {
+                "value": "none",
+                "label": "none"
+            }
+        ],
+        "environment": [
+            {
+                "value": "local",
+                "label": "local"
+            }
+        ],
+        "outcome": [
+            {
+                "value": "approval_required",
+                "label": "approval_required"
+            },
+            {
+                "value": "policy_denied",
+                "label": "policy_denied"
+            },
+            {
+                "value": "quota_denied",
+                "label": "quota_denied"
+            },
+            {
+                "value": "success",
+                "label": "success"
+            }
+        ],
+        "data_designation": [
+            {
+                "value": "synthetic",
+                "label": "synthetic"
+            }
+        ]
+    }
+}

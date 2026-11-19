@@ -1,0 +1,38 @@
+# Local stack: the gateway and the Control Center.
+#   docker compose -f deploy/compose.yaml up --build
+# Gateway http://localhost:8000/gateway · Control Center http://localhost:8080
+#
+# The gateway image runs its own Postgres (pgvector), Redis and OPA on localhost. Here it keeps them in the
+# `aiva-data` volume, runs simulated inference and the heuristic RLCD, and fills Insights with synthetic
+# traffic on first boot.
+name: aiva
+
+services:
+  gateway:
+    build:
+      context: ..
+      dockerfile: deploy/spaces/gateway/Dockerfile
+    environment:
+      AIVA_ENVIRONMENT: local
+      AIVA_DATA_DIR: /data/aiva
+      AIVA_INFERENCE_MODE: simulated
+      AIVA_RLCD_BACKEND: heuristic
+      AIVA_BOOT_TRAFFIC_RUNS: "60"
+      AIVA_DEV_SIGN_IN: "true"
+      # The front door (nginx) answers CORS for the UI and needs a proxy secret, shared with the
+      # gateway behind it (platform-proxy ingress, ADR-0025). A fixed local value: this stack is never deployed.
+      AIVA_PROXY_SECRET: local-compose-proxy-secret-not-for-deployment
+      AIVA_PROXY_CORS_ORIGINS: http://localhost:8080
+    ports: ["8000:7860"]
+    volumes: [aiva-data:/data]
+
+  control-center:
+    build:
+      context: ..
+      dockerfile: deploy/spaces/control-center/Dockerfile
+    environment:
+      AIVA_GATEWAY_URL: http://localhost:8000/gateway
+    ports: ["8080:7860"]
+
+volumes:
+  aiva-data: {}

@@ -1,0 +1,303 @@
+{
+  "draft": {
+    "version": 153,
+    "status": "draft",
+    "bundle_hash": "ecabc176ab0effcf4badfbbf12ff370bbc31e7038e8eda6914e15753e6d04eae",
+    "created_at": "2026-10-26T07:03:35.869845+00:00",
+    "created_by": "usr_aa30b1e4a5a5a11b",
+    "published_at": null,
+    "published_by": null,
+    "notes": "Model switch (ADR-0027): gct-qwen-finetuned off for gct-fraud-investigator.",
+    "policies": [
+      {
+        "policy_id": "GCT-CONF-001",
+        "title": "Confidential, restricted and sovereign-only data stays on the sovereign path",
+        "priority": 1000,
+        "match": {
+          "classification_any": [
+            "confidential",
+            "restricted",
+            "sovereign-only"
+          ],
+          "application_any": null,
+          "task_any": null,
+          "tags_any": null,
+          "dlp_findings_any": null,
+          "injection_detected": null,
+          "source_cidr_any": null,
+          "environment_any": null,
+          "evidence_injection_detected": null,
+          "tool_any": null,
+          "tool_access_any": null,
+          "tool_egress_any": null
+        },
+        "enforce": {
+          "action": null,
+          "reason": null,
+          "remediation": null,
+          "execution_path": "sovereign-direct",
+          "allowed_models": [
+            "gct-qwen-finetuned"
+          ],
+          "cim": "bypass",
+          "external_providers": "deny",
+          "output_dlp": "required",
+          "audit_level": "enhanced"
+        }
+      },
+      {
+        "policy_id": "GCT-SEC-002",
+        "title": "Block prompts that contain secrets or credentials",
+        "priority": 990,
+        "match": {
+          "classification_any": null,
+          "application_any": null,
+          "task_any": null,
+          "tags_any": null,
+          "dlp_findings_any": [
+            "SECRET",
+            "PRIVATE_KEY"
+          ],
+          "injection_detected": null,
+          "source_cidr_any": null,
+          "environment_any": null,
+          "evidence_injection_detected": null,
+          "tool_any": null,
+          "tool_access_any": null,
+          "tool_egress_any": null
+        },
+        "enforce": {
+          "action": "deny",
+          "reason": "The request contains a credential or secret.",
+          "remediation": "Remove credentials, keys and tokens from the prompt and resubmit.",
+          "execution_path": null,
+          "allowed_models": null,
+          "cim": null,
+          "external_providers": null,
+          "output_dlp": null,
+          "audit_level": "enhanced"
+        }
+      },
+      {
+        "policy_id": "GCT-INJ-003",
+        "title": "Block suspected prompt injection and data exfiltration",
+        "priority": 980,
+        "match": {
+          "classification_any": null,
+          "application_any": null,
+          "task_any": null,
+          "tags_any": null,
+          "dlp_findings_any": null,
+          "injection_detected": true,
+          "source_cidr_any": null,
+          "environment_any": null,
+          "evidence_injection_detected": null,
+          "tool_any": null,
+          "tool_access_any": null,
+          "tool_egress_any": null
+        },
+        "enforce": {
+          "action": "deny",
+          "reason": "The request matched prompt-injection or exfiltration indicators.",
+          "remediation": "Rephrase the request without instructions that override system or policy behaviour.",
+          "execution_path": null,
+          "allowed_models": null,
+          "cim": null,
+          "external_providers": null,
+          "output_dlp": null,
+          "audit_level": "enhanced"
+        }
+      },
+      {
+        "policy_id": "GCT-TOOL-006",
+        "title": "Block tool side effects when retrieved evidence contains injection indicators",
+        "priority": 970,
+        "match": {
+          "classification_any": null,
+          "application_any": null,
+          "task_any": null,
+          "tags_any": null,
+          "dlp_findings_any": null,
+          "injection_detected": null,
+          "source_cidr_any": null,
+          "environment_any": null,
+          "evidence_injection_detected": true,
+          "tool_any": null,
+          "tool_access_any": [
+            "write"
+          ],
+          "tool_egress_any": null
+        },
+        "enforce": {
+          "action": "deny",
+          "reason": "Retrieved evidence contained instruction-like text, so tool actions with side effects are blocked.",
+          "remediation": "Review the source documents; read-only tools remain available.",
+          "execution_path": null,
+          "allowed_models": null,
+          "cim": null,
+          "external_providers": null,
+          "output_dlp": null,
+          "audit_level": "enhanced"
+        }
+      },
+      {
+        "policy_id": "GCT-TOOL-005",
+        "title": "External tool actions with side effects require human approval",
+        "priority": 700,
+        "match": {
+          "classification_any": null,
+          "application_any": null,
+          "task_any": null,
+          "tags_any": null,
+          "dlp_findings_any": null,
+          "injection_detected": null,
+          "source_cidr_any": null,
+          "environment_any": null,
+          "evidence_injection_detected": null,
+          "tool_any": null,
+          "tool_access_any": [
+            "write"
+          ],
+          "tool_egress_any": [
+            "external"
+          ]
+        },
+        "enforce": {
+          "action": "approval_required",
+          "reason": "Tool actions that leave GCT and have side effects need a human approver.",
+          "remediation": "Ask an approver to review the action in the AiVa Govern approval queue.",
+          "execution_path": null,
+          "allowed_models": null,
+          "cim": null,
+          "external_providers": null,
+          "output_dlp": null,
+          "audit_level": "enhanced"
+        }
+      },
+      {
+        "policy_id": "GCT-SWITCH-gct-fraud-investigator",
+        "title": "Models switched off for Fraud Investigation Assistant",
+        "priority": 600,
+        "match": {
+          "classification_any": null,
+          "application_any": [
+            "gct-fraud-investigator"
+          ],
+          "task_any": null,
+          "tags_any": null,
+          "dlp_findings_any": null,
+          "injection_detected": null,
+          "source_cidr_any": null,
+          "environment_any": null,
+          "evidence_injection_detected": null,
+          "tool_any": null,
+          "tool_access_any": null,
+          "tool_egress_any": null
+        },
+        "enforce": {
+          "action": null,
+          "reason": null,
+          "remediation": null,
+          "execution_path": null,
+          "allowed_models": [
+            "gemini-flash-lite",
+            "deepseek-v4-1-flash",
+            "claude-flagship"
+          ],
+          "cim": null,
+          "external_providers": null,
+          "output_dlp": null,
+          "audit_level": null
+        }
+      },
+      {
+        "policy_id": "GCT-OUT-004",
+        "title": "Output DLP required for customer support applications",
+        "priority": 500,
+        "match": {
+          "classification_any": null,
+          "application_any": [
+            "gct-support-chatbot"
+          ],
+          "task_any": null,
+          "tags_any": null,
+          "dlp_findings_any": null,
+          "injection_detected": null,
+          "source_cidr_any": null,
+          "environment_any": null,
+          "evidence_injection_detected": null,
+          "tool_any": null,
+          "tool_access_any": null,
+          "tool_egress_any": null
+        },
+        "enforce": {
+          "action": null,
+          "reason": null,
+          "remediation": null,
+          "execution_path": null,
+          "allowed_models": null,
+          "cim": null,
+          "external_providers": null,
+          "output_dlp": "required",
+          "audit_level": null
+        }
+      }
+    ],
+    "published_version": 148,
+    "changes_from_published": [
+      {
+        "target": "policy",
+        "target_id": "GCT-SWITCH-gct-fraud-investigator",
+        "change": "added",
+        "high_impact": false,
+        "summary": []
+      }
+    ],
+    "authored_by_viewer": true
+  },
+  "base_version": 148,
+  "application_id": "gct-fraud-investigator",
+  "model_id": "gct-qwen-finetuned",
+  "enabled": false,
+  "switched_off_models": [
+    "gct-qwen-finetuned"
+  ],
+  "high_impact": false,
+  "checks": [
+    {
+      "classification": "confidential",
+      "sovereign_path": true,
+      "allowed_models_before": [
+        "gct-qwen-finetuned"
+      ],
+      "allowed_models_after": [],
+      "blocked": true,
+      "blocked_before": false
+    },
+    {
+      "classification": "restricted",
+      "sovereign_path": true,
+      "allowed_models_before": [
+        "gct-qwen-finetuned"
+      ],
+      "allowed_models_after": [],
+      "blocked": true,
+      "blocked_before": false
+    },
+    {
+      "classification": "sovereign-only",
+      "sovereign_path": true,
+      "allowed_models_before": [
+        "gct-qwen-finetuned"
+      ],
+      "allowed_models_after": [],
+      "blocked": true,
+      "blocked_before": false
+    }
+  ],
+  "sovereign_blocked": true,
+  "sovereign_blocked_before": false,
+  "warnings": [
+    "Under this draft, confidential, restricted and sovereign-only requests from this application have no model: they are blocked by AI policy (AIPEL-ROUTE-001), never rerouted to another model."
+  ]
+}

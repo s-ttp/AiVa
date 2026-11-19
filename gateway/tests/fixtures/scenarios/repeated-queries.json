@@ -1,0 +1,15 @@
+{
+  "scenario_id": "repeated-queries",
+  "question": "What are the synthetic GCT roaming rates for Europe on the Traveller 10 bundle?",
+  "paraphrase": "List the synthetic GCT roaming rates for Europe on the Traveller 10 bundle.",
+  "other_region": "What are the synthetic GCT roaming rates for Asia on the Traveller 10 bundle?",
+  "account_specific": "Why did my synthetic GCT bill increase by 15 AED this month?",
+  "request": {
+    "scenario_id": "repeated-queries",
+    "max_output_tokens": 200,
+    "routing": {
+      "preferred_model": "gemini-flash-lite"
+    },
+    "task": "rag"
+  }
+}

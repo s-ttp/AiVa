@@ -1,0 +1,564 @@
+{
+    "metadata": {
+        "window": {
+            "from": "2026-10-10",
+            "to": "2026-10-16",
+            "timezone": "UTC"
+        },
+        "filters": {},
+        "scope": {
+            "level": "tenant",
+            "department_id": null,
+            "application_ids": [],
+            "user_identities": "pseudonymous",
+            "users_visible": true
+        },
+        "generated_at": "2026-10-16T10:21:48.729704Z",
+        "aggregates_as_of": null,
+        "granularity": "day",
+        "taxonomy_versions": [
+            "tax-2026.10.1"
+        ],
+        "classifier_versions": [
+            "heuristic-v0"
+        ],
+        "rate_card_versions": [],
+        "pricing_snapshot": "rc-2026-10-15",
+        "data_designation": "synthetic",
+        "attribution": "Usage is attributed to the UTC hour its run started."
+    },
+    "computed_at": "2026-10-16T10:21:48.729704Z",
+    "group_by": "execution_path",
+    "totals": {
+        "request_count": 734,
+        "assurance": {
+            "checked_runs": 408,
+            "passed": {
+                "numerator": 408,
+                "denominator": 408,
+                "value": 1.0
+            },
+            "output_dlp": {
+                "clean": 408,
+                "redacted": 0,
+                "blocked": 0,
+                "not_run": 0
+            },
+            "escalations": [],
+            "checks": [
+                {
+                    "name": "non-empty-output",
+                    "count": 408
+                },
+                {
+                    "name": "output-dlp",
+                    "count": 408
+                },
+                {
+                    "name": "answer-citations",
+                    "count": 6
+                }
+            ],
+            "provenance": "simulated"
+        },
+        "sufficiency": {
+            "runs": 734,
+            "cim_invoked_runs": 105,
+            "verified": {
+                "numerator": 105,
+                "denominator": 105,
+                "value": 1.0
+            },
+            "cim_selected": {
+                "numerator": 0,
+                "denominator": 105,
+                "value": 0.0
+            },
+            "fallback": {
+                "numerator": 0,
+                "denominator": 105,
+                "value": 0.0
+            },
+            "bypassed_by_policy": {
+                "numerator": 116,
+                "denominator": 734,
+                "value": 0.15803814713896458
+            },
+            "skipped_sufficient": {
+                "numerator": 190,
+                "denominator": 734,
+                "value": 0.25885558583106266
+            },
+            "provenance": "simulated"
+        },
+        "guard": {
+            "packages": 105,
+            "passed": {
+                "numerator": 105,
+                "denominator": 105,
+                "value": 1.0
+            },
+            "relevance_unverified_passages": 0,
+            "recall_floor_added_runs": 0,
+            "failures": [],
+            "provenance": "simulated"
+        },
+        "evidence_coverage": {
+            "status": "not_measured",
+            "measured_runs": 0,
+            "mean": null,
+            "with_unresolved": null,
+            "provenance": null
+        }
+    },
+    "rows": [
+        {
+            "request_count": 192,
+            "assurance": {
+                "checked_runs": 0,
+                "passed": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "output_dlp": {
+                    "clean": 0,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [],
+                "provenance": "synthetic"
+            },
+            "sufficiency": {
+                "runs": 192,
+                "cim_invoked_runs": 0,
+                "verified": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "bypassed_by_policy": {
+                    "numerator": 0,
+                    "denominator": 192,
+                    "value": 0.0
+                },
+                "skipped_sufficient": {
+                    "numerator": 0,
+                    "denominator": 192,
+                    "value": 0.0
+                },
+                "provenance": "synthetic"
+            },
+            "guard": {
+                "packages": 0,
+                "passed": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "synthetic"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "none",
+            "label": "none"
+        },
+        {
+            "request_count": 183,
+            "assurance": {
+                "checked_runs": 180,
+                "passed": {
+                    "numerator": 180,
+                    "denominator": 180,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 180,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 180
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 180
+                    },
+                    {
+                        "name": "answer-citations",
+                        "count": 4
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 183,
+                "cim_invoked_runs": 0,
+                "verified": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "bypassed_by_policy": {
+                    "numerator": 0,
+                    "denominator": 183,
+                    "value": 0.0
+                },
+                "skipped_sufficient": {
+                    "numerator": 183,
+                    "denominator": 183,
+                    "value": 1.0
+                },
+                "provenance": "synthetic"
+            },
+            "guard": {
+                "packages": 0,
+                "passed": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "synthetic"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "local-fast",
+            "label": "local-fast"
+        },
+        {
+            "request_count": 131,
+            "assurance": {
+                "checked_runs": 0,
+                "passed": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "output_dlp": {
+                    "clean": 0,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [],
+                "provenance": "synthetic"
+            },
+            "sufficiency": {
+                "runs": 131,
+                "cim_invoked_runs": 0,
+                "verified": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "bypassed_by_policy": {
+                    "numerator": 0,
+                    "denominator": 131,
+                    "value": 0.0
+                },
+                "skipped_sufficient": {
+                    "numerator": 0,
+                    "denominator": 131,
+                    "value": 0.0
+                },
+                "provenance": "synthetic"
+            },
+            "guard": {
+                "packages": 0,
+                "passed": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "synthetic"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "cache-return",
+            "label": "cache-return"
+        },
+        {
+            "request_count": 116,
+            "assurance": {
+                "checked_runs": 116,
+                "passed": {
+                    "numerator": 116,
+                    "denominator": 116,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 116,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 116
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 116
+                    },
+                    {
+                        "name": "answer-citations",
+                        "count": 2
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 116,
+                "cim_invoked_runs": 0,
+                "verified": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "bypassed_by_policy": {
+                    "numerator": 116,
+                    "denominator": 116,
+                    "value": 1.0
+                },
+                "skipped_sufficient": {
+                    "numerator": 0,
+                    "denominator": 116,
+                    "value": 0.0
+                },
+                "provenance": "synthetic"
+            },
+            "guard": {
+                "packages": 0,
+                "passed": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "synthetic"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "sovereign-direct",
+            "label": "sovereign-direct"
+        },
+        {
+            "request_count": 112,
+            "assurance": {
+                "checked_runs": 112,
+                "passed": {
+                    "numerator": 112,
+                    "denominator": 112,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 112,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 112
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 112
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 112,
+                "cim_invoked_runs": 105,
+                "verified": {
+                    "numerator": 105,
+                    "denominator": 105,
+                    "value": 1.0
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 105,
+                    "value": 0.0
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 105,
+                    "value": 0.0
+                },
+                "bypassed_by_policy": {
+                    "numerator": 0,
+                    "denominator": 112,
+                    "value": 0.0
+                },
+                "skipped_sufficient": {
+                    "numerator": 7,
+                    "denominator": 112,
+                    "value": 0.0625
+                },
+                "provenance": "simulated"
+            },
+            "guard": {
+                "packages": 105,
+                "passed": {
+                    "numerator": 105,
+                    "denominator": 105,
+                    "value": 1.0
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "simulated"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "cim-assisted",
+            "label": "cim-assisted"
+        }
+    ],
+    "trend": [
+        {
+            "bucket": "2026-10-10T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-11T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-12T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-13T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-14T00:00:00Z",
+            "request_count": 189,
+            "checked_runs": 109,
+            "passed_runs": 109,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-15T00:00:00Z",
+            "request_count": 290,
+            "checked_runs": 195,
+            "passed_runs": 195,
+            "cim_invoked_runs": 66,
+            "verified_runs": 66
+        },
+        {
+            "bucket": "2026-10-16T00:00:00Z",
+            "request_count": 255,
+            "checked_runs": 104,
+            "passed_runs": 104,
+            "cim_invoked_runs": 39,
+            "verified_runs": 39
+        }
+    ]
+}

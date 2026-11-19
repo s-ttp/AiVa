@@ -1,0 +1,9 @@
+# Used by BuildKit for `docker build -f deploy/spaces/control-center/Dockerfile .`
+# (repository-root context). Copy to .dockerignore when the Dockerfile sits at a
+# Space repository's root.
+**
+!web/
+web/**/node_modules
+web/**/dist
+!deploy/spaces/control-center/
+!deploy/spaces/shared/

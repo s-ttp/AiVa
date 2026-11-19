@@ -1,0 +1,11 @@
+{
+    "error": {
+        "code": "GATEWAY_STARTING",
+        "message": "The demo backend is starting; ready in about 3 minutes.",
+        "remediation": "Retry in a minute.",
+        "retryable": true,
+        "rule_ids": [],
+        "run_id": null,
+        "details": {}
+    }
+}

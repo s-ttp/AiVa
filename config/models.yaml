@@ -1,0 +1,213 @@
+# Model registry (LLD §19: pin model IDs, revisions, providers and regions).
+# Verified against the live providers on 2026-10-14 (see docs/adr/0009-live-inference-and-optimization.md):
+# - HF Hub `sha` is the base-weight revision. Endpoints A/B serve merged bf16 fine-tunes (ML & Data, PR #7):
+#   `weights_repo`@`weights_revision` pins what each endpoint serves, and the gateway checks it against the
+#   HF Endpoints API before every call. `adapter` is the vLLM `--served-model-name`. Both endpoints run
+#   vLLM v0.31.0 with `--max-model-len 16384` (verified 2026-10-15).
+# - HF Inference Providers cannot pin provider-side weights; `revision` is the Hub sha the route was verified
+#   against and `provider_route` pins the provider (requests use `<repo>:<provider>`).
+# - Anthropic and Google expose no snapshot suffix for these IDs; `revision` records what the model API
+#   reported (Anthropic: model id, created 2026-09-21; Google: `version` field).
+# - `summary`, `hosting` and `fine_tuning` feed the live demo page's info balloons (ADR-0021): a summary of
+#   about 120 characters and a few short facts (`fine_tuning.label`, `evaluation`). Recorded facts only; what
+#   is not recorded is left out. Hosting: ADR-0009, ADR-0013 and deploy/RUNBOOK.md. Fine-tuning:
+#   ADR-0002, ADR-0013, each LoRA repo's adapter_config.json and training_run.json (RLCD: rlcd_config.json),
+#   confirmed by ML & Data on 2026-10-21; evaluation figures from the ml/reports files cited.
+frontier_baseline: claude-flagship
+# The opt-in baseline comparison call (ADR-0009, 2026-10-18 amendment). Opus 5.5 thinking cannot be disabled
+# and counts against max_tokens: with the request's 1024 the shipped baselines for S2, S5 and S6 stopped at
+# max_tokens (S5 with no text). Measured on those five request bodies (2026-10-18): at effort low every answer
+# finished, the largest at 3,512 output tokens (S2); at medium S2 still hit a 4096 cap. The baseline gets
+# max(request max_output_tokens, max_output_tokens) and its reservation line is sized with the same number.
+baseline:
+  max_output_tokens: 6144
+  effort: low
+cim_model: enterprise-cim
+# The answer-quality grader (ADR-0023): judges a live answer against the frontier reference. Confirmed by the
+# owner on 2026-10-21.
+grader_model: openai-grader
+
+models:
+  - id: gct-qwen-finetuned
+    display_name: GCT Sovereign Qwen
+    role: upstream
+    provider: hf-endpoint
+    provider_model_id: Qwen/Qwen3-32B
+    adapter: gct-qwen-lora
+    revision: 9216db5781bf21249d130ec9da846c4624c16137
+    # Qwen3-32B merged with the GCT LoRA.
+    weights_repo: s-ttp/aiva-gct-qwen3-32b
+    weights_revision: f839f6e7810ed729a3046080a10689c83bc82689
+    endpoint_name: gct-qwen-finetuned
+    region: aws-us-east-1
+    sovereign: true
+    external: false
+    context_window: 16384
+    rate_card_id: rc-gct-qwen-local
+    quality_rank: 2
+    summary: GCT's fine-tuned sovereign model, the only model that answers confidential and restricted requests.
+    hosting:
+      platform: HF Inference Endpoint
+      instance: 1x NVIDIA A100 80GB
+      precision: bf16
+      serving: vLLM v0.31.0, max-model-len 16,384
+      scale_to_zero_minutes: 15
+    fine_tuning:
+      method: >-
+        LoRA r=16, alpha 32 on the attention and MLP projections, 2 epochs, lr 1e-4, trained on an NVIDIA H200
+        (HF Jobs), merged into bf16 weights
+      label: Qwen3-32B + GCT LoRA
+      adapter: s-ttp/aiva-gct-qwen3-32b-lora@a086e9aad27e
+      dataset: s-ttp/aiva-gct-qwen-sft@eeb7ab65a198
+      dataset_size: 12,000 train / 1,500 validation / 2,000 test rows
+      data_generator: openai/gpt-oss-120b (ADR-0002)
+      evaluation: "Held-out test pass rate 0.924 (base Qwen3-32B: 0.604)"
+      evaluation_source: ml/reports/gct-test-base-vs-tuned.md
+  - id: enterprise-cim
+    display_name: Enterprise CIM
+    role: cim
+    provider: hf-endpoint
+    provider_model_id: Qwen/Qwen3-4B-Instruct-2507
+    adapter: enterprise-cim-lora
+    revision: cdbee75f17c01a7cc42f958dc650907174af0554
+    # Qwen3-4B-Instruct-2507 merged with the CIM v7 LoRA. Contract v2: it returns the selection, the gateway
+    # builds the package (ADR-0018).
+    weights_repo: s-ttp/aiva-cim-qwen3-4b-v7
+    weights_revision: 16bd341b02869d8059ee967b3c03abedbfa00974
+    cim_contract: v2
+    # The task categories v7 was trained on (ML & Data); coding and generation bypass the CIM.
+    cim_trained_tasks: [qa, rag, agentic, summarization, analysis]
+    endpoint_name: enterprise-cim
+    region: aws-us-east-1
+    sovereign: false
+    external: false
+    context_window: 16384
+    rate_card_id: rc-enterprise-cim
+    quality_rank: 0
+    summary: Fine-tuned context model that sends the answering model only the evidence it needs, checked by the Context Guard.
+    hosting:
+      platform: HF Inference Endpoint
+      instance: 1x NVIDIA L4 24GB
+      precision: bf16
+      serving: vLLM v0.31.0, max-model-len 16,384
+      scale_to_zero_minutes: 15
+    fine_tuning:
+      method: >-
+        LoRA r=32, alpha 64 on the attention and MLP projections, 1 epoch, lr 2e-4, trained on an NVIDIA H200
+        (HF Jobs), merged into bf16 weights
+      label: Qwen3-4B + CIM v7 LoRA
+      adapter: s-ttp/aiva-cim-qwen3-4b-v7-lora@cfa0a50b8628
+      dataset: s-ttp/aiva-cim-sft@da9e8a9d0ae2
+      dataset_size: 13,000 train / 1,500 validation / 2,000 test rows
+      data_generator: openai/gpt-oss-120b (ADR-0002)
+      evaluation: "Context Guard pass rate 0.988 (CIM v1: 0.761), fact recall 0.981"
+      evaluation_source: ml/reports/cim-v7-test-v1-vs-v7.md
+  - id: gemini-flash-lite
+    display_name: Gemini 2.5 Flash-Lite
+    role: upstream
+    provider: google
+    provider_model_id: gemini-2.5-flash-lite
+    revision: 2.5-flash-lite
+    sovereign: false
+    external: true
+    context_window: 1048576
+    rate_card_id: rc-gemini-2-5-flash-lite
+    quality_rank: 1
+    # Grounded answers (ADR-0009, 2026-10-22 grounded-answers amendment, owner-approved). Measured on S2's exact
+    # request bodies, N=5: on knowledge passages only its modal answer asks "which entity?" or says the
+    # evidence lacks a figure it holds, at every temperature, so it does not qualify there (DeepSeek does). On
+    # operational records it is clean, and 0.3 stops S5's runaway alarm lists (2/5 at the default).
+    grounding:
+      knowledge: {qualified: false}
+      records: {temperature: 0.3}
+    summary: Google's Gemini 2.5 Flash-Lite, an external model.
+    hosting:
+      platform: Google Gemini API
+  - id: deepseek-v4-1-flash
+    display_name: DeepSeek V4.1 Flash
+    role: upstream
+    provider: hf-router
+    provider_model_id: deepseek-ai/DeepSeek-V4.1-Flash
+    provider_route: deepinfra
+    revision: 5254448103b6254fc646dacbca1cbbf20e9216c1
+    sovereign: false
+    external: true
+    context_window: 1048576
+    rate_card_id: rc-deepseek-v4-1-flash
+    quality_rank: 2
+    # Grounded answers at temperature 0 (same amendment): complete on the knowledge-only prompts (5/5) and
+    # 0/5 gate fails on S8 and S5, where its default temperature failed 1/5 and 2/5.
+    grounding:
+      knowledge: {temperature: 0}
+      records: {temperature: 0}
+    summary: DeepSeek V4.1 Flash, an external model.
+    hosting:
+      platform: Hugging Face Inference Providers, routed to DeepInfra
+  - id: claude-flagship
+    display_name: Claude Opus 5.5
+    role: upstream
+    provider: anthropic
+    provider_model_id: claude-opus-5-5
+    revision: claude-opus-5-5
+    sovereign: false
+    external: true
+    context_window: 1000000
+    rate_card_id: rc-claude-opus-5-5
+    quality_rank: 3
+    summary: Anthropic's Claude Opus 5.5, the frontier model and the baseline AiVa compares against.
+    hosting:
+      platform: Anthropic API
+  # The grader is never a routing target. Its key (`AIVA_OPENAI_API_KEY`) is a Space 2 secret only, so OpenAI's
+  # models API was not queried: `revision` records the model id as its own version, as for Claude. The id and
+  # prices were verified on OpenAI's official pricing page on 2026-10-21; the live check after deploy confirms
+  # access. `context_window` is that page's short-context tier (up to 272K), the only tier the rate card prices.
+  - id: openai-grader
+    display_name: GPT-6.1 Sol
+    role: grader
+    provider: openai
+    provider_model_id: gpt-6.1-sol
+    revision: gpt-6.1-sol
+    sovereign: false
+    external: true
+    context_window: 272000
+    rate_card_id: rc-gpt-6-1-sol
+    quality_rank: 0
+    summary: OpenAI's GPT-6.1 Sol, an external model that grades a live answer against the frontier reference.
+    hosting:
+      platform: OpenAI API
+
+# The RLCD classifier (ADR-0009): it runs inside the gateway, so it is no routing target. The gateway loads this
+# pin (`optimize.rlcd_model`, checked by a test). v2 since 2026-10-27 (ADR-0009 amendment); v1 was
+# cd53974b98590daaf6d53b8952f6f9883d98a1c6, kept privately at s-ttp/aiva-rlcd-modernbert-v1@db20e9922bbd. Facts:
+# ml/reports/rlcd-v2-stage-d.md and rlcd-v2-gates-run1.md, ADR-0013 and the dataset's card; hosting:
+# deploy/RUNBOOK.md.
+rlcd:
+  display_name: RLCD ModernBERT
+  summary: Fine-tuned classifier that routes each request to the lowest-cost model good enough, within policy.
+  weights_repo: s-ttp/aiva-rlcd-modernbert
+  weights_revision: 817911b1b4975d70aa0e7127b33212fa17e76898
+  base_model: answerdotai/ModernBERT-base@8949b909ec90
+  hosting:
+    platform: Inside the AiVa gateway process
+    instance: CPU Upgrade (8 vCPU, 32 GB)
+    precision: fp32
+    serving: PyTorch, loaded once at startup
+  fine_tuning:
+    method: >-
+      Full fine-tune of ModernBERT-base with four classification heads (task, sensitivity, complexity, context
+      need) on mean pooling, max_length 1024, 3 epochs, lr 5e-5, square-root class-balanced sampling on
+      sensitivity, length-bucketed batches, per-head temperature fitted on natural validation as the gateway
+      computes it (CPU fp32, realistic prior); trained on an HF Jobs a100-large
+    label: ModernBERT-base, fully fine-tuned (4 heads)
+    dataset: s-ttp/aiva-rlcd-labels-v2@7c3c0971267a
+    # Train: 21,954 v1 template rows + 16,164 natural rows (ml/reports/rlcd-v2-stage-d.md).
+    dataset_size: 38,118 train / 2,018 validation / 2,233 natural test rows
+    data_generator: >-
+      openai/gpt-oss-120b writes natural requests around code-fixed labels and identifiers; a second
+      openai/gpt-oss-120b pass with a different prompt must agree from the rubric alone. Plus v1's template rows
+    # Frozen natural test split, scored once: macro-F1 task 0.934, sensitivity 0.983, complexity 0.816, context
+    # need 0.981; confidential-or-above requests routed too low with DLP alongside 0.5% (v1: 45.2%). Its rows
+    # come from the same generator as the training data. On 16 fresh hand-written prompts the coordinator's
+    # check scored about 70-80% (2026-10-27), so real traffic scores lower.
+    evaluation: "Macro-F1 0.82-0.98 on same-generator synthetic tests; ~70-80% on hand-written"
+    evaluation_source: ml/reports/rlcd-v2-gates-run1.md

@@ -1,0 +1,12 @@
+# Agents do not take customer-facing or external actions on their own (LLD §7 Tools/agents, §15 #6).
+policy_id: GCT-TOOL-005
+title: External tool actions with side effects require human approval
+priority: 700
+match:
+  tool_access_any: [write]
+  tool_egress_any: [external]
+enforce:
+  action: approval_required
+  reason: Tool actions that leave GCT and have side effects need a human approver.
+  remediation: Ask an approver to review the action in the AiVa Govern approval queue.
+  audit_level: enhanced

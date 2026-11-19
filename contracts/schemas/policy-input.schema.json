@@ -1,0 +1,486 @@
+{
+  "$defs": {
+    "ApprovalGrant": {
+      "additionalProperties": false,
+      "properties": {
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        },
+        "tool_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Set for tool approvals: the grant applies only to calls of this tool.",
+          "title": "Tool Id"
+        }
+      },
+      "required": [
+        "rule_id"
+      ],
+      "title": "ApprovalGrant",
+      "type": "object"
+    },
+    "AttemptStage": {
+      "enum": [
+        "cim",
+        "upstream",
+        "validation",
+        "baseline",
+        "quality_reference",
+        "quality_grading"
+      ],
+      "title": "AttemptStage",
+      "type": "string"
+    },
+    "Classification": {
+      "description": "Data classification, ordered from least to most restrictive (LLD \u00a77, \u00a721.3).",
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted",
+        "sovereign-only"
+      ],
+      "title": "Classification",
+      "type": "string"
+    },
+    "IdentityMode": {
+      "enum": [
+        "authenticated",
+        "simulated"
+      ],
+      "title": "IdentityMode",
+      "type": "string"
+    },
+    "PolicyApproval": {
+      "additionalProperties": false,
+      "description": "An approval the gateway verified (status, binding, expiry) before the run started.",
+      "properties": {
+        "approval_id": {
+          "title": "Approval Id",
+          "type": "string"
+        },
+        "grants": {
+          "items": {
+            "$ref": "#/$defs/ApprovalGrant"
+          },
+          "title": "Grants",
+          "type": "array"
+        }
+      },
+      "required": [
+        "approval_id"
+      ],
+      "title": "PolicyApproval",
+      "type": "object"
+    },
+    "PolicyClassification": {
+      "additionalProperties": false,
+      "properties": {
+        "declared": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Classification"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "dlp": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Classification"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "effective": {
+          "$ref": "#/$defs/Classification"
+        },
+        "floor": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Classification"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "rlcd": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Classification"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "effective"
+      ],
+      "title": "PolicyClassification",
+      "type": "object"
+    },
+    "PolicyDlpFacts": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_injection_detected": {
+          "default": false,
+          "description": "Injection indicators in evidence. Evidence is data, never instructions; this fact only restricts (e.g. blocks tool side effects).",
+          "title": "Evidence Injection Detected",
+          "type": "boolean"
+        },
+        "finding_types": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Finding Types",
+          "type": "array"
+        },
+        "injection_detected": {
+          "default": false,
+          "title": "Injection Detected",
+          "type": "boolean"
+        },
+        "injection_indicators": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Injection Indicators",
+          "type": "array"
+        }
+      },
+      "title": "PolicyDlpFacts",
+      "type": "object"
+    },
+    "PolicyEgress": {
+      "additionalProperties": false,
+      "properties": {
+        "model_id": {
+          "title": "Model Id",
+          "type": "string"
+        },
+        "stage": {
+          "$ref": "#/$defs/AttemptStage"
+        }
+      },
+      "required": [
+        "model_id",
+        "stage"
+      ],
+      "title": "PolicyEgress",
+      "type": "object"
+    },
+    "PolicyIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "application_id": {
+          "title": "Application Id",
+          "type": "string"
+        },
+        "department_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Department Id"
+        },
+        "identity_mode": {
+          "$ref": "#/$defs/IdentityMode"
+        },
+        "kind": {
+          "enum": [
+            "application",
+            "user"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Roles",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "application_id",
+        "identity_mode"
+      ],
+      "title": "PolicyIdentity",
+      "type": "object"
+    },
+    "PolicyQuality": {
+      "additionalProperties": false,
+      "description": "Facts for an answer-quality comparison call (ADR-0023). Set only by the quality-check endpoint.",
+      "properties": {
+        "data_designation": {
+          "description": "The deployment's data designation, e.g. `synthetic`.",
+          "title": "Data Designation",
+          "type": "string"
+        },
+        "requested": {
+          "description": "A signed-in presenter explicitly asked for this comparison.",
+          "title": "Requested",
+          "type": "boolean"
+        },
+        "synthetic_sample": {
+          "description": "The run's messages and evidence are exactly one of its scenario's committed synthetic samples: the sample question or a committed alternate, over the unchanged sample evidence.",
+          "title": "Synthetic Sample",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "requested",
+        "synthetic_sample",
+        "data_designation"
+      ],
+      "title": "PolicyQuality",
+      "type": "object"
+    },
+    "PolicyRequestFacts": {
+      "additionalProperties": false,
+      "properties": {
+        "max_output_tokens": {
+          "default": 0,
+          "title": "Max Output Tokens",
+          "type": "integer"
+        },
+        "preferred_model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Preferred Model"
+        },
+        "quality_tier": {
+          "default": "standard",
+          "title": "Quality Tier",
+          "type": "string"
+        },
+        "routing_mode": {
+          "default": "hybrid",
+          "title": "Routing Mode",
+          "type": "string"
+        },
+        "scenario_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scenario Id"
+        },
+        "tags": {
+          "description": "Caller hints. Never authorization.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "task": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Task"
+        }
+      },
+      "title": "PolicyRequestFacts",
+      "type": "object"
+    },
+    "PolicySource": {
+      "additionalProperties": false,
+      "properties": {
+        "ip": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Client IP from trusted ingress, or the simulated IP for testers.",
+          "title": "Ip"
+        },
+        "mode": {
+          "$ref": "#/$defs/SourceMode"
+        }
+      },
+      "required": [
+        "ip",
+        "mode"
+      ],
+      "title": "PolicySource",
+      "type": "object"
+    },
+    "PolicyStage": {
+      "enum": [
+        "request",
+        "egress",
+        "tool"
+      ],
+      "title": "PolicyStage",
+      "type": "string"
+    },
+    "PolicyTool": {
+      "additionalProperties": false,
+      "description": "The tool an agent is about to call (`tool` stage). Access and egress come from the registry.",
+      "properties": {
+        "arguments_sha256": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "SHA-256 of the call's canonical JSON arguments. Policies do not match on it; a tool approval is bound to it, so only the recorded call can be executed with that approval.",
+          "title": "Arguments Sha256"
+        },
+        "tool_id": {
+          "title": "Tool Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool_id"
+      ],
+      "title": "PolicyTool",
+      "type": "object"
+    },
+    "SourceMode": {
+      "enum": [
+        "observed",
+        "simulated"
+      ],
+      "title": "SourceMode",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Input document sent to OPA at `data.aiva.decision`.",
+  "properties": {
+    "approvals": {
+      "items": {
+        "$ref": "#/$defs/PolicyApproval"
+      },
+      "title": "Approvals",
+      "type": "array"
+    },
+    "classification": {
+      "$ref": "#/$defs/PolicyClassification"
+    },
+    "dlp": {
+      "$ref": "#/$defs/PolicyDlpFacts"
+    },
+    "egress": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PolicyEgress"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "environment": {
+      "title": "Environment",
+      "type": "string"
+    },
+    "identity": {
+      "$ref": "#/$defs/PolicyIdentity"
+    },
+    "quality": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PolicyQuality"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "request": {
+      "$ref": "#/$defs/PolicyRequestFacts"
+    },
+    "source": {
+      "$ref": "#/$defs/PolicySource"
+    },
+    "stage": {
+      "$ref": "#/$defs/PolicyStage"
+    },
+    "tenant_id": {
+      "title": "Tenant Id",
+      "type": "string"
+    },
+    "tool": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PolicyTool"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "stage",
+    "environment",
+    "tenant_id",
+    "identity",
+    "source",
+    "request",
+    "classification",
+    "dlp"
+  ],
+  "title": "PolicyInput",
+  "type": "object"
+}

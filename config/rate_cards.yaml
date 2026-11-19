@@ -1,0 +1,58 @@
+# Pinned prices (LLD §19, §21.4). Amounts are USD per million tokens; GPU is USD per hour; tools are USD per
+# billed unit.
+# Local GPU-served models have a $0 token price by POC convention; GPU cost is reported separately.
+version: rc-2026-10-21
+currency: USD
+rate_cards:
+  - id: rc-claude-opus-5-5
+    model_id: claude-flagship
+    input_per_mtok: "4.00"
+    output_per_mtok: "20.00"
+    cached_input_per_mtok: "0.20"
+    effective_from: "2026-10-14"
+    source: Anthropic API list price for claude-opus-5-5 (model table dated 2026-10-06)
+  - id: rc-gemini-2-5-flash-lite
+    model_id: gemini-flash-lite
+    input_per_mtok: "0.10"
+    output_per_mtok: "0.40"
+    cached_input_per_mtok: "0.01"
+    effective_from: "2026-10-20"
+    source: ai.google.dev/gemini-api/docs/pricing (gemini-2.5-flash-lite, paid tier, text), fetched 2026-10-20
+  - id: rc-gpt-6-1-sol
+    model_id: openai-grader
+    input_per_mtok: "2.00"
+    output_per_mtok: "10.00"
+    cached_input_per_mtok: "0.10"
+    effective_from: "2026-10-21"
+    source: OpenAI API pricing page (developers.openai.com/api/docs/pricing), gpt-6.1-sol, Standard tier, short context (<=272K), fetched 2026-10-21; the answer-quality grader (ADR-0023)
+  - id: rc-deepseek-v4-1-flash
+    model_id: deepseek-v4-1-flash
+    input_per_mtok: "0.20"
+    output_per_mtok: "0.60"
+    cached_input_per_mtok: "0.20"
+    effective_from: "2026-10-14"
+    source: HF Inference Providers router listing, provider deepinfra, fetched 2026-10-14 (no cached-input discount assumed)
+  - id: rc-gct-qwen-local
+    model_id: gct-qwen-finetuned
+    input_per_mtok: "0"
+    output_per_mtok: "0"
+    cached_input_per_mtok: "0"
+    gpu_per_hour: "2.50"
+    effective_from: "2026-10-15"
+    source: POC convention ($0 token price); GPU rate = HF Inference Endpoints aws-us-east-1-nvidia-a100-x1 (1x A100 80 GB), live price from api.endpoints.huggingface.cloud/v2/provider fetched 2026-10-15
+  - id: rc-enterprise-cim
+    model_id: enterprise-cim
+    input_per_mtok: "0"
+    output_per_mtok: "0"
+    cached_input_per_mtok: "0"
+    gpu_per_hour: "0.80"
+    effective_from: "2026-10-14"
+    source: POC convention ($0 token price); GPU rate = HF Inference Endpoints aws-us-east-1-nvidia-l4-x1 (1x L4 24 GB), live price from api.endpoints.huggingface.cloud/v2/provider re-checked 2026-10-15 (unchanged)
+# Tool calls that a provider bills (charge type `tool_call`). One card per tool; the price is per billed unit.
+tool_rate_cards:
+  - id: rc-tavily-search
+    tool_id: web.search
+    unit: credit
+    per_unit: "0.008"
+    effective_from: "2026-10-20"
+    source: docs.tavily.com/documentation/api-credits, fetched 2026-10-20 (pay-as-you-go $0.008 per API credit; a basic search is 1 credit, an advanced search 2; the 1,000 free credits a month are not netted)

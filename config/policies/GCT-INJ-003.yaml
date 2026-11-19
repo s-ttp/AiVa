@@ -1,0 +1,11 @@
+# Suspected prompt injection or exfiltration attempts are blocked and audited (LLD §7, §17).
+policy_id: GCT-INJ-003
+title: Block suspected prompt injection and data exfiltration
+priority: 980
+match:
+  injection_detected: true
+enforce:
+  action: deny
+  reason: The request matched prompt-injection or exfiltration indicators.
+  remediation: Rephrase the request without instructions that override system or policy behaviour.
+  audit_level: enhanced

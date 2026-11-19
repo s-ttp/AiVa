@@ -1,0 +1,294 @@
+{
+  "run_id": "run_01M4WVJ0FRQ3S142B75HRE068E",
+  "trace_id": "c88a6b341e5647d79ae2d20649e5c866",
+  "status": "blocked",
+  "outcome": "policy_denied",
+  "selected_model": null,
+  "execution_path": "none",
+  "cim_invoked": false,
+  "response": null,
+  "usage": {
+    "original_context_tokens": 2,
+    "constructed_context_tokens": 0,
+    "upstream_submitted_input_tokens": 0,
+    "upstream_output_tokens": 0,
+    "cached_input_tokens": 0,
+    "reasoning_tokens": 0,
+    "cim_input_tokens": 0,
+    "cim_output_tokens": 0,
+    "retry_tokens": 0,
+    "provenance": "measured"
+  },
+  "cost": {
+    "upstream_micros": 0,
+    "cim_micros": 0,
+    "baseline_micros": 0,
+    "gpu_estimated_micros": 0,
+    "total_api_micros": 0,
+    "currency": "USD",
+    "rate_card_version": "rc-2026-10-14",
+    "provenance": "measured"
+  },
+  "policy": {
+    "action": "deny",
+    "policy_version": "1",
+    "bundle_hash": "086fe8a9df228d8d9f8554b29a383dacfb00afb9dbaccc7e1d30bb205c26625d",
+    "matched_rule_ids": [
+      "GCT-OUT-004"
+    ],
+    "declared_classification": null,
+    "effective_classification": "internal",
+    "allowed_models": [
+      "claude-flagship",
+      "deepseek-v4-1-flash",
+      "gct-qwen-finetuned",
+      "gemini-flash-lite"
+    ],
+    "denied_candidates": [],
+    "reasons": [
+      {
+        "rule_id": "AIPEL-NET-001",
+        "message": "The request source is not in a trusted network for this application.",
+        "remediation": "Call from an approved network or ask an administrator to register it."
+      }
+    ]
+  },
+  "identity": {
+    "application_id": "gct-support-chatbot",
+    "identity_mode": "simulated",
+    "source_mode": "simulated",
+    "matched_network_id": null
+  },
+  "routing": null,
+  "cache": {
+    "checked": false,
+    "hit": false,
+    "cache_type": null,
+    "upstream_call": false
+  },
+  "cim": {
+    "state": "not-reached",
+    "message": "Not reached.",
+    "cim_revision": null,
+    "sufficiency": "not-applicable"
+  },
+  "budget": {
+    "reservation_id": null,
+    "reserved_micros": 0,
+    "committed_micros": 0,
+    "released_micros": 0,
+    "provenance": "measured"
+  },
+  "assurance": {
+    "passed": false,
+    "output_dlp": "not-run",
+    "checks": []
+  },
+  "data_designation": "synthetic",
+  "error": {
+    "code": "POLICY_DENIED",
+    "message": "Blocked by AI policy.",
+    "remediation": "Call from an approved network or ask an administrator to register it.",
+    "rule_ids": [
+      "AIPEL-NET-001"
+    ],
+    "retryable": false,
+    "run_id": "run_01M4WVJ0FRQ3S142B75HRE068E",
+    "details": {}
+  },
+  "trace": [
+    {
+      "span_id": "9dc3d8999e8a2a9d",
+      "parent_span_id": null,
+      "name": "aiva.chat",
+      "status": "unset",
+      "started_at": "2026-10-14T09:23:08.408962Z",
+      "duration_ms": 3.927221,
+      "attributes": {
+        "aiva.run_id": "run_01M4WVJ0FRQ3S142B75HRE068E",
+        "aiva.status": "blocked",
+        "aiva.execution_path": "none"
+      }
+    },
+    {
+      "span_id": "aeed262076d56b0c",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "ingress",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.409075Z",
+      "duration_ms": 0.026997,
+      "attributes": {
+        "aiva.stage": "ingress",
+        "aiva.stage.status": "executed",
+        "aiva.application_id": "gct-support-chatbot",
+        "aiva.identity_mode": "simulated",
+        "aiva.source_mode": "simulated",
+        "aiva.message_count": 1,
+        "aiva.evidence_count": 0,
+        "aiva.original_context_tokens": 2
+      }
+    },
+    {
+      "span_id": "fb9526a57dfecda0",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "policy",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.409137Z",
+      "duration_ms": 3.398445,
+      "attributes": {
+        "aiva.stage": "policy",
+        "aiva.stage.status": "executed",
+        "aiva.dlp.finding_types": [],
+        "aiva.dlp.scanner_version": "pattern-dlp-v1",
+        "aiva.dlp.injection_detected": false,
+        "aiva.dlp.evidence_injection_indicators": [],
+        "aiva.stage.halted": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "24699ea794ed9fd6",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "cache",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412604Z",
+      "duration_ms": 0.013433,
+      "attributes": {
+        "aiva.stage": "cache",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "f2941dc8da18df47",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "rlcd1",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412641Z",
+      "duration_ms": 0.007979,
+      "attributes": {
+        "aiva.stage": "rlcd1",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "f53e4587c6ca072a",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "retrieval",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412665Z",
+      "duration_ms": 0.006655,
+      "attributes": {
+        "aiva.stage": "retrieval",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "83ee7c0189d2d3cd",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "cim",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412686Z",
+      "duration_ms": 0.00722,
+      "attributes": {
+        "aiva.stage": "cim",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "7d7f1a56b5c380c8",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "context_guard",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412707Z",
+      "duration_ms": 0.006685,
+      "attributes": {
+        "aiva.stage": "context_guard",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "9153115d20c21fd6",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "rlcd2",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412726Z",
+      "duration_ms": 0.006647,
+      "attributes": {
+        "aiva.stage": "rlcd2",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "4e0eb6ffe3e175b7",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "quota",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412746Z",
+      "duration_ms": 0.006722,
+      "attributes": {
+        "aiva.stage": "quota",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "29c04728c0482f52",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "preflight",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412767Z",
+      "duration_ms": 0.006417,
+      "attributes": {
+        "aiva.stage": "preflight",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "b3d431612e25d582",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "inference",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412787Z",
+      "duration_ms": 0.0202,
+      "attributes": {
+        "aiva.stage": "inference",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "0249efb7087a22e4",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "assurance",
+      "status": "skipped",
+      "started_at": "2026-10-14T09:23:08.412827Z",
+      "duration_ms": 0.007294,
+      "attributes": {
+        "aiva.stage": "assurance",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Blocked by AI policy"
+      }
+    },
+    {
+      "span_id": "b94bd098800e32cc",
+      "parent_span_id": "9dc3d8999e8a2a9d",
+      "name": "reconciliation",
+      "status": "executed",
+      "started_at": "2026-10-14T09:23:08.412854Z",
+      "duration_ms": 0.02328,
+      "attributes": {
+        "aiva.stage": "reconciliation",
+        "aiva.stage.status": "executed",
+        "aiva.reconciliation.api_cost_micros": 0,
+        "aiva.reconciliation.released_micros": 0,
+        "aiva.status": "blocked"
+      }
+    }
+  ]
+}

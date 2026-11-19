@@ -1,0 +1,8 @@
+# Output DLP is always on for customer-facing support traffic.
+policy_id: GCT-OUT-004
+title: Output DLP required for customer support applications
+priority: 500
+match:
+  application_any: [gct-support-chatbot]
+enforce:
+  output_dlp: required

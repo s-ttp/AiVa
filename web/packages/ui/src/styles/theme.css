@@ -1,0 +1,91 @@
+/*
+ * Tailwind v4 theme bound to the AiVa tokens. Import after "tailwindcss" and
+ * tokens.css. `inline` makes every utility resolve to the token variable, so a
+ * rebrand in tokens.css needs no rebuild of this mapping.
+ */
+@source "../";
+
+@theme inline {
+  /* Only token colours exist; Tailwind's default palette is removed. */
+  --color-*: initial;
+  --color-brand-navy: var(--aiva-brand-navy);
+  --color-brand-teal: var(--aiva-brand-teal);
+  --color-brand-teal-light: var(--aiva-brand-teal-light);
+  --color-canvas: var(--aiva-surface-canvas);
+  --color-card: var(--aiva-surface-card);
+  --color-ink: var(--aiva-text-primary);
+  --color-ink-muted: var(--aiva-text-muted);
+  --color-on-brand: var(--aiva-text-on-brand);
+  --color-line: var(--aiva-border-subtle);
+  --color-success: var(--aiva-semantic-success);
+  --color-warning: var(--aiva-semantic-warning);
+  --color-danger: var(--aiva-semantic-danger);
+  --color-info: var(--aiva-semantic-info);
+  --color-viz-1: var(--aiva-viz-1);
+  --color-viz-2: var(--aiva-viz-2);
+  --color-viz-3: var(--aiva-viz-3);
+  --color-viz-4: var(--aiva-viz-4);
+  --color-route-sovereign: var(--aiva-route-sovereign);
+  --color-route-sovereign-soft: var(--aiva-route-sovereign-soft);
+  --color-route-sovereign-ink: var(--aiva-route-sovereign-ink);
+  --color-route-packed: var(--aiva-route-packed);
+  --color-route-packed-soft: var(--aiva-route-packed-soft);
+  --color-route-packed-ink: var(--aiva-route-packed-ink);
+  --color-route-stopped: var(--aiva-route-stopped);
+  --color-route-stopped-soft: var(--aiva-route-stopped-soft);
+  --color-route-stopped-ink: var(--aiva-route-stopped-ink);
+  --color-route-cache: var(--aiva-route-cache);
+  --color-route-cache-soft: var(--aiva-route-cache-soft);
+  --color-route-cache-ink: var(--aiva-route-cache-ink);
+  --color-route-direct: var(--aiva-route-direct);
+  --color-route-direct-soft: var(--aiva-route-direct-soft);
+  --color-route-direct-ink: var(--aiva-route-direct-ink);
+  --color-route-idle: var(--aiva-route-idle);
+
+  --font-sans: var(--aiva-font-sans);
+  --font-mono: var(--aiva-font-mono);
+  --spacing: var(--aiva-space-1);
+
+  --radius-card: var(--aiva-radius-card);
+  --radius-panel: var(--aiva-radius-panel);
+
+  --text-secondary: var(--aiva-font-size-secondary);
+  --text-secondary--line-height: 1.45;
+  --text-body: var(--aiva-font-size-body);
+  --text-body--line-height: 1.5;
+  --text-heading: var(--aiva-font-size-heading);
+  --text-heading--line-height: 1.3;
+  --text-title: var(--aiva-font-size-title);
+  --text-title--line-height: 1.25;
+  --text-kpi: var(--aiva-font-size-kpi);
+  --text-kpi--line-height: 1.15;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--aiva-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

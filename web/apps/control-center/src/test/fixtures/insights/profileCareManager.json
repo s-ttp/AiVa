@@ -1,0 +1,18 @@
+{
+  "kind": "user",
+  "tenant_id": "gct",
+  "user_id": "u-care-manager",
+  "display_name": "Customer Care Manager (demo)",
+  "application_id": null,
+  "department_id": "customer-care",
+  "roles": [
+    "department_manager"
+  ],
+  "permissions": [
+    "approvals:read",
+    "budgets:read",
+    "catalog:read",
+    "reports:read",
+    "runs:read"
+  ]
+}

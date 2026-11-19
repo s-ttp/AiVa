@@ -1,0 +1,26 @@
+{
+  "kind": "user",
+  "tenant_id": "gct",
+  "user_id": "u-tenant-admin",
+  "display_name": "Tenant Administrator (demo)",
+  "application_id": null,
+  "department_id": null,
+  "roles": [
+    "tenant_admin"
+  ],
+  "permissions": [
+    "approvals:decide",
+    "approvals:read",
+    "budgets:read",
+    "budgets:write",
+    "catalog:read",
+    "evaluations:run",
+    "policies:publish",
+    "policies:read",
+    "policies:write",
+    "reports:export",
+    "reports:identity",
+    "reports:read",
+    "runs:read"
+  ]
+}

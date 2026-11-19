@@ -1,0 +1,36 @@
+import type { components } from '@aiva/api-client';
+
+/** Insights report contracts (gateway `contracts/reports.py`), named for the views that use them. */
+type Schemas = components['schemas'];
+export type OverviewReport = Schemas['OverviewReport'];
+export type ConsumptionReport = Schemas['ConsumptionReport'];
+export type ConsumptionRow = Schemas['ConsumptionRow'];
+export type ClassificationReport = Schemas['ClassificationReport'];
+export type OptimizationReport = Schemas['OptimizationReport'];
+export type OptimizationRow = Schemas['OptimizationRow'];
+export type GovernanceReport = Schemas['GovernanceReport'];
+export type GovernanceRow = Schemas['GovernanceRow'];
+export type RunList = Schemas['RunList'];
+export type RunSummary = Schemas['RunSummary'];
+export type ReportRunDetail = Schemas['ReportRunDetail'];
+export type ReportMetadata = Schemas['ReportMetadata'];
+export type ReportFilterOptions = Schemas['ReportFilterOptions'];
+export type UsageSummary = Schemas['ReportUsage'];
+export type ProvenanceSplit = Schemas['ProvenanceSplit'];
+export type Amount = Schemas['Amount'];
+export type Ratio = Schemas['Ratio'];
+export type SavingsWaterfall = Schemas['SavingsWaterfall'];
+export type SavingsStep = Schemas['SavingsStep'];
+export type BaselineComparison = Schemas['BaselineComparison'];
+export type TrendPoint = Schemas['TrendPoint'];
+export type ExportJob = Schemas['ExportJob'];
+export type ExportRequest = Schemas['ExportRequest'];
+export type ResolvedIdentity = Schemas['ResolvedIdentity'];
+export type QualityReport = Schemas['QualityReport'];
+export type QualityBlocks = Schemas['QualityBlocks'];
+export type QualityRow = Schemas['QualityRow'];
+export type QualityTrendPoint = Schemas['QualityTrendPoint'];
+export type GuardFailureKind = Schemas['GuardFailureCount']['kind'];
+export type TrafficFlow = Schemas['TrafficFlow'];
+export type PackingSummary = Schemas['PackingSummary'];
+export type TokenUsage = Schemas['TokenUsage'];

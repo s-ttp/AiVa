@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:streamGenerateContent?alt=sse",
+    "body": {
+      "contents": [
+        {
+          "parts": [
+            {
+              "text": "Write a short Python function that returns the synthetic GCT roaming surcharge in AED for a number of megabytes, at 0.05 AED per MB. Code only."
+            }
+          ],
+          "role": "user"
+        }
+      ],
+      "generationConfig": {
+        "maxOutputTokens": 400
+      }
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "content_type": "text/event-stream",
+    "body": "data: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"```python\\ndef calculate\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 5,\"totalTokenCount\": 41,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"lzrXarrBFqvdytMP8bPK-Q4\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"_gct_roaming_surcharge(megabytes: float) -\\u003e float\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 22,\"totalTokenCount\": 58,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"lzrXarrBFqvdytMP8bPK-Q4\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \":\\n  \\\"\\\"\\\"\\n  Calculates the synthetic GCT roaming surcharge in AED for a given number of megabytes.\\n\\n  Args:\\n    megabytes: The number of megabytes used.\\n\\n  Returns:\\n    The total\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 70,\"totalTokenCount\": 106,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"lzrXarrBFqvdytMP8bPK-Q4\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" surcharge in AED.\\n  \\\"\\\"\\\"\\n  rate_per_mb = 0.05\\n  return megabytes * rate_per_mb\\n\\nif __name__ == '__main__':\\n  # Example usage:\\n  mb_used = \"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 123,\"totalTokenCount\": 159,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"lzrXarrBFqvdytMP8bPK-Q4\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"250.5\\n  surcharge = calculate_gct_roaming_surcharge(mb_used)\\n  print(f\\\"For {mb_used} MB, the GCT roaming surcharge is: {surcharge:.2f}\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 176,\"totalTokenCount\": 212,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"lzrXarrBFqvdytMP8bPK-Q4\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" AED\\\")\\n\\n  mb_used_2 = 100\\n  surcharge_2 = calculate_gct_roaming_surcharge(mb_used_2)\\n  print(f\\\"For {mb_used_2\"}],\"role\": \"model\"},\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 227,\"totalTokenCount\": 263,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"lzrXarrBFqvdytMP8bPK-Q4\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"} MB, the GCT roaming surcharge is: {surcharge_2:.2f} AED\\\")\\n```\"}],\"role\": \"model\"},\"finishReason\": \"STOP\",\"index\": 0}],\"usageMetadata\": {\"promptTokenCount\": 36,\"candidatesTokenCount\": 250,\"totalTokenCount\": 286,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 36}],\"serviceTier\": \"standard\"},\"modelVersion\": \"gemini-2.5-flash-lite\",\"responseId\": \"lzrXarrBFqvdytMP8bPK-Q4\"}\r\n\r\n"
+  }
+}

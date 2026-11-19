@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "window": {
+      "from": "2026-10-09",
+      "to": "2026-10-15",
+      "timezone": "UTC"
+    },
+    "filters": {},
+    "scope": {
+      "level": "tenant",
+      "department_id": null,
+      "application_ids": [],
+      "user_identities": "pseudonymous"
+    },
+    "generated_at": "2026-10-15T06:20:39.116601Z",
+    "aggregates_as_of": "2026-10-15T06:20:23.716343Z",
+    "granularity": "day",
+    "taxonomy_versions": [
+      "tax-2026.10.1"
+    ],
+    "classifier_versions": [
+      "heuristic-v0"
+    ],
+    "rate_card_versions": [
+      "rc-2026-10-14"
+    ],
+    "pricing_snapshot": "rc-2026-10-14",
+    "data_designation": "synthetic",
+    "attribution": "Usage is attributed to the UTC hour its run started."
+  },
+  "group_by": "application",
+  "rows": [
+    {
+      "group": "gct-support-chatbot",
+      "label": "Customer Support Chatbot",
+      "request_count": 31,
+      "allowed": 31,
+      "policy_denied": 0,
+      "approval_required": 0,
+      "quota_denied": 0,
+      "failed": 0,
+      "confidential_requests": 0,
+      "sovereign_direct": 0,
+      "cim_bypassed_by_policy": 0,
+      "confidential_external_attempts": 0,
+      "confidential_cim_attempts": 0,
+      "approval_exceptions": 0,
+      "denial_reasons": []
+    },
+    {
+      "group": "gct-coding-assistant",
+      "label": "Coding Assistant",
+      "request_count": 11,
+      "allowed": 11,
+      "policy_denied": 0,
+      "approval_required": 0,
+      "quota_denied": 0,
+      "failed": 0,
+      "confidential_requests": 0,
+      "sovereign_direct": 0,
+      "cim_bypassed_by_policy": 0,
+      "confidential_external_attempts": 0,
+      "confidential_cim_attempts": 0,
+      "approval_exceptions": 0,
+      "denial_reasons": []
+    },
+    {
+      "group": "gct-knowledge-portal",
+      "label": "Enterprise Knowledge Portal",
+      "request_count": 6,
+      "allowed": 5,
+      "policy_denied": 1,
+      "approval_required": 0,
+      "quota_denied": 0,
+      "failed": 0,
+      "confidential_requests": 0,
+      "sovereign_direct": 0,
+      "cim_bypassed_by_policy": 0,
+      "confidential_external_attempts": 0,
+      "confidential_cim_attempts": 0,
+      "approval_exceptions": 0,
+      "denial_reasons": [
+        {
+          "rule_id": "GCT-INJ-003",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "group": "gct-fraud-investigator",
+      "label": "Fraud Investigation Assistant",
+      "request_count": 5,
+      "allowed": 5,
+      "policy_denied": 0,
+      "approval_required": 0,
+      "quota_denied": 0,
+      "failed": 0,
+      "confidential_requests": 5,
+      "sovereign_direct": 5,
+      "cim_bypassed_by_policy": 5,
+      "confidential_external_attempts": 0,
+      "confidential_cim_attempts": 0,
+      "approval_exceptions": 0,
+      "denial_reasons": []
+    },
+    {
+      "group": "gct-noc-assistant",
+      "label": "Network Operations Intelligence",
+      "request_count": 5,
+      "allowed": 5,
+      "policy_denied": 0,
+      "approval_required": 0,
+      "quota_denied": 0,
+      "failed": 0,
+      "confidential_requests": 0,
+      "sovereign_direct": 0,
+      "cim_bypassed_by_policy": 0,
+      "confidential_external_attempts": 0,
+      "confidential_cim_attempts": 0,
+      "approval_exceptions": 0,
+      "denial_reasons": []
+    },
+    {
+      "group": "gct-doc-copilot",
+      "label": "Confidential Document Copilot",
+      "request_count": 1,
+      "allowed": 1,
+      "policy_denied": 0,
+      "approval_required": 0,
+      "quota_denied": 0,
+      "failed": 0,
+      "confidential_requests": 1,
+      "sovereign_direct": 1,
+      "cim_bypassed_by_policy": 1,
+      "confidential_external_attempts": 0,
+      "confidential_cim_attempts": 0,
+      "approval_exceptions": 0,
+      "denial_reasons": []
+    },
+    {
+      "group": "gct-incident-agent",
+      "label": "Service Incident Agent",
+      "request_count": 1,
+      "allowed": 1,
+      "policy_denied": 0,
+      "approval_required": 0,
+      "quota_denied": 0,
+      "failed": 0,
+      "confidential_requests": 0,
+      "sovereign_direct": 0,
+      "cim_bypassed_by_policy": 0,
+      "confidential_external_attempts": 0,
+      "confidential_cim_attempts": 0,
+      "approval_exceptions": 0,
+      "denial_reasons": []
+    }
+  ],
+  "totals": {
+    "group": "all",
+    "label": "All requests",
+    "request_count": 60,
+    "allowed": 59,
+    "policy_denied": 1,
+    "approval_required": 0,
+    "quota_denied": 0,
+    "failed": 0,
+    "confidential_requests": 6,
+    "sovereign_direct": 6,
+    "cim_bypassed_by_policy": 6,
+    "confidential_external_attempts": 0,
+    "confidential_cim_attempts": 0,
+    "approval_exceptions": 0,
+    "denial_reasons": [
+      {
+        "rule_id": "GCT-INJ-003",
+        "count": 1
+      }
+    ]
+  },
+  "alerts": [],
+  "policy_versions": [
+    {
+      "version": "1",
+      "published_at": "2026-10-15T06:20:08.279281Z"
+    }
+  ]
+}

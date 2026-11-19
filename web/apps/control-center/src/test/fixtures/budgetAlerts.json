@@ -1,0 +1,22 @@
+{
+  "alerts": [
+    {
+      "alert_id": "alr_01M4WZJDFRT43Q5N3P4XMSTGR3",
+      "kind": "hard_cap",
+      "message": "Hard cap reached: a reservation of $0.020524 was denied by the daily budget for application gct-support-chatbot.",
+      "budget_id": "bud-application-gct-support-chatbot-daily",
+      "scope_type": "application",
+      "scope_id": "gct-support-chatbot",
+      "period": "daily",
+      "period_key": "2026-10-14",
+      "threshold": 1.0,
+      "cap_micros": 3000,
+      "spent_micros": 2668,
+      "amount_micros": 20524,
+      "reservation_id": null,
+      "run_id": "run_01M4WZJDFE7EM9T1QJHDKX1X8E",
+      "provenance": "estimated",
+      "created_at": "2026-10-14T10:33:16.026677Z"
+    }
+  ]
+}

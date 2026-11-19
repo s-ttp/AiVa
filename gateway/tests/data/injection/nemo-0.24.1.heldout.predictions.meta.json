@@ -1,0 +1,180 @@
+{
+  "corpus": "gateway/tests/data/injection/heldout.jsonl",
+  "predictions": "gateway/tests/data/injection/nemo-0.24.1.heldout.predictions.jsonl",
+  "n_records": 196,
+  "run_started_utc": "2026-10-14T09:51:28Z",
+  "run_wall_seconds": 104.944,
+  "provenance": "measured (local CPU run of the NeMo Guardrails library)",
+  "versions": {
+    "python": "3.12.3",
+    "nemoguardrails": "0.24.1",
+    "torch": "2.14.1+cpu",
+    "transformers": "4.57.6",
+    "huggingface_hub": "0.36.2",
+    "onnxruntime": "1.31.0",
+    "yara-python": "4.5.4",
+    "numpy": "2.5.4"
+  },
+  "device": {
+    "requested": "cpu",
+    "cuda_available": false,
+    "torch_num_threads": 4,
+    "cpu_count": 4,
+    "platform": "Linux-6.18.44-fc-v114-x86_64-with-glibc2.39",
+    "processor": "x86_64"
+  },
+  "warmup": {
+    "calls_per_detector": 1,
+    "text": "Hello, what are the opening hours of your nearest store?"
+  },
+  "latency_definition": "wall-clock ms of the library call(s) for one record, models already loaded",
+  "detectors": {
+    "nemo_heuristics": {
+      "library_functions": [
+        "nemoguardrails.library.jailbreak_detection.heuristics.checks.check_jailbreak_length_per_perplexity",
+        "nemoguardrails.library.jailbreak_detection.heuristics.checks.check_jailbreak_prefix_suffix_perplexity"
+      ],
+      "combination": "flagged = any([lp_check['jailbreak'], ps_ppl_check['jailbreak']]) (same as actions.jailbreak_detection_heuristics in-process path)",
+      "thresholds": {
+        "length_per_perplexity_threshold": 89.79,
+        "prefix_suffix_perplexity_threshold": 1845.65,
+        "source": "nemoguardrails.library.jailbreak_detection.rail_config.JailbreakDetectionConfig defaults"
+      },
+      "rule_notes": {
+        "length_per_perplexity": "flag if len(text_chars) / perplexity(text) >= threshold",
+        "prefix_suffix_perplexity": "only evaluated when text has >= 20 whitespace words; flag if perplexity of first 19 words or of words[-20:-1] >= threshold"
+      },
+      "model": {
+        "id": "gpt2-large",
+        "class": "GPT2LMHeadModel / GPT2TokenizerFast",
+        "revision": "32b71b12589c2f8d625668d2335a01cac3249519",
+        "revision_note": "library calls from_pretrained without a pinned revision; this is the cached snapshot commit that was resolved",
+        "device": "cpu",
+        "dtype": "torch.float32",
+        "n_positions": 1024,
+        "stride": 512
+      },
+      "load_seconds": 3.533,
+      "score_fields": {
+        "perplexity": "full-text perplexity computed by the library (captured, not recomputed)",
+        "length_per_perplexity": "len(text) / perplexity (derived from the captured value)",
+        "lp_flagged": "check_jailbreak_length_per_perplexity result",
+        "ps_evaluated": "False when text has < 20 words (library returns not-jailbreak)",
+        "prefix_perplexity / suffix_perplexity": "captured from the library call when evaluated",
+        "ps_flagged": "check_jailbreak_prefix_suffix_perplexity result"
+      }
+    },
+    "nemo_model_based": {
+      "library_functions": [
+        "nemoguardrails.library.jailbreak_detection.model_based.checks.initialize_model",
+        "nemoguardrails.library.jailbreak_detection.model_based.checks.check_jailbreak"
+      ],
+      "thresholds": {
+        "decision": "classifier label from the ONNX random forest (argmax of class probabilities); the library exposes no configurable threshold"
+      },
+      "classifier": {
+        "repo_id": "nvidia/NemoGuard-JailbreakDetect",
+        "file": "snowflake.onnx",
+        "revision": "cc8b97e2bd6c1667c31476eedaa9a75b4d7ed282",
+        "sha256": "2309ca0930e0d9d5961631dcc62c791f014a7fa1927f80492269672bfc471ff7",
+        "local_path": "<nemo-workdir>/models/nemoguard_jailbreakdetect/snowflake.onnx",
+        "runtime": "onnxruntime CPUExecutionProvider",
+        "licence": "NVIDIA Open Model License (model card); repo not gated"
+      },
+      "embedding_model": {
+        "id": "Snowflake/snowflake-arctic-embed-m-long",
+        "revision": "92d97331f1f4b6a366c1f161354b9f3390cc219f",
+        "revision_note": "library calls from_pretrained(trust_remote_code=True) without a pinned revision; this is the cached snapshot commit that was resolved",
+        "trust_remote_code": true,
+        "device": "cpu",
+        "max_length": 2048
+      },
+      "compat_shims": [
+        "During initialize_model() only, AutoModel.from_pretrained(use_safetensors=True) also receives safe_serialization=True. Without it NeMo 0.24.1's own in-process path fails with 'OSError: Model name Snowflake/snowflake-arctic-embed-m-long was not found.' because the remote NomicBert loader ignores use_safetensors and the repo has no pytorch_model.bin.",
+        "transformers pinned to 4.x: under transformers 5.19.0 the remote NomicBert forward raises AttributeError: 'NomicBertModel' object has no attribute 'get_extended_attention_mask'."
+      ],
+      "load_seconds": 5.037,
+      "score_fields": {
+        "score": "library value: +P(jailbreak) when flagged, -P(benign) when not flagged",
+        "p_jailbreak": "derived: score if flagged else 1 + score (binary RF probabilities sum to 1)"
+      }
+    },
+    "nemo_yara_injection": {
+      "library_functions": [
+        "nemoguardrails.library.injection_detection.actions.injection_detection"
+      ],
+      "config": {
+        "injections": [
+          "code",
+          "sqli",
+          "template",
+          "xss"
+        ],
+        "action": "reject",
+        "yara_path": "<nemo-workdir>/.venv/lib/python3.12/site-packages/nemoguardrails/library/injection_detection/yara_rules"
+      },
+      "thresholds": {
+        "decision": "flag if any YARA rule matches (no numeric threshold)"
+      },
+      "notes": [
+        "Library default config has injections=[] (checks nothing); all four built-in rule sets were enabled here.",
+        "Rail is designed as an output rail ($bot_message) targeting code (Python os/subprocess/networking imports), SQL injection, Jinja template injection and Markdown XSS. It does not target natural-language prompt injection; here it is applied to the input text.",
+        "The library action recompiles the YARA rules on every call; latency includes that."
+      ],
+      "rule_files": [
+        "code.yara",
+        "sqli.yara",
+        "template.yara",
+        "xss.yara"
+      ]
+    }
+  },
+  "skipped_detectors": {},
+  "other_rails_not_included": {
+    "self_check_input / content_safety / topic_safety / llama_guard": "LLM-based rails (need an LLM).",
+    "jailbreak_detection NIM path (nim_base_url)": "Same NemoGuard JailbreakDetect model served by an NVIDIA NIM; not needed because the model runs in-process here.",
+    "context_bloat_detection": "Non-LLM, local; targets padded/oversized/repetitive context-manipulation (token-budget exhaustion), not prompt-injection semantics. Not included.",
+    "regex": "Non-LLM, local, but ships no default patterns (user-supplied regexes only). Not included.",
+    "hf_classifier": "Generic local HF text-classification rail with no default model; using it means picking a third-party classifier, not a NeMo detector. Not included.",
+    "guardrails_ai detect_jailbreak": "Wrapper around a third-party Guardrails AI hub validator (hub://guardrails/detect_jailbreak); requires the separate guardrails-ai package and hub install. Not included.",
+    "activefence / prompt_security / pangea / crowdstrike_aidr / f5 / trend_micro / ai_defense / fiddler / autoalign / clavata / cleanlab / privateai / patronusai / polygraf / policyai / gcp_moderate_text": "Rails that call hosted third-party services (API key / external endpoint); not run to keep spend at zero and because they are not NeMo's own detectors."
+  },
+  "summary": {
+    "nemo_heuristics": {
+      "flagged": 0,
+      "errors": 0,
+      "latency": {
+        "n": 196,
+        "mean_ms": 477.403,
+        "p50_ms": 318.349,
+        "p95_ms": 968.475,
+        "max_ms": 1369.46,
+        "min_ms": 228.607
+      }
+    },
+    "nemo_model_based": {
+      "flagged": 2,
+      "errors": 0,
+      "latency": {
+        "n": 196,
+        "mean_ms": 55.673,
+        "p50_ms": 54.305,
+        "p95_ms": 79.117,
+        "max_ms": 94.098,
+        "min_ms": 36.055
+      }
+    },
+    "nemo_yara_injection": {
+      "flagged": 3,
+      "errors": 0,
+      "latency": {
+        "n": 196,
+        "mean_ms": 2.102,
+        "p50_ms": 1.924,
+        "p95_ms": 2.476,
+        "max_ms": 6.57,
+        "min_ms": 1.733
+      }
+    }
+  }
+}

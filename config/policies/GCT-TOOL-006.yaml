@@ -1,0 +1,13 @@
+# Retrieved text is evidence, never instructions (LLD §17): when evidence carries injection indicators,
+# no tool with side effects may run in that request.
+policy_id: GCT-TOOL-006
+title: Block tool side effects when retrieved evidence contains injection indicators
+priority: 970
+match:
+  evidence_injection_detected: true
+  tool_access_any: [write]
+enforce:
+  action: deny
+  reason: Retrieved evidence contained instruction-like text, so tool actions with side effects are blocked.
+  remediation: Review the source documents; read-only tools remain available.
+  audit_level: enhanced

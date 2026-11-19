@@ -1,0 +1,313 @@
+{
+  "metadata": {
+    "window": {
+      "from": "2026-10-09",
+      "to": "2026-10-15",
+      "timezone": "UTC"
+    },
+    "filters": {},
+    "scope": {
+      "level": "tenant",
+      "department_id": null,
+      "application_ids": [],
+      "user_identities": "pseudonymous"
+    },
+    "generated_at": "2026-10-15T06:20:38.884948Z",
+    "aggregates_as_of": "2026-10-15T06:20:23.716343Z",
+    "granularity": "day",
+    "taxonomy_versions": [
+      "tax-2026.10.1"
+    ],
+    "classifier_versions": [
+      "heuristic-v0"
+    ],
+    "rate_card_versions": [
+      "rc-2026-10-14"
+    ],
+    "pricing_snapshot": "rc-2026-10-14",
+    "data_designation": "synthetic",
+    "attribution": "Usage is attributed to the UTC hour its run started."
+  },
+  "group_by": "task_category",
+  "rows": [
+    {
+      "group": "generation",
+      "label": "generation",
+      "request_count": 12,
+      "share": {
+        "numerator": 12,
+        "denominator": 60,
+        "value": 0.2
+      },
+      "tokens": 1836,
+      "api": {
+        "value": 6666,
+        "provenance": "simulated"
+      },
+      "low_confidence": false,
+      "models": [
+        {
+          "model_id": "claude-flagship",
+          "request_count": 5,
+          "quality_checked": 5,
+          "quality_passed": 5
+        },
+        {
+          "model_id": "deepseek-v4-1-flash",
+          "request_count": 4,
+          "quality_checked": 4,
+          "quality_passed": 4
+        },
+        {
+          "model_id": "gct-qwen-finetuned",
+          "request_count": 2,
+          "quality_checked": 2,
+          "quality_passed": 2
+        },
+        {
+          "model_id": "gemini-flash-lite",
+          "request_count": 1,
+          "quality_checked": 1,
+          "quality_passed": 1
+        }
+      ]
+    },
+    {
+      "group": "coding",
+      "label": "coding",
+      "request_count": 11,
+      "share": {
+        "numerator": 11,
+        "denominator": 60,
+        "value": 0.18333333333333332
+      },
+      "tokens": 1959,
+      "api": {
+        "value": 6883,
+        "provenance": "simulated"
+      },
+      "low_confidence": false,
+      "models": [
+        {
+          "model_id": "claude-flagship",
+          "request_count": 3,
+          "quality_checked": 3,
+          "quality_passed": 3
+        },
+        {
+          "model_id": "gct-qwen-finetuned",
+          "request_count": 3,
+          "quality_checked": 3,
+          "quality_passed": 3
+        },
+        {
+          "model_id": "gemini-flash-lite",
+          "request_count": 3,
+          "quality_checked": 3,
+          "quality_passed": 3
+        },
+        {
+          "model_id": "deepseek-v4-1-flash",
+          "request_count": 2,
+          "quality_checked": 2,
+          "quality_passed": 2
+        }
+      ]
+    },
+    {
+      "group": "qa",
+      "label": "qa",
+      "request_count": 11,
+      "share": {
+        "numerator": 11,
+        "denominator": 60,
+        "value": 0.18333333333333332
+      },
+      "tokens": 869,
+      "api": {
+        "value": 2740,
+        "provenance": "simulated"
+      },
+      "low_confidence": false,
+      "models": [
+        {
+          "model_id": "gct-qwen-finetuned",
+          "request_count": 11,
+          "quality_checked": 11,
+          "quality_passed": 11
+        }
+      ]
+    },
+    {
+      "group": "analysis",
+      "label": "analysis",
+      "request_count": 10,
+      "share": {
+        "numerator": 10,
+        "denominator": 60,
+        "value": 0.16666666666666666
+      },
+      "tokens": 3504,
+      "api": {
+        "value": 0,
+        "provenance": "simulated"
+      },
+      "low_confidence": false,
+      "models": [
+        {
+          "model_id": "gct-qwen-finetuned",
+          "request_count": 10,
+          "quality_checked": 10,
+          "quality_passed": 10
+        }
+      ]
+    },
+    {
+      "group": "summarization",
+      "label": "summarization",
+      "request_count": 7,
+      "share": {
+        "numerator": 7,
+        "denominator": 60,
+        "value": 0.11666666666666667
+      },
+      "tokens": 538,
+      "api": {
+        "value": 1816,
+        "provenance": "simulated"
+      },
+      "low_confidence": false,
+      "models": [
+        {
+          "model_id": "gct-qwen-finetuned",
+          "request_count": 7,
+          "quality_checked": 7,
+          "quality_passed": 7
+        }
+      ]
+    },
+    {
+      "group": "rag",
+      "label": "rag",
+      "request_count": 5,
+      "share": {
+        "numerator": 5,
+        "denominator": 60,
+        "value": 0.08333333333333333
+      },
+      "tokens": 2795,
+      "api": {
+        "value": 0,
+        "provenance": "simulated"
+      },
+      "low_confidence": false,
+      "models": [
+        {
+          "model_id": "gct-qwen-finetuned",
+          "request_count": 5,
+          "quality_checked": 5,
+          "quality_passed": 5
+        }
+      ]
+    },
+    {
+      "group": "unclassified",
+      "label": "unclassified",
+      "request_count": 3,
+      "share": {
+        "numerator": 3,
+        "denominator": 60,
+        "value": 0.05
+      },
+      "tokens": 51,
+      "api": {
+        "value": 0,
+        "provenance": "simulated"
+      },
+      "low_confidence": true,
+      "models": [
+        {
+          "model_id": "gct-qwen-finetuned",
+          "request_count": 1,
+          "quality_checked": 1,
+          "quality_passed": 1
+        }
+      ]
+    },
+    {
+      "group": "agentic",
+      "label": "agentic",
+      "request_count": 1,
+      "share": {
+        "numerator": 1,
+        "denominator": 60,
+        "value": 0.016666666666666666
+      },
+      "tokens": 163,
+      "api": {
+        "value": 0,
+        "provenance": "simulated"
+      },
+      "low_confidence": false,
+      "models": [
+        {
+          "model_id": "gct-qwen-finetuned",
+          "request_count": 1,
+          "quality_checked": 1,
+          "quality_passed": 1
+        }
+      ]
+    }
+  ],
+  "trend": [
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "agentic",
+      "request_count": 1
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "analysis",
+      "request_count": 10
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "coding",
+      "request_count": 11
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "generation",
+      "request_count": 12
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "qa",
+      "request_count": 11
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "rag",
+      "request_count": 5
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "summarization",
+      "request_count": 7
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "unclassified",
+      "request_count": 3
+    }
+  ],
+  "unclassified": {
+    "numerator": 3,
+    "denominator": 60,
+    "value": 0.05
+  },
+  "taxonomy": {
+    "version": "tax-2026.10.1",
+    "review_confidence_threshold": 0.6
+  }
+}

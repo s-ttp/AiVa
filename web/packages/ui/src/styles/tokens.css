@@ -1,0 +1,111 @@
+/*
+ * AiVa design tokens (LLD v1.2 §22.3–22.4).
+ * This file is the only place brand colours are defined: rebranding edits this
+ * file and nothing else. Framework-agnostic; theme.css maps it into Tailwind.
+ */
+:root {
+  /* Brand */
+  --aiva-brand-navy: #101d34;
+  --aiva-brand-teal: #10a79d;
+  --aiva-brand-teal-light: #75dccc;
+
+  /* Surfaces, text and borders */
+  --aiva-surface-canvas: #f7f9fc;
+  --aiva-surface-card: #ffffff;
+  --aiva-text-primary: #17253d;
+  --aiva-text-muted: #607086;
+  --aiva-text-on-brand: #ffffff;
+  --aiva-border-subtle: #dde5ed;
+
+  /* Semantic: only where meaning is explicit, always paired with text or an icon */
+  --aiva-semantic-success: #16805d;
+  --aiva-semantic-warning: #b76b12;
+  --aiva-semantic-danger: #b83b46;
+  --aiva-semantic-info: #2764b3;
+
+  /*
+   * Data visualization: categorical series slots, assigned to entities in this
+   * fixed order and never cycled. Validated as a set for colour-vision
+   * deficiency on the card surface (adjacent CVD ΔE ≥ 9, normal-vision ΔE ≥ 22).
+   * Slots 3 and 4 sit below 3:1 on white, so every chart ships a legend and a
+   * data table. Text never takes a series colour; total, muted and grid marks
+   * reuse the text and border tokens.
+   */
+  --aiva-viz-1: #2a78d6;
+  --aiva-viz-2: #eb6834;
+  --aiva-viz-3: #1baf7a;
+  --aiva-viz-4: #eda100;
+  --aiva-viz-total: var(--aiva-text-muted);
+  --aiva-viz-muted: var(--aiva-border-subtle);
+  --aiva-viz-grid: var(--aiva-border-subtle);
+
+  /*
+   * Story mode routes: one hue per path a request can take (owner's design
+   * canvas, 2026-10-19). The main hue marks lines, nodes and swatches (≥ 3:1 on
+   * white); text sits on the soft tint in the ink step (≥ 7:1). A route is never
+   * told apart by hue alone: every one carries a glyph and a label.
+   */
+  --aiva-route-sovereign: #2a44a8;
+  --aiva-route-sovereign-soft: #e8edfa;
+  --aiva-route-sovereign-ink: #1e3380;
+  --aiva-route-packed: #0b7f77;
+  --aiva-route-packed-soft: #e3f5f3;
+  --aiva-route-packed-ink: #0b4f4a;
+  --aiva-route-stopped: #c2410c;
+  --aiva-route-stopped-soft: #fdede3;
+  --aiva-route-stopped-ink: #8a2e06;
+  --aiva-route-cache: #b07c00;
+  --aiva-route-cache-soft: #fdf3d4;
+  --aiva-route-cache-ink: #6b4a00;
+  --aiva-route-direct: #475569;
+  --aiva-route-direct-soft: #eef2f6;
+  --aiva-route-direct-ink: #1e293b;
+  --aiva-route-idle: #c3cdd9;
+
+  /* Focus ring; dark surfaces override it with --aiva-brand-teal-light */
+  --aiva-focus-ring: var(--aiva-brand-navy);
+
+  /* Spacing: 8px grid with a 4px half-step */
+  --aiva-space-1: 4px;
+  --aiva-space-2: 8px;
+  --aiva-space-3: 16px;
+  --aiva-space-4: 24px;
+  --aiva-space-5: 32px;
+
+  /* Shape */
+  --aiva-radius-card: 12px;
+  --aiva-radius-panel: 16px;
+
+  /* Layout */
+  --aiva-nav-width: 252px;
+  --aiva-content-max-width: 1440px;
+
+  /* Typography (sizes in rem at a 16px root) */
+  --aiva-font-sans: "Inter Variable", Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --aiva-font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", "Liberation Mono",
+    "DejaVu Sans Mono", Menlo, Consolas, monospace;
+  --aiva-font-size-secondary: 0.8125rem; /* 13px */
+  --aiva-font-size-body: 0.9375rem; /* 15px */
+  --aiva-font-size-heading: 1.25rem; /* 20px section heading */
+  --aiva-font-size-title: 1.5rem; /* 24px page title */
+  --aiva-font-size-kpi: 1.875rem; /* 30px KPI value */
+}
+
+/*
+ * Dark steps of the same four series hues, validated as a set on the navy
+ * surface (all ≥ 3:1; adjacent CVD ΔE ≥ 8.4, normal-vision ΔE ≥ 19.8). No dark
+ * theme ships yet: one sets data-theme="dark" on the root element together with
+ * its own surface, text and border values.
+ */
+:root[data-theme="dark"] {
+  --aiva-viz-1: #3987e5;
+  --aiva-viz-2: #d95926;
+  --aiva-viz-3: #199e70;
+  --aiva-viz-4: #c98500;
+}
+
+/* Arabic phase: layout already uses logical properties; only the family changes. */
+:root:lang(ar) {
+  --aiva-font-sans: "Noto Sans Arabic", system-ui, sans-serif;
+}

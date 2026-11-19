@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "window": {
+      "from": "2026-10-09",
+      "to": "2026-10-15",
+      "timezone": "UTC"
+    },
+    "filters": {},
+    "scope": {
+      "level": "department",
+      "department_id": "customer-care",
+      "application_ids": [
+        "gct-support-chatbot"
+      ],
+      "user_identities": "pseudonymous"
+    },
+    "generated_at": "2026-10-15T06:20:39.363869Z",
+    "aggregates_as_of": "2026-10-15T06:20:23.716343Z",
+    "granularity": "day",
+    "taxonomy_versions": [
+      "tax-2026.10.1"
+    ],
+    "classifier_versions": [
+      "heuristic-v0"
+    ],
+    "rate_card_versions": [
+      "rc-2026-10-14"
+    ],
+    "pricing_snapshot": "rc-2026-10-14",
+    "data_designation": "synthetic",
+    "attribution": "Usage is attributed to the UTC hour its run started."
+  },
+  "group_by": "application",
+  "rows": [
+    {
+      "group": "gct-support-chatbot",
+      "label": "Customer Support Chatbot",
+      "usage": {
+        "request_count": 31,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 897,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 897,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 2332,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 2332,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 520,
+          "upstream_output_tokens": 1199,
+          "cim_input_tokens": 214,
+          "cim_output_tokens": 753,
+          "retry_input_tokens": 36,
+          "retry_output_tokens": 86,
+          "baseline_input_tokens": 127,
+          "baseline_output_tokens": 294,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 11222,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 11222,
+            "provenance": "simulated"
+          },
+          "upstream_micros": 4720,
+          "cim_micros": 0,
+          "retry_micros": 114,
+          "baseline_comparison_micros": 6388,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 1,
+            "provenance": "simulated"
+          }
+        },
+        "avoided": {
+          "calls": 1,
+          "tokens": 63,
+          "micros": 0,
+          "provenance": "simulated"
+        }
+      },
+      "spend_share": {
+        "numerator": 11222,
+        "denominator": 11222,
+        "value": 1.0
+      }
+    }
+  ],
+  "totals": {
+    "request_count": 31,
+    "provenance": "synthetic",
+    "tokens": {
+      "input_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 897,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 897,
+        "provenance": "simulated"
+      },
+      "output_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 2332,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 2332,
+        "provenance": "simulated"
+      },
+      "upstream_input_tokens": 520,
+      "upstream_output_tokens": 1199,
+      "cim_input_tokens": 214,
+      "cim_output_tokens": 753,
+      "retry_input_tokens": 36,
+      "retry_output_tokens": 86,
+      "baseline_input_tokens": 127,
+      "baseline_output_tokens": 294,
+      "other_input_tokens": 0,
+      "other_output_tokens": 0,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "spend": {
+      "api": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 11222,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 11222,
+        "provenance": "simulated"
+      },
+      "upstream_micros": 4720,
+      "cim_micros": 0,
+      "retry_micros": 114,
+      "baseline_comparison_micros": 6388,
+      "adjustment_micros": 0,
+      "tool_call_micros": 0,
+      "other_micros": 0,
+      "gpu_estimated": {
+        "value": 1,
+        "provenance": "simulated"
+      }
+    },
+    "avoided": {
+      "calls": 1,
+      "tokens": 63,
+      "micros": 0,
+      "provenance": "simulated"
+    }
+  },
+  "series": [
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "gct-support-chatbot",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "gct-support-chatbot",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "gct-support-chatbot",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "gct-support-chatbot",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "gct-support-chatbot",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "gct-support-chatbot",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "gct-support-chatbot",
+      "request_count": 31,
+      "input_tokens": 897,
+      "output_tokens": 2332,
+      "cim_tokens": 967,
+      "retry_tokens": 122,
+      "api_micros": 11222
+    }
+  ],
+  "page": {
+    "next_cursor": null,
+    "limit": 100,
+    "total_rows": 1
+  }
+}

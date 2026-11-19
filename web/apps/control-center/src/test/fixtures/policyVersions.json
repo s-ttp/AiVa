@@ -1,0 +1,10 @@
+[
+  {
+    "version": 1,
+    "status": "published",
+    "bundle_hash": "086fe8a9df228d8d9f8554b29a383dacfb00afb9dbaccc7e1d30bb205c26625d",
+    "created_at": "2026-10-14T09:15:07.214108+00:00",
+    "published_at": "2026-10-14T09:15:07.214108+00:00",
+    "notes": "Seeded from config/policies"
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "scenario_id": "enterprise-rag",
+  "request": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the approval process for a synthetic GCT enterprise roaming bundle discount? Cite the document_id and section you used."
+      }
+    ],
+    "scenario_id": "enterprise-rag",
+    "max_output_tokens": 300,
+    "routing": {
+      "preferred_model": "gemini-flash-lite"
+    }
+  },
+  "primary_doc": "GCT-POL-014",
+  "approved_docs": [
+    "GCT-POL-014",
+    "GCT-POL-112",
+    "GCT-POL-113",
+    "GCT-POL-114",
+    "GCT-POL-115",
+    "GCT-POL-116",
+    "GCT-POL-117",
+    "GCT-POL-118",
+    "GCT-POL-119",
+    "GCT-POL-120",
+    "KB-POLICY-030",
+    "KB-POLICY-031"
+  ],
+  "never_retrieved": [
+    "KB-POLICY-032",
+    "KB-POLICY-033",
+    "KB-POLICY-034",
+    "KB-POLICY-035"
+  ],
+  "insufficient_evidence": [
+    {
+      "id": "note-1",
+      "text": "Discount approvals are handled by the commercial team."
+    }
+  ]
+}

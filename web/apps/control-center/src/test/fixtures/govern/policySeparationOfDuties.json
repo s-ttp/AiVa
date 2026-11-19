@@ -1,0 +1,15 @@
+{
+  "error": {
+    "code": "SEPARATION_OF_DUTIES",
+    "message": "A high-impact change must be published by a different administrator than its author.",
+    "remediation": "Ask another administrator to review the changes and publish this version.",
+    "rule_ids": [],
+    "retryable": false,
+    "run_id": null,
+    "details": {
+      "high_impact": [
+        "GCT-SEC-002"
+      ]
+    }
+  }
+}

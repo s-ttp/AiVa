@@ -1,0 +1,13 @@
+# Classification taxonomy (LLD §21.3). Category IDs are stable; labels may change between versions.
+version: tax-2026.10.1
+review_confidence_threshold: 0.6
+dimensions:
+  business_function: [support, fraud, network, finance, it, hr]
+  task_category: [qa, summarization, coding, rag, analysis, generation, agentic]
+  business_intent: [billing-dispute, roaming-inquiry, sim-swap, incident-triage, automation-script, policy-lookup, board-pack]
+  complexity: [simple, moderate, complex, advanced]
+  sensitivity: [public, internal, confidential, restricted, sovereign-only]
+  language: [english, arabic, bilingual, other]
+  execution_path: [cache-return, sovereign-direct, local-fast, cim-assisted]
+  context_strategy: [full, prune, retrieve, compress, evidence-preserving]
+  outcome: [success, quality_fail, policy_denied, quota_denied, approval_required, timeout, error]

@@ -1,0 +1,15 @@
+{
+  "error": {
+    "code": "VALIDATION_FAILED",
+    "message": "The draft has invalid references.",
+    "remediation": null,
+    "rule_ids": [],
+    "retryable": false,
+    "run_id": null,
+    "details": {
+      "errors": [
+        "policy GCT-BAD: unknown model no-such-model"
+      ]
+    }
+  }
+}

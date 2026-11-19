@@ -1,0 +1,742 @@
+{
+    "metadata": {
+        "window": {
+            "from": "2026-10-10",
+            "to": "2026-10-16",
+            "timezone": "UTC"
+        },
+        "filters": {},
+        "scope": {
+            "level": "tenant",
+            "department_id": null,
+            "application_ids": [],
+            "user_identities": "pseudonymous",
+            "users_visible": true
+        },
+        "generated_at": "2026-10-16T10:21:48.367761Z",
+        "aggregates_as_of": null,
+        "granularity": "day",
+        "taxonomy_versions": [
+            "tax-2026.10.1"
+        ],
+        "classifier_versions": [
+            "heuristic-v0"
+        ],
+        "rate_card_versions": [],
+        "pricing_snapshot": "rc-2026-10-15",
+        "data_designation": "synthetic",
+        "attribution": "Usage is attributed to the UTC hour its run started."
+    },
+    "computed_at": "2026-10-16T10:21:48.367761Z",
+    "group_by": "application",
+    "totals": {
+        "request_count": 734,
+        "assurance": {
+            "checked_runs": 408,
+            "passed": {
+                "numerator": 408,
+                "denominator": 408,
+                "value": 1.0
+            },
+            "output_dlp": {
+                "clean": 408,
+                "redacted": 0,
+                "blocked": 0,
+                "not_run": 0
+            },
+            "escalations": [],
+            "checks": [
+                {
+                    "name": "non-empty-output",
+                    "count": 408
+                },
+                {
+                    "name": "output-dlp",
+                    "count": 408
+                },
+                {
+                    "name": "answer-citations",
+                    "count": 6
+                }
+            ],
+            "provenance": "simulated"
+        },
+        "sufficiency": {
+            "runs": 734,
+            "cim_invoked_runs": 105,
+            "verified": {
+                "numerator": 105,
+                "denominator": 105,
+                "value": 1.0
+            },
+            "cim_selected": {
+                "numerator": 0,
+                "denominator": 105,
+                "value": 0.0
+            },
+            "fallback": {
+                "numerator": 0,
+                "denominator": 105,
+                "value": 0.0
+            },
+            "bypassed_by_policy": {
+                "numerator": 116,
+                "denominator": 734,
+                "value": 0.15803814713896458
+            },
+            "skipped_sufficient": {
+                "numerator": 190,
+                "denominator": 734,
+                "value": 0.25885558583106266
+            },
+            "provenance": "simulated"
+        },
+        "guard": {
+            "packages": 105,
+            "passed": {
+                "numerator": 105,
+                "denominator": 105,
+                "value": 1.0
+            },
+            "relevance_unverified_passages": 0,
+            "recall_floor_added_runs": 0,
+            "failures": [],
+            "provenance": "simulated"
+        },
+        "evidence_coverage": {
+            "status": "not_measured",
+            "measured_runs": 0,
+            "mean": null,
+            "with_unresolved": null,
+            "provenance": null
+        }
+    },
+    "rows": [
+        {
+            "request_count": 446,
+            "assurance": {
+                "checked_runs": 216,
+                "passed": {
+                    "numerator": 216,
+                    "denominator": 216,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 216,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 216
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 216
+                    },
+                    {
+                        "name": "answer-citations",
+                        "count": 4
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 446,
+                "cim_invoked_runs": 35,
+                "verified": {
+                    "numerator": 35,
+                    "denominator": 35,
+                    "value": 1.0
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 35,
+                    "value": 0.0
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 35,
+                    "value": 0.0
+                },
+                "bypassed_by_policy": {
+                    "numerator": 1,
+                    "denominator": 446,
+                    "value": 0.002242152466367713
+                },
+                "skipped_sufficient": {
+                    "numerator": 183,
+                    "denominator": 446,
+                    "value": 0.4103139013452915
+                },
+                "provenance": "simulated"
+            },
+            "guard": {
+                "packages": 35,
+                "passed": {
+                    "numerator": 35,
+                    "denominator": 35,
+                    "value": 1.0
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "simulated"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "gct-support-chatbot",
+            "label": "Customer Support Chatbot"
+        },
+        {
+            "request_count": 117,
+            "assurance": {
+                "checked_runs": 96,
+                "passed": {
+                    "numerator": 96,
+                    "denominator": 96,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 96,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 96
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 96
+                    },
+                    {
+                        "name": "answer-citations",
+                        "count": 2
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 117,
+                "cim_invoked_runs": 0,
+                "verified": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "bypassed_by_policy": {
+                    "numerator": 96,
+                    "denominator": 117,
+                    "value": 0.8205128205128205
+                },
+                "skipped_sufficient": {
+                    "numerator": 0,
+                    "denominator": 117,
+                    "value": 0.0
+                },
+                "provenance": "synthetic"
+            },
+            "guard": {
+                "packages": 0,
+                "passed": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "synthetic"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "gct-fraud-investigator",
+            "label": "Fraud Investigation Assistant"
+        },
+        {
+            "request_count": 49,
+            "assurance": {
+                "checked_runs": 24,
+                "passed": {
+                    "numerator": 24,
+                    "denominator": 24,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 24,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 24
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 24
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 49,
+                "cim_invoked_runs": 24,
+                "verified": {
+                    "numerator": 24,
+                    "denominator": 24,
+                    "value": 1.0
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 24,
+                    "value": 0.0
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 24,
+                    "value": 0.0
+                },
+                "bypassed_by_policy": {
+                    "numerator": 0,
+                    "denominator": 49,
+                    "value": 0.0
+                },
+                "skipped_sufficient": {
+                    "numerator": 0,
+                    "denominator": 49,
+                    "value": 0.0
+                },
+                "provenance": "simulated"
+            },
+            "guard": {
+                "packages": 24,
+                "passed": {
+                    "numerator": 24,
+                    "denominator": 24,
+                    "value": 1.0
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "simulated"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "gct-knowledge-portal",
+            "label": "Enterprise Knowledge Portal"
+        },
+        {
+            "request_count": 45,
+            "assurance": {
+                "checked_runs": 24,
+                "passed": {
+                    "numerator": 24,
+                    "denominator": 24,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 24,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 24
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 24
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 45,
+                "cim_invoked_runs": 24,
+                "verified": {
+                    "numerator": 24,
+                    "denominator": 24,
+                    "value": 1.0
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 24,
+                    "value": 0.0
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 24,
+                    "value": 0.0
+                },
+                "bypassed_by_policy": {
+                    "numerator": 0,
+                    "denominator": 45,
+                    "value": 0.0
+                },
+                "skipped_sufficient": {
+                    "numerator": 0,
+                    "denominator": 45,
+                    "value": 0.0
+                },
+                "provenance": "simulated"
+            },
+            "guard": {
+                "packages": 24,
+                "passed": {
+                    "numerator": 24,
+                    "denominator": 24,
+                    "value": 1.0
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "simulated"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "gct-coding-assistant",
+            "label": "Coding Assistant"
+        },
+        {
+            "request_count": 31,
+            "assurance": {
+                "checked_runs": 20,
+                "passed": {
+                    "numerator": 20,
+                    "denominator": 20,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 20,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 20
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 20
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 31,
+                "cim_invoked_runs": 20,
+                "verified": {
+                    "numerator": 20,
+                    "denominator": 20,
+                    "value": 1.0
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 20,
+                    "value": 0.0
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 20,
+                    "value": 0.0
+                },
+                "bypassed_by_policy": {
+                    "numerator": 0,
+                    "denominator": 31,
+                    "value": 0.0
+                },
+                "skipped_sufficient": {
+                    "numerator": 0,
+                    "denominator": 31,
+                    "value": 0.0
+                },
+                "provenance": "simulated"
+            },
+            "guard": {
+                "packages": 20,
+                "passed": {
+                    "numerator": 20,
+                    "denominator": 20,
+                    "value": 1.0
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "simulated"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "gct-incident-agent",
+            "label": "Service Incident Agent"
+        },
+        {
+            "request_count": 28,
+            "assurance": {
+                "checked_runs": 19,
+                "passed": {
+                    "numerator": 19,
+                    "denominator": 19,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 19,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 19
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 19
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 28,
+                "cim_invoked_runs": 0,
+                "verified": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "bypassed_by_policy": {
+                    "numerator": 19,
+                    "denominator": 28,
+                    "value": 0.6785714285714286
+                },
+                "skipped_sufficient": {
+                    "numerator": 0,
+                    "denominator": 28,
+                    "value": 0.0
+                },
+                "provenance": "synthetic"
+            },
+            "guard": {
+                "packages": 0,
+                "passed": {
+                    "numerator": 0,
+                    "denominator": 0,
+                    "value": null
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "synthetic"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "gct-doc-copilot",
+            "label": "Confidential Document Copilot"
+        },
+        {
+            "request_count": 18,
+            "assurance": {
+                "checked_runs": 9,
+                "passed": {
+                    "numerator": 9,
+                    "denominator": 9,
+                    "value": 1.0
+                },
+                "output_dlp": {
+                    "clean": 9,
+                    "redacted": 0,
+                    "blocked": 0,
+                    "not_run": 0
+                },
+                "escalations": [],
+                "checks": [
+                    {
+                        "name": "non-empty-output",
+                        "count": 9
+                    },
+                    {
+                        "name": "output-dlp",
+                        "count": 9
+                    }
+                ],
+                "provenance": "simulated"
+            },
+            "sufficiency": {
+                "runs": 18,
+                "cim_invoked_runs": 2,
+                "verified": {
+                    "numerator": 2,
+                    "denominator": 2,
+                    "value": 1.0
+                },
+                "cim_selected": {
+                    "numerator": 0,
+                    "denominator": 2,
+                    "value": 0.0
+                },
+                "fallback": {
+                    "numerator": 0,
+                    "denominator": 2,
+                    "value": 0.0
+                },
+                "bypassed_by_policy": {
+                    "numerator": 0,
+                    "denominator": 18,
+                    "value": 0.0
+                },
+                "skipped_sufficient": {
+                    "numerator": 7,
+                    "denominator": 18,
+                    "value": 0.3888888888888889
+                },
+                "provenance": "simulated"
+            },
+            "guard": {
+                "packages": 2,
+                "passed": {
+                    "numerator": 2,
+                    "denominator": 2,
+                    "value": 1.0
+                },
+                "relevance_unverified_passages": 0,
+                "recall_floor_added_runs": 0,
+                "failures": [],
+                "provenance": "simulated"
+            },
+            "evidence_coverage": {
+                "status": "not_measured",
+                "measured_runs": 0,
+                "mean": null,
+                "with_unresolved": null,
+                "provenance": null
+            },
+            "group": "gct-noc-assistant",
+            "label": "Network Operations Intelligence"
+        }
+    ],
+    "trend": [
+        {
+            "bucket": "2026-10-10T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-11T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-12T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-13T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-14T00:00:00Z",
+            "request_count": 189,
+            "checked_runs": 109,
+            "passed_runs": 109,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-10-15T00:00:00Z",
+            "request_count": 290,
+            "checked_runs": 195,
+            "passed_runs": 195,
+            "cim_invoked_runs": 66,
+            "verified_runs": 66
+        },
+        {
+            "bucket": "2026-10-16T00:00:00Z",
+            "request_count": 255,
+            "checked_runs": 104,
+            "passed_runs": 104,
+            "cim_invoked_runs": 39,
+            "verified_runs": 39
+        }
+    ]
+}

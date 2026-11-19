@@ -1,0 +1,164 @@
+{
+  "version": 3,
+  "status": "draft",
+  "bundle_hash": "d8ef815d092201f147a8bfb893d0e17fb386d701fb76e495df7bd3b26de8a7db",
+  "results": [
+    {
+      "name": "Tagged support request",
+      "input": {
+        "stage": "request",
+        "environment": "local",
+        "tenant_id": "gct",
+        "identity": {
+          "kind": "user",
+          "application_id": "gct-support-chatbot",
+          "identity_mode": "simulated",
+          "roles": [
+            "tester"
+          ],
+          "department_id": "customer-care"
+        },
+        "source": {
+          "ip": "192.0.2.10",
+          "mode": "simulated"
+        },
+        "request": {
+          "task": null,
+          "scenario_id": null,
+          "tags": [
+            "needs-approval"
+          ],
+          "quality_tier": "standard",
+          "routing_mode": "hybrid",
+          "preferred_model": null,
+          "max_output_tokens": 1024
+        },
+        "classification": {
+          "declared": null,
+          "floor": "internal",
+          "dlp": null,
+          "rlcd": null,
+          "effective": "internal"
+        },
+        "dlp": {
+          "finding_types": [],
+          "injection_detected": false,
+          "injection_indicators": [],
+          "evidence_injection_detected": false
+        },
+        "egress": null,
+        "tool": null,
+        "approvals": []
+      },
+      "decision": {
+        "action": "approval_required",
+        "reasons": [
+          {
+            "rule_id": "GCT-E2E-APPROVAL",
+            "message": "Requests tagged needs-approval need an approver.",
+            "remediation": "Ask an approver to review the request in the AiVa Govern Approval Queue."
+          }
+        ],
+        "matched_rule_ids": [
+          "GCT-E2E-APPROVAL",
+          "GCT-OUT-004"
+        ],
+        "matched_network_id": "net-test-console",
+        "effective": {
+          "execution_path": null,
+          "allowed_models": [
+            "claude-flagship",
+            "deepseek-v4-1-flash",
+            "gct-qwen-finetuned",
+            "gemini-flash-lite"
+          ],
+          "cim": "allowed",
+          "external_providers": "allow",
+          "output_dlp": "required",
+          "audit_level": "standard"
+        },
+        "denied_candidates": [],
+        "satisfied_approval_rule_ids": [],
+        "policy_version": "3",
+        "bundle_hash": "d8ef815d092201f147a8bfb893d0e17fb386d701fb76e495df7bd3b26de8a7db"
+      },
+      "expected_action": "approval_required",
+      "passed": true
+    },
+    {
+      "name": "Untagged support request",
+      "input": {
+        "stage": "request",
+        "environment": "local",
+        "tenant_id": "gct",
+        "identity": {
+          "kind": "user",
+          "application_id": "gct-support-chatbot",
+          "identity_mode": "simulated",
+          "roles": [
+            "tester"
+          ],
+          "department_id": "customer-care"
+        },
+        "source": {
+          "ip": "192.0.2.10",
+          "mode": "simulated"
+        },
+        "request": {
+          "task": null,
+          "scenario_id": null,
+          "tags": [],
+          "quality_tier": "standard",
+          "routing_mode": "hybrid",
+          "preferred_model": null,
+          "max_output_tokens": 1024
+        },
+        "classification": {
+          "declared": null,
+          "floor": "internal",
+          "dlp": null,
+          "rlcd": null,
+          "effective": "internal"
+        },
+        "dlp": {
+          "finding_types": [],
+          "injection_detected": false,
+          "injection_indicators": [],
+          "evidence_injection_detected": false
+        },
+        "egress": null,
+        "tool": null,
+        "approvals": []
+      },
+      "decision": {
+        "action": "allow",
+        "reasons": [],
+        "matched_rule_ids": [
+          "GCT-OUT-004"
+        ],
+        "matched_network_id": "net-test-console",
+        "effective": {
+          "execution_path": null,
+          "allowed_models": [
+            "claude-flagship",
+            "deepseek-v4-1-flash",
+            "gct-qwen-finetuned",
+            "gemini-flash-lite"
+          ],
+          "cim": "allowed",
+          "external_providers": "allow",
+          "output_dlp": "required",
+          "audit_level": "standard"
+        },
+        "denied_candidates": [],
+        "satisfied_approval_rule_ids": [],
+        "policy_version": "3",
+        "bundle_hash": "d8ef815d092201f147a8bfb893d0e17fb386d701fb76e495df7bd3b26de8a7db"
+      },
+      "expected_action": "allow",
+      "passed": true
+    }
+  ],
+  "passed": 2,
+  "failed": 0
+}

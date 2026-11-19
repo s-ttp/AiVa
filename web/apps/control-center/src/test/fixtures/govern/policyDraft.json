@@ -1,0 +1,252 @@
+{
+  "version": 3,
+  "status": "draft",
+  "bundle_hash": "d8ef815d092201f147a8bfb893d0e17fb386d701fb76e495df7bd3b26de8a7db",
+  "created_at": "2026-10-14T11:35:53.641974+00:00",
+  "created_by": "usr_15427478b0b965e7",
+  "published_at": null,
+  "published_by": null,
+  "notes": "Add an approval rule for needs-approval requests",
+  "policies": [
+    {
+      "policy_id": "GCT-CONF-001",
+      "title": "Confidential, restricted and sovereign-only data stays on the sovereign path",
+      "priority": 1000,
+      "match": {
+        "classification_any": [
+          "confidential",
+          "restricted",
+          "sovereign-only"
+        ],
+        "application_any": null,
+        "task_any": null,
+        "tags_any": null,
+        "dlp_findings_any": null,
+        "injection_detected": null,
+        "source_cidr_any": null,
+        "environment_any": null,
+        "evidence_injection_detected": null,
+        "tool_any": null,
+        "tool_access_any": null,
+        "tool_egress_any": null
+      },
+      "enforce": {
+        "action": null,
+        "reason": null,
+        "remediation": null,
+        "execution_path": "sovereign-direct",
+        "allowed_models": [
+          "gct-qwen-finetuned"
+        ],
+        "cim": "bypass",
+        "external_providers": "deny",
+        "output_dlp": "required",
+        "audit_level": "enhanced"
+      }
+    },
+    {
+      "policy_id": "GCT-SEC-002",
+      "title": "Block prompts that contain secrets or credentials",
+      "priority": 990,
+      "match": {
+        "classification_any": null,
+        "application_any": null,
+        "task_any": null,
+        "tags_any": null,
+        "dlp_findings_any": [
+          "SECRET",
+          "PRIVATE_KEY"
+        ],
+        "injection_detected": null,
+        "source_cidr_any": null,
+        "environment_any": null,
+        "evidence_injection_detected": null,
+        "tool_any": null,
+        "tool_access_any": null,
+        "tool_egress_any": null
+      },
+      "enforce": {
+        "action": "deny",
+        "reason": "The request contains a credential or secret.",
+        "remediation": "Remove credentials, keys and tokens from the prompt and resubmit.",
+        "execution_path": null,
+        "allowed_models": null,
+        "cim": null,
+        "external_providers": null,
+        "output_dlp": null,
+        "audit_level": "enhanced"
+      }
+    },
+    {
+      "policy_id": "GCT-INJ-003",
+      "title": "Block suspected prompt injection and data exfiltration",
+      "priority": 980,
+      "match": {
+        "classification_any": null,
+        "application_any": null,
+        "task_any": null,
+        "tags_any": null,
+        "dlp_findings_any": null,
+        "injection_detected": true,
+        "source_cidr_any": null,
+        "environment_any": null,
+        "evidence_injection_detected": null,
+        "tool_any": null,
+        "tool_access_any": null,
+        "tool_egress_any": null
+      },
+      "enforce": {
+        "action": "deny",
+        "reason": "The request matched prompt-injection or exfiltration indicators.",
+        "remediation": "Rephrase the request without instructions that override system or policy behaviour.",
+        "execution_path": null,
+        "allowed_models": null,
+        "cim": null,
+        "external_providers": null,
+        "output_dlp": null,
+        "audit_level": "enhanced"
+      }
+    },
+    {
+      "policy_id": "GCT-TOOL-006",
+      "title": "Block tool side effects when retrieved evidence contains injection indicators",
+      "priority": 970,
+      "match": {
+        "classification_any": null,
+        "application_any": null,
+        "task_any": null,
+        "tags_any": null,
+        "dlp_findings_any": null,
+        "injection_detected": null,
+        "source_cidr_any": null,
+        "environment_any": null,
+        "evidence_injection_detected": true,
+        "tool_any": null,
+        "tool_access_any": [
+          "write"
+        ],
+        "tool_egress_any": null
+      },
+      "enforce": {
+        "action": "deny",
+        "reason": "Retrieved evidence contained instruction-like text, so tool actions with side effects are blocked.",
+        "remediation": "Review the source documents; read-only tools remain available.",
+        "execution_path": null,
+        "allowed_models": null,
+        "cim": null,
+        "external_providers": null,
+        "output_dlp": null,
+        "audit_level": "enhanced"
+      }
+    },
+    {
+      "policy_id": "GCT-TOOL-005",
+      "title": "External tool actions with side effects require human approval",
+      "priority": 700,
+      "match": {
+        "classification_any": null,
+        "application_any": null,
+        "task_any": null,
+        "tags_any": null,
+        "dlp_findings_any": null,
+        "injection_detected": null,
+        "source_cidr_any": null,
+        "environment_any": null,
+        "evidence_injection_detected": null,
+        "tool_any": null,
+        "tool_access_any": [
+          "write"
+        ],
+        "tool_egress_any": [
+          "external"
+        ]
+      },
+      "enforce": {
+        "action": "approval_required",
+        "reason": "Tool actions that leave GCT and have side effects need a human approver.",
+        "remediation": "Ask an approver to review the action in the AiVa Govern approval queue.",
+        "execution_path": null,
+        "allowed_models": null,
+        "cim": null,
+        "external_providers": null,
+        "output_dlp": null,
+        "audit_level": "enhanced"
+      }
+    },
+    {
+      "policy_id": "GCT-E2E-APPROVAL",
+      "title": "Requests tagged needs-approval wait for an approver",
+      "priority": 500,
+      "match": {
+        "classification_any": null,
+        "application_any": null,
+        "task_any": null,
+        "tags_any": [
+          "needs-approval"
+        ],
+        "dlp_findings_any": null,
+        "injection_detected": null,
+        "source_cidr_any": null,
+        "environment_any": null,
+        "evidence_injection_detected": null,
+        "tool_any": null,
+        "tool_access_any": null,
+        "tool_egress_any": null
+      },
+      "enforce": {
+        "action": "approval_required",
+        "reason": "Requests tagged needs-approval need an approver.",
+        "remediation": "Ask an approver to review the request in the AiVa Govern Approval Queue.",
+        "execution_path": null,
+        "allowed_models": null,
+        "cim": null,
+        "external_providers": null,
+        "output_dlp": null,
+        "audit_level": null
+      }
+    },
+    {
+      "policy_id": "GCT-OUT-004",
+      "title": "Output DLP required for customer support applications",
+      "priority": 500,
+      "match": {
+        "classification_any": null,
+        "application_any": [
+          "gct-support-chatbot"
+        ],
+        "task_any": null,
+        "tags_any": null,
+        "dlp_findings_any": null,
+        "injection_detected": null,
+        "source_cidr_any": null,
+        "environment_any": null,
+        "evidence_injection_detected": null,
+        "tool_any": null,
+        "tool_access_any": null,
+        "tool_egress_any": null
+      },
+      "enforce": {
+        "action": null,
+        "reason": null,
+        "remediation": null,
+        "execution_path": null,
+        "allowed_models": null,
+        "cim": null,
+        "external_providers": null,
+        "output_dlp": "required",
+        "audit_level": null
+      }
+    }
+  ],
+  "published_version": 2,
+  "changes_from_published": [
+    {
+      "target": "policy",
+      "target_id": "GCT-E2E-APPROVAL",
+      "change": "added",
+      "high_impact": false,
+      "summary": []
+    }
+  ],
+  "authored_by_viewer": true
+}

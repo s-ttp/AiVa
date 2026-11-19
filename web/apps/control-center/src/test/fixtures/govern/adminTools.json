@@ -1,0 +1,79 @@
+{
+  "policy_version": "2",
+  "bundle_hash": "28a889a6e26a659a47bcaa49ba91e5937dd4245e219aa2fe521e0d835105f7b5",
+  "tools": [
+    {
+      "id": "incident.lookup",
+      "display_name": "Incident lookup",
+      "description": "Read a service incident record from the synthetic ITSM.",
+      "access": "read",
+      "egress": "internal",
+      "enabled": true,
+      "application_ids": [
+        "gct-incident-agent"
+      ]
+    },
+    {
+      "id": "kb.search",
+      "display_name": "Knowledge base search",
+      "description": "Search approved synthetic GCT knowledge articles.",
+      "access": "read",
+      "egress": "internal",
+      "enabled": true,
+      "application_ids": [
+        "gct-incident-agent"
+      ]
+    },
+    {
+      "id": "network.site_status",
+      "display_name": "Cell site status",
+      "description": "Read current alarms and KPIs for synthetic cell sites.",
+      "access": "read",
+      "egress": "internal",
+      "enabled": true,
+      "application_ids": [
+        "gct-incident-agent"
+      ]
+    },
+    {
+      "id": "notification.draft",
+      "display_name": "Draft customer notice",
+      "description": "Save a draft customer notice in the synthetic CRM (not sent).",
+      "access": "write",
+      "egress": "internal",
+      "enabled": true,
+      "application_ids": [
+        "gct-incident-agent"
+      ]
+    },
+    {
+      "id": "notification.send",
+      "display_name": "Send customer notice",
+      "description": "Send a notice to affected customers through the external SMS/email gateway.",
+      "access": "write",
+      "egress": "external",
+      "enabled": true,
+      "application_ids": [
+        "gct-incident-agent"
+      ]
+    },
+    {
+      "id": "subscriber.suspend",
+      "display_name": "Suspend subscriber",
+      "description": "Suspend a synthetic subscriber line in the provisioning system.",
+      "access": "write",
+      "egress": "internal",
+      "enabled": true,
+      "application_ids": []
+    },
+    {
+      "id": "web.search",
+      "display_name": "Public web search",
+      "description": "Query a public search engine.",
+      "access": "read",
+      "egress": "external",
+      "enabled": true,
+      "application_ids": []
+    }
+  ]
+}

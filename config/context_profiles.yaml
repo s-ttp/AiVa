@@ -1,0 +1,61 @@
+# CIM context profiles (LLD §9): runtime configuration, not model weights.
+# Task categories (taxonomy `task_category`) that never search the knowledge base or the web on the
+# CIM-assisted path: the request keeps only the evidence it supplies. The KB holds tariffs and policies, no
+# technical material, so a coding question drew 8 unrelated passages, and its answer said so on stage
+# (scenario 16, 2026-10-25); they also sent internal KB text to the external model for nothing.
+retrieval_skip_tasks: [coding]
+profiles:
+  - id: fraud-investigation
+    required_fields: [event_timestamp, event_type, source_id]
+    chronology_field: event_timestamp
+    preserve_numbers: true
+    target_budget_tokens: 4000
+  - id: enterprise-rag
+    required_fields: [document_id, section]
+    # document_id and section name each passage's source (its `[DOC-ID §N]` header): the Guard checks that
+    # every citation resolves to a retrieved passage, and does not pin every passage that carries one.
+    citation: {document: document_id, section: section}
+    # Recall floor: the two top-ranked retrieved passages are always kept. On ML & Data's 121 held-out RAG
+    # cases (offline re-score of served predictions, measured) gold passage recall 83.2% -> 94.4% for 65.6%
+    # -> 53.7% tokens saved (k=1: 85.5%, 64.3%). See ADR-0009.
+    keep_top_k: 2
+    # Heading-aware fusion (ADR-0009, 2026-10-18 amendment), measured on ML & Data's 150 enterprise-rag
+    # questions: GCT Group target @2 0.10 -> 0.20, S4's GCT-POL-014 §3 from rank 3 to 1. Not measured elsewhere.
+    heading_fusion: true
+    preserve_numbers: true
+    target_budget_tokens: 3000
+  # Live demo use case 5, market research (S15): enterprise-rag's citation contract and recall floor. Heading
+  # fusion stays off: it was measured only on enterprise-rag's policy questions (ADR-0009). Governed live web
+  # search (ADR-0022): up to five screened results join the knowledge-base passages, each with a citation
+  # header `[WEB-<n> §1]`, and the CIM trims them all to the budget. The recall floor keeps knowledge-base
+  # passages only.
+  - id: market-research
+    required_fields: [document_id, section]
+    citation: {document: document_id, section: section}
+    keep_top_k: 2
+    preserve_numbers: true
+    target_budget_tokens: 3000
+    web_search_k: 5
+  - id: customer-support
+    # Scenario 1. Its confidential questions take the sovereign path, where nothing is retrieved unless the
+    # profile opts in (ADR-0020): up to three KB passages with cosine >= 0.62 (on-topic gold kept 94.5%,
+    # off-topic questions with any chunk added 7.3%; calibrated 2026-10-18), only when the caller supplied no
+    # evidence. The default chat supplies its evidence, so it retrieves nothing.
+    required_fields: []
+    target_budget_tokens: 4000
+    sovereign_retrieval_k: 3
+    sovereign_retrieval_min_cosine: 0.62
+  - id: network-alarm-correlation
+    required_fields: [alarm_id, site_id, raised_at, severity]
+    chronology_field: raised_at
+    preserve_numbers: true
+    target_budget_tokens: 4000
+  - id: service-incident
+    # Scenario 6, the agent workflow's model steps and the incident chat. The evidence is the incident's tool
+    # results and a few policy passages, small enough to keep whole, and an omitted incident record is a
+    # correctness failure: the first recording run's customer notice, built from a package that kept no
+    # evidence, named a region and a date its model was never given. Every passage is kept, so the CIM is
+    # never called ("CIM bypassed: nothing to omit; full context used") and the Guard sees the full context.
+    required_fields: []
+    keep_all_passages: true
+    target_budget_tokens: 4000

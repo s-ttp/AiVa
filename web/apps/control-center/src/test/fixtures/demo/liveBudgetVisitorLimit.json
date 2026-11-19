@@ -1,0 +1,9 @@
+{
+    "available": false,
+    "remaining_percent": 100,
+    "resets_at": "2026-10-16T00:00:00Z",
+    "provenance": "measured",
+    "visitor_runs_remaining": 0,
+    "visitor_resets_at": "2026-10-15T20:32:50.021000Z",
+    "unavailable_reason": "visitor_limit"
+}

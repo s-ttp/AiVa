@@ -1,0 +1,298 @@
+{
+  "metadata": {
+    "window": {
+      "from": "2026-10-09",
+      "to": "2026-10-15",
+      "timezone": "UTC"
+    },
+    "filters": {},
+    "scope": {
+      "level": "tenant",
+      "department_id": null,
+      "application_ids": [],
+      "user_identities": "pseudonymous"
+    },
+    "generated_at": "2026-10-15T06:20:38.574221Z",
+    "aggregates_as_of": "2026-10-15T06:20:23.716343Z",
+    "granularity": "day",
+    "taxonomy_versions": [
+      "tax-2026.10.1"
+    ],
+    "classifier_versions": [
+      "heuristic-v0"
+    ],
+    "rate_card_versions": [
+      "rc-2026-10-14"
+    ],
+    "pricing_snapshot": "rc-2026-10-14",
+    "data_designation": "synthetic",
+    "attribution": "Usage is attributed to the UTC hour its run started."
+  },
+  "usage": {
+    "request_count": 60,
+    "provenance": "synthetic",
+    "tokens": {
+      "input_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 4520,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 4520,
+        "provenance": "simulated"
+      },
+      "output_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 7195,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 7195,
+        "provenance": "simulated"
+      },
+      "upstream_input_tokens": 2775,
+      "upstream_output_tokens": 2272,
+      "cim_input_tokens": 1431,
+      "cim_output_tokens": 4247,
+      "retry_input_tokens": 100,
+      "retry_output_tokens": 214,
+      "baseline_input_tokens": 214,
+      "baseline_output_tokens": 462,
+      "other_input_tokens": 0,
+      "other_output_tokens": 0,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "spend": {
+      "api": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 18105,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 18105,
+        "provenance": "simulated"
+      },
+      "upstream_micros": 6826,
+      "cim_micros": 0,
+      "retry_micros": 1183,
+      "baseline_comparison_micros": 10096,
+      "adjustment_micros": 0,
+      "tool_call_micros": 0,
+      "other_micros": 0,
+      "gpu_estimated": {
+        "value": 1,
+        "provenance": "simulated"
+      }
+    },
+    "avoided": {
+      "calls": 1,
+      "tokens": 63,
+      "micros": 0,
+      "provenance": "simulated"
+    }
+  },
+  "outcomes": {
+    "success": 59,
+    "quality_fail": 0,
+    "policy_denied": 1,
+    "quota_denied": 0,
+    "approval_required": 0,
+    "timeout": 0,
+    "error": 0
+  },
+  "cache_hit_rate": {
+    "numerator": 1,
+    "denominator": 60,
+    "value": 0.016666666666666666
+  },
+  "quality_pass_rate": {
+    "numerator": 58,
+    "denominator": 58,
+    "value": 1.0
+  },
+  "cost_variance": {
+    "reserved_micros": 5317676,
+    "committed_micros": 18105,
+    "variance_micros": 5299571,
+    "provenance": "simulated"
+  },
+  "savings": {
+    "frontier_model_id": "claude-flagship",
+    "pricing_snapshot": "rc-2026-10-14",
+    "quality_adjusted": false,
+    "steps": [
+      {
+        "step": "frontier_baseline",
+        "amount_micros": 59160,
+        "provenance": "simulated"
+      },
+      {
+        "step": "cache",
+        "amount_micros": -940,
+        "provenance": "simulated"
+      },
+      {
+        "step": "context",
+        "amount_micros": 3000,
+        "provenance": "simulated"
+      },
+      {
+        "step": "routing",
+        "amount_micros": -53211,
+        "provenance": "simulated"
+      },
+      {
+        "step": "prompt_cache",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "cim_overhead",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "retries",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "tool_calls",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "adjustments",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "local_gpu",
+        "amount_micros": 1,
+        "provenance": "simulated"
+      },
+      {
+        "step": "net",
+        "amount_micros": 8010,
+        "provenance": "simulated"
+      }
+    ],
+    "net_savings_micros": 51150,
+    "measurement_cost": {
+      "value": 10096,
+      "provenance": "simulated"
+    },
+    "provenance": "simulated"
+  },
+  "baseline": {
+    "frontier_model_id": "claude-flagship",
+    "frontier_model_name": "Claude Opus 5.5",
+    "runs": 11,
+    "baseline": {
+      "value": 10096,
+      "provenance": "simulated"
+    },
+    "actual": {
+      "value": 204,
+      "provenance": "simulated"
+    },
+    "savings": {
+      "value": 9892,
+      "provenance": "simulated"
+    },
+    "quality_passed_runs": 11,
+    "quality_failed_runs": 0,
+    "quality_gated_savings": {
+      "value": 9892,
+      "provenance": "simulated"
+    },
+    "baseline_quality": "not_graded"
+  },
+  "trend": [
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "baseline_tokens": 0,
+      "api_micros": 0,
+      "gpu_estimated_micros": 0,
+      "avoided_micros": 0
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "request_count": 60,
+      "input_tokens": 4520,
+      "output_tokens": 7195,
+      "cim_tokens": 5678,
+      "retry_tokens": 314,
+      "baseline_tokens": 676,
+      "api_micros": 18105,
+      "gpu_estimated_micros": 1,
+      "avoided_micros": 0
+    }
+  ]
+}

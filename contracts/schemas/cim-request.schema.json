@@ -1,0 +1,94 @@
+{
+  "$defs": {
+    "CimEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "Stable evidence reference, e.g. 'doc-1#p4'.",
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "text"
+      ],
+      "title": "CimEvidence",
+      "type": "object"
+    },
+    "CimMessage": {
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "title": "Content",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "system",
+            "user",
+            "assistant",
+            "tool"
+          ],
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "content"
+      ],
+      "title": "CimMessage",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "context_profile": {
+      "title": "Context Profile",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/CimEvidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "messages": {
+      "items": {
+        "$ref": "#/$defs/CimMessage"
+      },
+      "title": "Messages",
+      "type": "array"
+    },
+    "required_fields": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Required Fields",
+      "type": "array"
+    },
+    "target_budget_tokens": {
+      "exclusiveMinimum": 0,
+      "title": "Target Budget Tokens",
+      "type": "integer"
+    },
+    "task": {
+      "title": "Task",
+      "type": "string"
+    }
+  },
+  "required": [
+    "task",
+    "messages",
+    "context_profile",
+    "target_budget_tokens"
+  ],
+  "title": "CimRequest",
+  "type": "object"
+}

@@ -1,0 +1,246 @@
+{
+  "policy_version": "2",
+  "bundle_hash": "28a889a6e26a659a47bcaa49ba91e5937dd4245e219aa2fe521e0d835105f7b5",
+  "applications": [
+    {
+      "id": "gct-coding-assistant",
+      "name": "Coding Assistant",
+      "department_id": "it-engineering",
+      "enabled": true,
+      "classification_floor": "internal",
+      "allowed_tasks": [
+        "coding",
+        "qa"
+      ],
+      "allowed_models": [
+        "gct-qwen-finetuned",
+        "gemini-flash-lite",
+        "deepseek-v4-1-flash",
+        "claude-flagship"
+      ],
+      "allowed_tools": [],
+      "trusted_networks": [
+        {
+          "id": "net-eng-vpn",
+          "name": "Engineering VPN",
+          "cidr": "10.40.0.0/16"
+        },
+        {
+          "id": "net-test-console",
+          "name": "AiVa Test Console (simulated ingress)",
+          "cidr": "192.0.2.0/24"
+        }
+      ],
+      "credentials": [],
+      "internet_callers": true
+    },
+    {
+      "id": "gct-doc-copilot",
+      "name": "Confidential Document Copilot",
+      "department_id": "finance",
+      "enabled": true,
+      "classification_floor": "internal",
+      "allowed_tasks": [
+        "generation",
+        "summarization"
+      ],
+      "allowed_models": [
+        "gct-qwen-finetuned",
+        "gemini-flash-lite",
+        "deepseek-v4-1-flash",
+        "claude-flagship"
+      ],
+      "allowed_tools": [],
+      "trusted_networks": [
+        {
+          "id": "net-finance-hq",
+          "name": "Finance HQ",
+          "cidr": "10.60.0.0/16"
+        },
+        {
+          "id": "net-test-console",
+          "name": "AiVa Test Console (simulated ingress)",
+          "cidr": "192.0.2.0/24"
+        }
+      ],
+      "credentials": [],
+      "internet_callers": false
+    },
+    {
+      "id": "gct-fraud-investigator",
+      "name": "Fraud Investigation Assistant",
+      "department_id": "fraud-risk",
+      "enabled": true,
+      "classification_floor": "confidential",
+      "allowed_tasks": [
+        "analysis",
+        "summarization",
+        "qa"
+      ],
+      "allowed_models": [
+        "gct-qwen-finetuned",
+        "gemini-flash-lite",
+        "deepseek-v4-1-flash",
+        "claude-flagship"
+      ],
+      "allowed_tools": [],
+      "trusted_networks": [
+        {
+          "id": "net-fraud-soc",
+          "name": "Fraud operations centre",
+          "cidr": "10.30.10.0/24"
+        },
+        {
+          "id": "net-test-console",
+          "name": "AiVa Test Console (simulated ingress)",
+          "cidr": "192.0.2.0/24"
+        }
+      ],
+      "credentials": [],
+      "internet_callers": false
+    },
+    {
+      "id": "gct-incident-agent",
+      "name": "Service Incident Agent",
+      "department_id": "network-ops",
+      "enabled": true,
+      "classification_floor": "internal",
+      "allowed_tasks": [
+        "agentic",
+        "analysis"
+      ],
+      "allowed_models": [
+        "gct-qwen-finetuned",
+        "gemini-flash-lite",
+        "deepseek-v4-1-flash",
+        "claude-flagship"
+      ],
+      "allowed_tools": [
+        "incident.lookup",
+        "network.site_status",
+        "kb.search",
+        "notification.draft",
+        "notification.send"
+      ],
+      "trusted_networks": [
+        {
+          "id": "net-noc",
+          "name": "Network operations centre",
+          "cidr": "10.50.0.0/16"
+        },
+        {
+          "id": "net-test-console",
+          "name": "AiVa Test Console (simulated ingress)",
+          "cidr": "192.0.2.0/24"
+        }
+      ],
+      "credentials": [],
+      "internet_callers": false
+    },
+    {
+      "id": "gct-knowledge-portal",
+      "name": "Enterprise Knowledge Portal",
+      "department_id": "it-engineering",
+      "enabled": true,
+      "classification_floor": "internal",
+      "allowed_tasks": [
+        "rag",
+        "qa",
+        "summarization"
+      ],
+      "allowed_models": [
+        "gct-qwen-finetuned",
+        "gemini-flash-lite",
+        "deepseek-v4-1-flash",
+        "claude-flagship"
+      ],
+      "allowed_tools": [],
+      "trusted_networks": [
+        {
+          "id": "net-eng-vpn",
+          "name": "Engineering VPN",
+          "cidr": "10.40.0.0/16"
+        },
+        {
+          "id": "net-care-campus",
+          "name": "Customer Care campus",
+          "cidr": "10.20.0.0/16"
+        },
+        {
+          "id": "net-test-console",
+          "name": "AiVa Test Console (simulated ingress)",
+          "cidr": "192.0.2.0/24"
+        }
+      ],
+      "credentials": [],
+      "internet_callers": true
+    },
+    {
+      "id": "gct-noc-assistant",
+      "name": "Network Operations Intelligence",
+      "department_id": "network-ops",
+      "enabled": true,
+      "classification_floor": "internal",
+      "allowed_tasks": [
+        "analysis",
+        "summarization",
+        "qa"
+      ],
+      "allowed_models": [
+        "gct-qwen-finetuned",
+        "gemini-flash-lite",
+        "deepseek-v4-1-flash",
+        "claude-flagship"
+      ],
+      "allowed_tools": [],
+      "trusted_networks": [
+        {
+          "id": "net-noc",
+          "name": "Network operations centre",
+          "cidr": "10.50.0.0/16"
+        },
+        {
+          "id": "net-test-console",
+          "name": "AiVa Test Console (simulated ingress)",
+          "cidr": "192.0.2.0/24"
+        }
+      ],
+      "credentials": [],
+      "internet_callers": false
+    },
+    {
+      "id": "gct-support-chatbot",
+      "name": "Customer Support Chatbot",
+      "department_id": "customer-care",
+      "enabled": true,
+      "classification_floor": "internal",
+      "allowed_tasks": [
+        "qa",
+        "summarization",
+        "rag",
+        "generation"
+      ],
+      "allowed_models": [
+        "gct-qwen-finetuned",
+        "gemini-flash-lite",
+        "deepseek-v4-1-flash",
+        "claude-flagship"
+      ],
+      "allowed_tools": [],
+      "trusted_networks": [
+        {
+          "id": "net-care-campus",
+          "name": "Customer Care campus",
+          "cidr": "10.20.0.0/16"
+        },
+        {
+          "id": "net-test-console",
+          "name": "AiVa Test Console (simulated ingress)",
+          "cidr": "192.0.2.0/24"
+        }
+      ],
+      "credentials": [],
+      "internet_callers": false
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "policy_version": "2",
+  "bundle_hash": "28a889a6e26a659a47bcaa49ba91e5937dd4245e219aa2fe521e0d835105f7b5",
+  "ingress": {
+    "trusted_proxies": [],
+    "forwarded_for_trusted": false,
+    "simulated_ingress_allowed": true
+  },
+  "networks": [
+    {
+      "id": "net-care-campus",
+      "name": "Customer Care campus",
+      "cidr": "10.20.0.0/16",
+      "application_ids": [
+        "gct-knowledge-portal",
+        "gct-support-chatbot"
+      ]
+    },
+    {
+      "id": "net-eng-vpn",
+      "name": "Engineering VPN",
+      "cidr": "10.40.0.0/16",
+      "application_ids": [
+        "gct-coding-assistant",
+        "gct-knowledge-portal"
+      ]
+    },
+    {
+      "id": "net-finance-hq",
+      "name": "Finance HQ",
+      "cidr": "10.60.0.0/16",
+      "application_ids": [
+        "gct-doc-copilot"
+      ]
+    },
+    {
+      "id": "net-fraud-soc",
+      "name": "Fraud operations centre",
+      "cidr": "10.30.10.0/24",
+      "application_ids": [
+        "gct-fraud-investigator"
+      ]
+    },
+    {
+      "id": "net-noc",
+      "name": "Network operations centre",
+      "cidr": "10.50.0.0/16",
+      "application_ids": [
+        "gct-incident-agent",
+        "gct-noc-assistant"
+      ]
+    },
+    {
+      "id": "net-test-console",
+      "name": "AiVa Test Console (simulated ingress)",
+      "cidr": "192.0.2.0/24",
+      "application_ids": [
+        "gct-coding-assistant",
+        "gct-doc-copilot",
+        "gct-fraud-investigator",
+        "gct-incident-agent",
+        "gct-knowledge-portal",
+        "gct-noc-assistant",
+        "gct-support-chatbot"
+      ]
+    }
+  ]
+}

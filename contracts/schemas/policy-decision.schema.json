@@ -1,0 +1,202 @@
+{
+  "$defs": {
+    "DecisionReason": {
+      "additionalProperties": false,
+      "properties": {
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "remediation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Remediation"
+        },
+        "rule_id": {
+          "title": "Rule Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rule_id",
+        "message"
+      ],
+      "title": "DecisionReason",
+      "type": "object"
+    },
+    "DeniedCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "model_id": {
+          "title": "Model Id",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "model_id",
+        "reason"
+      ],
+      "title": "DeniedCandidate",
+      "type": "object"
+    },
+    "EffectiveConstraints": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_models": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed Models",
+          "type": "array"
+        },
+        "audit_level": {
+          "default": "standard",
+          "enum": [
+            "standard",
+            "enhanced"
+          ],
+          "title": "Audit Level",
+          "type": "string"
+        },
+        "cim": {
+          "default": "allowed",
+          "enum": [
+            "bypass",
+            "allowed"
+          ],
+          "title": "Cim",
+          "type": "string"
+        },
+        "execution_path": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ExecutionPath"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Mandatory path, or null when RLCD may choose within the allowed set."
+        },
+        "external_providers": {
+          "default": "allow",
+          "enum": [
+            "deny",
+            "allow"
+          ],
+          "title": "External Providers",
+          "type": "string"
+        },
+        "output_dlp": {
+          "default": "optional",
+          "enum": [
+            "required",
+            "optional"
+          ],
+          "title": "Output Dlp",
+          "type": "string"
+        }
+      },
+      "title": "EffectiveConstraints",
+      "type": "object"
+    },
+    "ExecutionPath": {
+      "enum": [
+        "cache-return",
+        "sovereign-direct",
+        "local-fast",
+        "cim-assisted",
+        "none"
+      ],
+      "title": "ExecutionPath",
+      "type": "string"
+    },
+    "PolicyAction": {
+      "enum": [
+        "allow",
+        "deny",
+        "approval_required"
+      ],
+      "title": "PolicyAction",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Decision returned by OPA, plus the bundle identity the gateway attaches.",
+  "properties": {
+    "action": {
+      "$ref": "#/$defs/PolicyAction"
+    },
+    "bundle_hash": {
+      "default": "",
+      "title": "Bundle Hash",
+      "type": "string"
+    },
+    "denied_candidates": {
+      "items": {
+        "$ref": "#/$defs/DeniedCandidate"
+      },
+      "title": "Denied Candidates",
+      "type": "array"
+    },
+    "effective": {
+      "$ref": "#/$defs/EffectiveConstraints"
+    },
+    "matched_network_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Matched Network Id"
+    },
+    "matched_rule_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Matched Rule Ids",
+      "type": "array"
+    },
+    "policy_version": {
+      "default": "",
+      "title": "Policy Version",
+      "type": "string"
+    },
+    "reasons": {
+      "items": {
+        "$ref": "#/$defs/DecisionReason"
+      },
+      "title": "Reasons",
+      "type": "array"
+    },
+    "satisfied_approval_rule_ids": {
+      "description": "Approval rules satisfied by a verified approval.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Satisfied Approval Rule Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "action"
+  ],
+  "title": "PolicyDecision",
+  "type": "object"
+}

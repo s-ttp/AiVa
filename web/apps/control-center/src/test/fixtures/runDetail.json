@@ -1,0 +1,56 @@
+{
+  "run_id": "run_01M4WVJ0AXSD9JF8VNXHA3A4QF",
+  "trace_id": "8890c1e44cf90ec84e545060aaa11493",
+  "tenant_id": "gct",
+  "application_id": "gct-fraud-investigator",
+  "scenario_id": "fraud-management",
+  "status": "completed",
+  "outcome": "success",
+  "execution_path": "sovereign-direct",
+  "selected_model": "gct-qwen-finetuned",
+  "cim_state": "bypassed-policy",
+  "cache_hit": false,
+  "identity_mode": "simulated",
+  "source_mode": "simulated",
+  "policy_version": "1",
+  "data_designation": "synthetic",
+  "created_at": "2026-10-14T09:23:08.253160Z",
+  "completed_at": "2026-10-14T09:23:08.263768Z",
+  "latency_ms": 11.726246000023366,
+  "attempts": [
+    {
+      "attempt_id": "att_01M4WVJ0B7D089YP227XMW9QX4",
+      "stage": "upstream",
+      "model_id": "gct-qwen-finetuned",
+      "provider": "hf-endpoint",
+      "status": "ok",
+      "input_tokens": 22,
+      "output_tokens": 43,
+      "cached_input_tokens": 0,
+      "latency_ms": 0.009672999965459894,
+      "provenance": "simulated"
+    }
+  ],
+  "policy_events": [
+    {
+      "stage": "request",
+      "action": "allow",
+      "policy_version": "1",
+      "bundle_hash": "086fe8a9df228d8d9f8554b29a383dacfb00afb9dbaccc7e1d30bb205c26625d",
+      "matched_rule_ids": [
+        "GCT-CONF-001"
+      ],
+      "effective_classification": "confidential"
+    },
+    {
+      "stage": "egress",
+      "action": "allow",
+      "policy_version": "1",
+      "bundle_hash": "086fe8a9df228d8d9f8554b29a383dacfb00afb9dbaccc7e1d30bb205c26625d",
+      "matched_rule_ids": [
+        "GCT-CONF-001"
+      ],
+      "effective_classification": "confidential"
+    }
+  ]
+}

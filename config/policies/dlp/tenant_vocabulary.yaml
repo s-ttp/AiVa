@@ -1,0 +1,63 @@
+# Tenant vocabulary that is never a personal name (ADR-0011, amendments 2026-10-14).
+# Presidio's English NER sometimes tags organisation, plan and bundle names as PERSON ("GCT Oman",
+# "Prepaid Smart", "Hajj"). A PERSON span made entirely of tokens from these names is not reported; a
+# mixed span such as "Hajj Omar" stays flagged. Names follow the synthetic GCT world
+# (ml/src/aiva_ml/world/build.py). Kept outside `config/policies/*.yaml` so it is not a policy document.
+version: tenant-vocabulary-v2
+organisations:
+  - GCT Group
+  - GCT UAE
+  - GCT KSA
+  - GCT Qatar
+  - GCT Oman
+  - GCT Kuwait
+  - GCT Bahrain
+  - GCT Enterprise
+  - GCT Wholesale
+plans:
+  - Prepaid Smart
+  - Prepaid Plus
+  - Postpaid Freedom
+  - Postpaid Premium
+  - Youth Connect
+  - Senior Care
+  - Business Connect
+  - Business Elite
+  - Data SIM
+  - Visitor Line
+  - IoT Fleet
+bundles:
+  - Traveller
+  - Explorer
+  - Globe
+  - Business Roam
+  - Weekend Away
+  - Hajj and Umrah
+  - Gulf Hopper
+# Self-care app and portal labels. A PERSON span is dropped only when it lies inside one of these phrases
+# in the text ("choose Bill history"); the words never become vocabulary on their own, so "Ask Bill" and
+# "Bill Ahmed" stay flagged. Every label has at least two words. Labels match case-sensitively, exactly as
+# written: list each casing the app uses. In a label with a first name ("Bill"), any word that can also be
+# read as a verb is capitalised ("Bill Pay", "Bill Details", "Bill Shock"), so "Can Bill pay the invoice?"
+# never matches; text in another casing simply stays confidential. Never add a label that reads as an
+# action on a person ("Pay Bill" would hide "pay Bill tomorrow").
+ui_labels:
+  - Bill history
+  - Bill History
+  - Bill summary
+  - Bill Summary
+  - Bill payment
+  - Bill Payment
+  - Bill Pay
+  - Bill Details
+  - Bill Shock
+  - Bill and Payments
+  - My Plan
+  - Plan Details
+  - Change Plan
+  - Top Up
+  - Top Up History
+  - Auto Top Up
+  - Check Balance
+  - Data Balance
+  - Balance Transfer

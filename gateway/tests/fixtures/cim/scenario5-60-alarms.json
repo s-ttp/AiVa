@@ -1,0 +1,266 @@
+{
+ "source": "Endpoint A (enterprise-cim, s-ttp/aiva-cim-qwen3-4b@739f46e97fd5), scenario 5 at full size, 2026-10-15; usage reported by vLLM",
+ "provenance": "measured",
+ "cim_request": {
+  "context_profile": "network-alarm-correlation",
+  "evidence": [
+   {
+    "id": "noc/ALM-7790",
+    "text": "alarm_id: ALM-7790\nsite_id: RUH-0412\nraised_at: 2026-10-14T06:31:00Z\nseverity: major\ntext: Microwave hop MW-12 down"
+   },
+   {
+    "id": "noc/ALM-7795",
+    "text": "alarm_id: ALM-7795\nsite_id: RUH-0419\nraised_at: 2026-10-14T06:32:00Z\nseverity: major\ntext: Loss of synchronisation on MW-12 far end"
+   },
+   {
+    "id": "noc/ALM-7792",
+    "text": "alarm_id: ALM-7792\nsite_id: RUH-0412\nraised_at: 2026-10-14T06:33:00Z\nseverity: minor\ntext: Backhaul utilisation above 90 percent"
+   },
+   {
+    "id": "noc/ALM-7801",
+    "text": "alarm_id: ALM-7801\nsite_id: RUH-0419\nraised_at: 2026-10-14T06:34:30Z\nseverity: major\ntext: Cell RUH-0419-C3 out of service"
+   },
+   {
+    "id": "noc/ALM-7803",
+    "text": "alarm_id: ALM-7803\nsite_id: RUH-0412\nraised_at: 2026-10-14T06:36:10Z\nseverity: minor\ntext: Throughput degraded to 38.2 Mbps"
+   },
+   {
+    "id": "noc/ALM-7810",
+    "text": "alarm_id: ALM-7810\nsite_id: RUH-0433\nraised_at: 2026-10-14T06:40:00Z\nseverity: warning\ntext: Door open at cabinet"
+   },
+   {
+    "id": "noc/ALM-7812",
+    "text": "alarm_id: ALM-7812\nsite_id: RUH-0419\nraised_at: 2026-10-14T06:41:15Z\nseverity: critical\ntext: Site availability below 90 percent"
+   },
+   {
+    "id": "noc/ALM-7820",
+    "text": "alarm_id: ALM-7820\nsite_id: RUH-0450\nraised_at: 2026-10-14T06:45:00Z\nseverity: minor\ntext: Fan speed high"
+   },
+   {
+    "id": "noc/ALM-8000",
+    "text": "alarm_id: ALM-8000\nsite_id: RUH-0433\nraised_at: 2026-10-14T06:02:00Z\nseverity: minor\ntext: Rectifier module fault"
+   },
+   {
+    "id": "noc/ALM-8003",
+    "text": "alarm_id: ALM-8003\nsite_id: RUH-0450\nraised_at: 2026-10-14T06:09:13Z\nseverity: warning\ntext: License usage above 80 percent"
+   },
+   {
+    "id": "noc/ALM-8006",
+    "text": "alarm_id: ALM-8006\nsite_id: RUH-0461\nraised_at: 2026-10-14T06:16:26Z\nseverity: minor\ntext: Door open at cabinet"
+   },
+   {
+    "id": "noc/ALM-8009",
+    "text": "alarm_id: ALM-8009\nsite_id: JED-0107\nraised_at: 2026-10-14T06:23:39Z\nseverity: major\ntext: VSWR above threshold"
+   },
+   {
+    "id": "noc/ALM-8012",
+    "text": "alarm_id: ALM-8012\nsite_id: JED-0122\nraised_at: 2026-10-14T06:30:52Z\nseverity: minor\ntext: Fan speed high"
+   },
+   {
+    "id": "noc/ALM-8015",
+    "text": "alarm_id: ALM-8015\nsite_id: DMM-0233\nraised_at: 2026-10-14T06:37:05Z\nseverity: warning\ntext: License usage above 80 percent"
+   },
+   {
+    "id": "noc/ALM-8018",
+    "text": "alarm_id: ALM-8018\nsite_id: DMM-0241\nraised_at: 2026-10-14T06:44:18Z\nseverity: minor\ntext: GPS synchronisation degraded"
+   },
+   {
+    "id": "noc/ALM-8021",
+    "text": "alarm_id: ALM-8021\nsite_id: MED-0310\nraised_at: 2026-10-14T06:51:31Z\nseverity: major\ntext: VSWR above threshold"
+   },
+   {
+    "id": "noc/ALM-8024",
+    "text": "alarm_id: ALM-8024\nsite_id: TIF-0402\nraised_at: 2026-10-14T06:58:44Z\nseverity: minor\ntext: Rectifier module fault"
+   },
+   {
+    "id": "noc/ALM-8027",
+    "text": "alarm_id: ALM-8027\nsite_id: ABH-0518\nraised_at: 2026-10-14T06:07:57Z\nseverity: warning\ntext: Battery on discharge"
+   },
+   {
+    "id": "noc/ALM-8030",
+    "text": "alarm_id: ALM-8030\nsite_id: RUH-0433\nraised_at: 2026-10-14T06:14:10Z\nseverity: minor\ntext: Fan speed high"
+   },
+   {
+    "id": "noc/ALM-8033",
+    "text": "alarm_id: ALM-8033\nsite_id: RUH-0450\nraised_at: 2026-10-14T06:21:23Z\nseverity: major\ntext: Temperature above threshold"
+   },
+   {
+    "id": "noc/ALM-8036",
+    "text": "alarm_id: ALM-8036\nsite_id: RUH-0461\nraised_at: 2026-10-14T06:28:36Z\nseverity: minor\ntext: GPS synchronisation degraded"
+   },
+   {
+    "id": "noc/ALM-8039",
+    "text": "alarm_id: ALM-8039\nsite_id: JED-0107\nraised_at: 2026-10-14T06:35:49Z\nseverity: warning\ntext: Cell restart completed"
+   },
+   {
+    "id": "noc/ALM-8042",
+    "text": "alarm_id: ALM-8042\nsite_id: JED-0122\nraised_at: 2026-10-14T06:42:02Z\nseverity: minor\ntext: GPS synchronisation degraded"
+   },
+   {
+    "id": "noc/ALM-8045",
+    "text": "alarm_id: ALM-8045\nsite_id: DMM-0233\nraised_at: 2026-10-14T06:49:15Z\nseverity: major\ntext: License usage above 80 percent"
+   },
+   {
+    "id": "noc/ALM-8048",
+    "text": "alarm_id: ALM-8048\nsite_id: DMM-0241\nraised_at: 2026-10-14T06:56:28Z\nseverity: minor\ntext: Temperature above threshold"
+   },
+   {
+    "id": "noc/ALM-8051",
+    "text": "alarm_id: ALM-8051\nsite_id: MED-0310\nraised_at: 2026-10-14T06:05:41Z\nseverity: warning\ntext: Cell restart completed"
+   },
+   {
+    "id": "noc/ALM-8054",
+    "text": "alarm_id: ALM-8054\nsite_id: TIF-0402\nraised_at: 2026-10-14T06:12:54Z\nseverity: minor\ntext: Cell restart completed"
+   },
+   {
+    "id": "noc/ALM-8057",
+    "text": "alarm_id: ALM-8057\nsite_id: ABH-0518\nraised_at: 2026-10-14T06:19:07Z\nseverity: major\ntext: Fan speed high"
+   },
+   {
+    "id": "noc/ALM-8060",
+    "text": "alarm_id: ALM-8060\nsite_id: RUH-0433\nraised_at: 2026-10-14T06:26:20Z\nseverity: minor\ntext: Door open at cabinet"
+   },
+   {
+    "id": "noc/ALM-8063",
+    "text": "alarm_id: ALM-8063\nsite_id: RUH-0450\nraised_at: 2026-10-14T06:33:33Z\nseverity: warning\ntext: Transport link flap cleared"
+   },
+   {
+    "id": "noc/ALM-8066",
+    "text": "alarm_id: ALM-8066\nsite_id: RUH-0461\nraised_at: 2026-10-14T06:40:46Z\nseverity: minor\ntext: VSWR above threshold"
+   },
+   {
+    "id": "noc/ALM-8069",
+    "text": "alarm_id: ALM-8069\nsite_id: JED-0107\nraised_at: 2026-10-14T06:47:59Z\nseverity: major\ntext: License usage above 80 percent"
+   },
+   {
+    "id": "noc/ALM-8072",
+    "text": "alarm_id: ALM-8072\nsite_id: JED-0122\nraised_at: 2026-10-14T06:54:12Z\nseverity: minor\ntext: Fan speed high"
+   },
+   {
+    "id": "noc/ALM-8075",
+    "text": "alarm_id: ALM-8075\nsite_id: DMM-0233\nraised_at: 2026-10-14T06:03:25Z\nseverity: warning\ntext: VSWR above threshold"
+   },
+   {
+    "id": "noc/ALM-8078",
+    "text": "alarm_id: ALM-8078\nsite_id: DMM-0241\nraised_at: 2026-10-14T06:10:38Z\nseverity: minor\ntext: Door open at cabinet"
+   },
+   {
+    "id": "noc/ALM-8081",
+    "text": "alarm_id: ALM-8081\nsite_id: MED-0310\nraised_at: 2026-10-14T06:17:51Z\nseverity: major\ntext: Door open at cabinet"
+   },
+   {
+    "id": "noc/ALM-8084",
+    "text": "alarm_id: ALM-8084\nsite_id: TIF-0402\nraised_at: 2026-10-14T06:24:04Z\nseverity: minor\ntext: Battery on discharge"
+   },
+   {
+    "id": "noc/ALM-8087",
+    "text": "alarm_id: ALM-8087\nsite_id: ABH-0518\nraised_at: 2026-10-14T06:31:17Z\nseverity: warning\ntext: GPS synchronisation degraded"
+   },
+   {
+    "id": "noc/ALM-8090",
+    "text": "alarm_id: ALM-8090\nsite_id: RUH-0433\nraised_at: 2026-10-14T06:38:30Z\nseverity: minor\ntext: License usage above 80 percent"
+   },
+   {
+    "id": "noc/ALM-8093",
+    "text": "alarm_id: ALM-8093\nsite_id: RUH-0450\nraised_at: 2026-10-14T06:45:43Z\nseverity: major\ntext: Rectifier module fault"
+   },
+   {
+    "id": "noc/ALM-8096",
+    "text": "alarm_id: ALM-8096\nsite_id: RUH-0461\nraised_at: 2026-10-14T06:52:56Z\nseverity: minor\ntext: Fan speed high"
+   },
+   {
+    "id": "noc/ALM-8099",
+    "text": "alarm_id: ALM-8099\nsite_id: JED-0107\nraised_at: 2026-10-14T06:59:09Z\nseverity: warning\ntext: Battery on discharge"
+   },
+   {
+    "id": "noc/ALM-8102",
+    "text": "alarm_id: ALM-8102\nsite_id: JED-0122\nraised_at: 2026-10-14T06:08:22Z\nseverity: minor\ntext: Door open at cabinet"
+   },
+   {
+    "id": "noc/ALM-8105",
+    "text": "alarm_id: ALM-8105\nsite_id: DMM-0233\nraised_at: 2026-10-14T06:15:35Z\nseverity: major\ntext: Cell restart completed"
+   },
+   {
+    "id": "noc/ALM-8108",
+    "text": "alarm_id: ALM-8108\nsite_id: DMM-0241\nraised_at: 2026-10-14T06:22:48Z\nseverity: minor\ntext: VSWR above threshold"
+   },
+   {
+    "id": "noc/ALM-8111",
+    "text": "alarm_id: ALM-8111\nsite_id: MED-0310\nraised_at: 2026-10-14T06:29:01Z\nseverity: warning\ntext: Door open at cabinet"
+   },
+   {
+    "id": "noc/ALM-8114",
+    "text": "alarm_id: ALM-8114\nsite_id: TIF-0402\nraised_at: 2026-10-14T06:36:14Z\nseverity: minor\ntext: Rectifier module fault"
+   },
+   {
+    "id": "noc/ALM-8117",
+    "text": "alarm_id: ALM-8117\nsite_id: ABH-0518\nraised_at: 2026-10-14T06:43:27Z\nseverity: major\ntext: Rectifier module fault"
+   },
+   {
+    "id": "noc/ALM-8120",
+    "text": "alarm_id: ALM-8120\nsite_id: RUH-0433\nraised_at: 2026-10-14T06:50:40Z\nseverity: minor\ntext: Battery on discharge"
+   },
+   {
+    "id": "noc/ALM-8123",
+    "text": "alarm_id: ALM-8123\nsite_id: RUH-0450\nraised_at: 2026-10-14T06:57:53Z\nseverity: warning\ntext: Battery on discharge"
+   },
+   {
+    "id": "noc/ALM-8126",
+    "text": "alarm_id: ALM-8126\nsite_id: RUH-0461\nraised_at: 2026-10-14T06:06:06Z\nseverity: minor\ntext: License usage above 80 percent"
+   },
+   {
+    "id": "noc/ALM-8129",
+    "text": "alarm_id: ALM-8129\nsite_id: JED-0107\nraised_at: 2026-10-14T06:13:19Z\nseverity: major\ntext: Fan speed high"
+   },
+   {
+    "id": "noc/ALM-8132",
+    "text": "alarm_id: ALM-8132\nsite_id: JED-0122\nraised_at: 2026-10-14T06:20:32Z\nseverity: minor\ntext: Temperature above threshold"
+   },
+   {
+    "id": "noc/ALM-8135",
+    "text": "alarm_id: ALM-8135\nsite_id: DMM-0233\nraised_at: 2026-10-14T06:27:45Z\nseverity: warning\ntext: Door open at cabinet"
+   },
+   {
+    "id": "noc/ALM-8138",
+    "text": "alarm_id: ALM-8138\nsite_id: DMM-0241\nraised_at: 2026-10-14T06:34:58Z\nseverity: minor\ntext: Transport link flap cleared"
+   },
+   {
+    "id": "noc/ALM-8141",
+    "text": "alarm_id: ALM-8141\nsite_id: MED-0310\nraised_at: 2026-10-14T06:41:11Z\nseverity: major\ntext: Transport link flap cleared"
+   },
+   {
+    "id": "noc/ALM-8144",
+    "text": "alarm_id: ALM-8144\nsite_id: TIF-0402\nraised_at: 2026-10-14T06:48:24Z\nseverity: minor\ntext: Temperature above threshold"
+   },
+   {
+    "id": "noc/ALM-8147",
+    "text": "alarm_id: ALM-8147\nsite_id: ABH-0518\nraised_at: 2026-10-14T06:55:37Z\nseverity: warning\ntext: Rectifier module fault"
+   },
+   {
+    "id": "noc/ALM-8150",
+    "text": "alarm_id: ALM-8150\nsite_id: RUH-0433\nraised_at: 2026-10-14T06:04:50Z\nseverity: minor\ntext: Cell restart completed"
+   },
+   {
+    "id": "noc/ALM-8153",
+    "text": "alarm_id: ALM-8153\nsite_id: RUH-0450\nraised_at: 2026-10-14T06:11:03Z\nseverity: major\ntext: Temperature above threshold"
+   }
+  ],
+  "messages": [
+   {
+    "content": "Correlate the synthetic alarms from cell sites RUH-0412 and RUH-0419 in the last hour. Identify the probable root cause, list the correlated alarm_ids in time order, and say which alarms are unrelated.",
+    "role": "user"
+   }
+  ],
+  "required_fields": [
+   "alarm_id",
+   "site_id",
+   "raised_at",
+   "severity"
+  ],
+  "target_budget_tokens": 4000,
+  "task": "analysis"
+ },
+ "prompt_tokens": 4786,
+ "completion_tokens": 1731,
+ "finish_reason": "stop"
+}

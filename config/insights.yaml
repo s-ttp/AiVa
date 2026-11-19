@@ -1,0 +1,36 @@
+# AiVa Insights anomaly rules (LLD §21.9; ADR-0015). Alerts inform; they never replace the preflight
+# reservation or an enforced spend cap. The rules run on the hourly aggregates after each refresh and raise at
+# most one alert per rule, scope and UTC hour, written to the FinOps alert store. Quota threshold (80/95%) and
+# hard-cap alerts are raised by FinOps at reservation time (ADR-0008), not here.
+version: ins-2026.10.1
+anomaly_rules:
+  # Per application: tokens in the hour against the trailing hourly average.
+  token_spike:
+    enabled: true
+    baseline_hours: 24
+    multiplier: 3.0
+    min_tokens: 20000
+  # Per application: share of API spend on expensive models, against the trailing share.
+  expensive_model_share:
+    enabled: true
+    expensive_models: [claude-flagship]
+    baseline_hours: 24
+    min_increase: 0.25
+    min_spend_usd: "0.05"
+  # Per application: retried provider calls in the hour.
+  repeated_retries:
+    enabled: true
+    min_retries: 3
+    min_retry_rate: 0.2
+  # Per application: output tokens per input token in the hour.
+  high_output_ratio:
+    enabled: true
+    max_ratio: 4.0
+    min_requests: 5
+    min_output_tokens: 5000
+  # Per user (pseudonym): tokens in the hour against the median of the application's other users.
+  unusual_user_consumption:
+    enabled: true
+    multiplier: 5.0
+    min_tokens: 20000
+    min_peers: 3

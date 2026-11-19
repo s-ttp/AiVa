@@ -1,0 +1,42 @@
+[
+  {
+    "version": 4,
+    "status": "draft",
+    "bundle_hash": "4847b0e6d9e96aae60d77c393c5181bf90468b12d81a714efea397389c6eb99b",
+    "created_at": "2026-10-14T11:35:55.325482+00:00",
+    "created_by": "usr_15427478b0b965e7",
+    "published_at": null,
+    "published_by": null,
+    "notes": "Drop GCT-SEC-002"
+  },
+  {
+    "version": 3,
+    "status": "archived",
+    "bundle_hash": "d8ef815d092201f147a8bfb893d0e17fb386d701fb76e495df7bd3b26de8a7db",
+    "created_at": "2026-10-14T11:35:53.641974+00:00",
+    "created_by": "usr_15427478b0b965e7",
+    "published_at": "2026-10-14T11:35:53.694433+00:00",
+    "published_by": "usr_15427478b0b965e7",
+    "notes": "Add an approval rule for needs-approval requests"
+  },
+  {
+    "version": 2,
+    "status": "published",
+    "bundle_hash": "28a889a6e26a659a47bcaa49ba91e5937dd4245e219aa2fe521e0d835105f7b5",
+    "created_at": "2026-10-14T11:30:17.899148+00:00",
+    "created_by": "seed",
+    "published_at": "2026-10-14T11:35:55.311486+00:00",
+    "published_by": "usr_15427478b0b965e7",
+    "notes": "Seeded from config/policies"
+  },
+  {
+    "version": 1,
+    "status": "archived",
+    "bundle_hash": "086fe8a9df228d8d9f8554b29a383dacfb00afb9dbaccc7e1d30bb205c26625d",
+    "created_at": "2026-10-14T09:15:07.214108+00:00",
+    "created_by": "seed",
+    "published_at": "2026-10-14T09:15:07.214108+00:00",
+    "published_by": "seed",
+    "notes": "Seeded from config/policies"
+  }
+]

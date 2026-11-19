@@ -1,0 +1,305 @@
+{
+  "run_id": "run_01M4X3533C9BBY1RRPS6B8DJB8",
+  "trace_id": "86fdd593d9b02900ab197fee58914953",
+  "status": "approval_required",
+  "outcome": "approval_required",
+  "selected_model": null,
+  "execution_path": "none",
+  "cim_invoked": false,
+  "response": null,
+  "usage": {
+    "original_context_tokens": 19,
+    "constructed_context_tokens": 0,
+    "upstream_submitted_input_tokens": 0,
+    "upstream_output_tokens": 0,
+    "cached_input_tokens": 0,
+    "reasoning_tokens": 0,
+    "cim_input_tokens": 0,
+    "cim_output_tokens": 0,
+    "retry_tokens": 0,
+    "provenance": "measured"
+  },
+  "cost": {
+    "upstream_micros": 0,
+    "cim_micros": 0,
+    "baseline_micros": 0,
+    "gpu_estimated_micros": 0,
+    "total_api_micros": 0,
+    "currency": "USD",
+    "rate_card_version": "rc-2026-10-14",
+    "provenance": "measured"
+  },
+  "policy": {
+    "action": "approval_required",
+    "policy_version": "3",
+    "bundle_hash": "d8ef815d092201f147a8bfb893d0e17fb386d701fb76e495df7bd3b26de8a7db",
+    "matched_rule_ids": [
+      "GCT-E2E-APPROVAL",
+      "GCT-OUT-004"
+    ],
+    "declared_classification": null,
+    "effective_classification": "internal",
+    "allowed_models": [
+      "claude-flagship",
+      "deepseek-v4-1-flash",
+      "gct-qwen-finetuned",
+      "gemini-flash-lite"
+    ],
+    "denied_candidates": [],
+    "reasons": [
+      {
+        "rule_id": "GCT-E2E-APPROVAL",
+        "message": "Requests tagged needs-approval need an approver.",
+        "remediation": "Ask an approver to review the request in the AiVa Govern Approval Queue."
+      }
+    ]
+  },
+  "identity": {
+    "application_id": "gct-support-chatbot",
+    "identity_mode": "simulated",
+    "source_mode": "simulated",
+    "matched_network_id": "net-test-console"
+  },
+  "routing": null,
+  "cache": {
+    "checked": false,
+    "hit": false,
+    "cache_type": null,
+    "upstream_call": false
+  },
+  "cim": {
+    "state": "not-reached",
+    "message": "Not reached.",
+    "cim_revision": null,
+    "sufficiency": "not-applicable"
+  },
+  "budget": {
+    "reservation_id": null,
+    "reserved_micros": 0,
+    "committed_micros": 0,
+    "released_micros": 0,
+    "provenance": "measured"
+  },
+  "assurance": {
+    "passed": false,
+    "output_dlp": "not-run",
+    "checks": []
+  },
+  "approval": {
+    "approval_id": "apr_01M4X3533Q4WM25KXX401E6F2S",
+    "status": "pending",
+    "expires_at": "2026-10-15T11:35:53.719059Z",
+    "rule_ids": [
+      "GCT-E2E-APPROVAL"
+    ],
+    "satisfied_by": null
+  },
+  "data_designation": "synthetic",
+  "error": {
+    "code": "APPROVAL_REQUIRED",
+    "message": "Approval required.",
+    "remediation": "An approver must review this request in the AiVa Govern approval queue.",
+    "rule_ids": [
+      "GCT-E2E-APPROVAL"
+    ],
+    "retryable": false,
+    "run_id": "run_01M4X3533C9BBY1RRPS6B8DJB8",
+    "details": {}
+  },
+  "trace": [
+    {
+      "span_id": "53169645690a1e45",
+      "parent_span_id": null,
+      "name": "aiva.chat",
+      "status": "unset",
+      "started_at": "2026-10-14T11:35:53.709451Z",
+      "duration_ms": 10.083102,
+      "attributes": {
+        "aiva.run_id": "run_01M4X3533C9BBY1RRPS6B8DJB8",
+        "aiva.status": "approval_required",
+        "aiva.execution_path": "none"
+      }
+    },
+    {
+      "span_id": "b3ea48cd195cb869",
+      "parent_span_id": "53169645690a1e45",
+      "name": "ingress",
+      "status": "executed",
+      "started_at": "2026-10-14T11:35:53.709543Z",
+      "duration_ms": 0.036091,
+      "attributes": {
+        "aiva.stage": "ingress",
+        "aiva.stage.status": "executed",
+        "aiva.application_id": "gct-support-chatbot",
+        "aiva.identity_mode": "simulated",
+        "aiva.source_mode": "simulated",
+        "aiva.message_count": 1,
+        "aiva.evidence_count": 0,
+        "aiva.original_context_tokens": 19,
+        "aiva.scenario_id": "customer-support"
+      }
+    },
+    {
+      "span_id": "1b88ce4724c6e577",
+      "parent_span_id": "53169645690a1e45",
+      "name": "policy",
+      "status": "executed",
+      "started_at": "2026-10-14T11:35:53.709618Z",
+      "duration_ms": 9.537896,
+      "attributes": {
+        "aiva.stage": "policy",
+        "aiva.stage.status": "executed",
+        "aiva.dlp.finding_types": [],
+        "aiva.dlp.scanner_version": "presidio-2.2.364+en_core_web_md-3.8.0+telecom-v1+ner-filter-v2+injection-heuristics-v2",
+        "aiva.dlp.injection_detected": false,
+        "aiva.dlp.evidence_injection_indicators": [],
+        "aiva.stage.halted": "Approval required"
+      }
+    },
+    {
+      "span_id": "c66a71ebe285f95e",
+      "parent_span_id": "53169645690a1e45",
+      "name": "cache",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719245Z",
+      "duration_ms": 0.016154,
+      "attributes": {
+        "aiva.stage": "cache",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "848f60371453ec84",
+      "parent_span_id": "53169645690a1e45",
+      "name": "rlcd1",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719284Z",
+      "duration_ms": 0.009363,
+      "attributes": {
+        "aiva.stage": "rlcd1",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "90f9807dd46fcafe",
+      "parent_span_id": "53169645690a1e45",
+      "name": "retrieval",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719311Z",
+      "duration_ms": 0.007685,
+      "attributes": {
+        "aiva.stage": "retrieval",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "3afc94394175fee0",
+      "parent_span_id": "53169645690a1e45",
+      "name": "cim",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719334Z",
+      "duration_ms": 0.007049,
+      "attributes": {
+        "aiva.stage": "cim",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "f664ffc6b5cfb603",
+      "parent_span_id": "53169645690a1e45",
+      "name": "context_guard",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719355Z",
+      "duration_ms": 0.006536,
+      "attributes": {
+        "aiva.stage": "context_guard",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "58b0502e612afcc8",
+      "parent_span_id": "53169645690a1e45",
+      "name": "rlcd2",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719375Z",
+      "duration_ms": 0.006329,
+      "attributes": {
+        "aiva.stage": "rlcd2",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "f45098af63cd0b8f",
+      "parent_span_id": "53169645690a1e45",
+      "name": "quota",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719404Z",
+      "duration_ms": 0.005939,
+      "attributes": {
+        "aiva.stage": "quota",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "278241350109a80f",
+      "parent_span_id": "53169645690a1e45",
+      "name": "preflight",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719423Z",
+      "duration_ms": 0.00685,
+      "attributes": {
+        "aiva.stage": "preflight",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "a4d7af7846b4882b",
+      "parent_span_id": "53169645690a1e45",
+      "name": "inference",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719443Z",
+      "duration_ms": 0.007041,
+      "attributes": {
+        "aiva.stage": "inference",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "a8b92d8d18090b42",
+      "parent_span_id": "53169645690a1e45",
+      "name": "assurance",
+      "status": "skipped",
+      "started_at": "2026-10-14T11:35:53.719464Z",
+      "duration_ms": 0.006786,
+      "attributes": {
+        "aiva.stage": "assurance",
+        "aiva.stage.status": "skipped",
+        "aiva.stage.skip_reason": "Approval required"
+      }
+    },
+    {
+      "span_id": "8ec9b69bbd95e087",
+      "parent_span_id": "53169645690a1e45",
+      "name": "reconciliation",
+      "status": "executed",
+      "started_at": "2026-10-14T11:35:53.719501Z",
+      "duration_ms": 0.022901,
+      "attributes": {
+        "aiva.stage": "reconciliation",
+        "aiva.stage.status": "executed",
+        "aiva.reconciliation.api_cost_micros": 0,
+        "aiva.reconciliation.released_micros": 0,
+        "aiva.status": "approval_required"
+      }
+    }
+  ]
+}

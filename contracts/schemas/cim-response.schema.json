@@ -1,0 +1,107 @@
+{
+  "$defs": {
+    "CimMessage": {
+      "additionalProperties": false,
+      "properties": {
+        "content": {
+          "title": "Content",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "system",
+            "user",
+            "assistant",
+            "tool"
+          ],
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "content"
+      ],
+      "title": "CimMessage",
+      "type": "object"
+    },
+    "RequiredFact": {
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "title": "Field",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "field",
+        "value",
+        "source_id"
+      ],
+      "title": "RequiredFact",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "intent": {
+      "title": "Intent",
+      "type": "string"
+    },
+    "missing_fields": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Fields",
+      "type": "array"
+    },
+    "omitted_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Omitted Evidence Ids",
+      "type": "array"
+    },
+    "required_facts": {
+      "items": {
+        "$ref": "#/$defs/RequiredFact"
+      },
+      "title": "Required Facts",
+      "type": "array"
+    },
+    "selected_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Selected Evidence Ids",
+      "type": "array"
+    },
+    "self_reported_complete": {
+      "description": "The CIM's own claim. Never treated as verified; the Context Guard checks independently.",
+      "title": "Self Reported Complete",
+      "type": "boolean"
+    },
+    "upstream_messages": {
+      "items": {
+        "$ref": "#/$defs/CimMessage"
+      },
+      "title": "Upstream Messages",
+      "type": "array"
+    }
+  },
+  "required": [
+    "intent",
+    "upstream_messages",
+    "self_reported_complete"
+  ],
+  "title": "CimResponse",
+  "type": "object"
+}

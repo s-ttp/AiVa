@@ -1,0 +1,53 @@
+[project]
+name = "aiva-workspace"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+license = "Apache-2.0"
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["gateway"]
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+    "types-PyYAML",
+    "types-jsonschema",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "ASYNC", "S", "SIM", "RUF"]
+ignore = ["S101", "RUF012"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["aiva_gateway", "tests"]
+
+[tool.ruff.lint.per-file-ignores]
+"gateway/tests/**" = ["S", "B"]
+"gateway/migrations/**" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+mypy_path = "gateway/src"
+packages = ["aiva_gateway"]
+
+[[tool.mypy.overrides]]
+module = ["asyncpg.*", "opentelemetry.exporter.*", "onnxruntime.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["gateway/tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope = "session"

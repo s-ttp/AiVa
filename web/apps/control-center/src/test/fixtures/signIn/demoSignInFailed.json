@@ -1,0 +1,11 @@
+{
+    "error": {
+        "code": "DEMO_SIGN_IN_FAILED",
+        "message": "The passcode is not correct.",
+        "remediation": "Check the demo passcode with the demo owner.",
+        "rule_ids": [],
+        "retryable": false,
+        "run_id": null,
+        "details": {}
+    }
+}

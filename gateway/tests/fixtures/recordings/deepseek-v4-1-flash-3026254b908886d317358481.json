@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://router.huggingface.co/v1/chat/completions",
+    "body": {
+      "model": "deepseek-ai/DeepSeek-V4.1-Flash:deepinfra",
+      "stream": true,
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a short Python function that returns the synthetic GCT roaming surcharge in AED for a number of megabytes, at 0.05 AED per MB. Code only."
+        }
+      ],
+      "max_tokens": 400,
+      "stream_options": {
+        "include_usage": true
+      }
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "content_type": "text/event-stream; charset=utf-8",
+    "body": "data: {\"service_tier\":null,\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning_content\":null,\"tool_calls\":null},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"service_tier\":\"default\",\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning_content\":null,\"tool_calls\":null},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"service_tier\":\"default\",\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":null,\"content\":\"```\",\"reasoning_content\":null,\"tool_calls\":null},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"service_tier\":\"default\",\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":null,\"content\":\"python\\ndef gct_\",\"reasoning_content\":null,\"tool_calls\":null},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"service_tier\":\"default\",\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":null,\"content\":\"roaming_surcharge(m\",\"reasoning_content\":null,\"tool_calls\":null},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"service_tier\":\"default\",\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":null,\"content\":\"eg\",\"reasoning_content\":null,\"tool_calls\":null},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"service_tier\":\"default\",\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":null,\"content\":\"abytes):\\n    return megabytes\",\"reasoning_content\":null,\"tool_calls\":null},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"service_tier\":\"default\",\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":null,\"content\":\" * 0.05\\n\",\"reasoning_content\":null,\"tool_calls\":null},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"service_tier\":\"default\",\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":null,\"content\":\"```\",\"reasoning_content\":null,\"tool_calls\":null},\"logprobs\":null,\"finish_reason\":\"stop\"}],\"usage\":null}\n\ndata: {\"service_tier\":\"default\",\"id\":\"chatcmpl-RUYtSOjJKE0onmGtAnhrJdU5\",\"object\":\"chat.completion.chunk\",\"created\":1791971104,\"model\":\"deepseek-ai/DeepSeek-V4.1-Flash\",\"choices\":[],\"usage\":{\"prompt_tokens\":38,\"total_tokens\":65,\"completion_tokens\":27,\"estimated_cost\":0.00001666,\"prompt_tokens_details\":{\"cached_tokens\":0,\"cache_write_tokens\":null},\"completion_tokens_details\":{\"reasoning_tokens\":0}}}\n\ndata: [DONE]\n\n"
+  }
+}

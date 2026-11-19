@@ -1,0 +1,11 @@
+# Credentials or secrets in a prompt are never forwarded anywhere (LLD §7 prompt/response domain).
+policy_id: GCT-SEC-002
+title: Block prompts that contain secrets or credentials
+priority: 990
+match:
+  dlp_findings_any: [SECRET, PRIVATE_KEY]
+enforce:
+  action: deny
+  reason: The request contains a credential or secret.
+  remediation: Remove credentials, keys and tokens from the prompt and resubmit.
+  audit_level: enhanced

@@ -1,0 +1,297 @@
+{
+  "run": {
+    "run_id": "run_01M4Z3FWDAE0E20RKR9A30KGBT",
+    "trace_id": "e00615cd176cb1aeb93c5a98b9151966",
+    "tenant_id": "gct",
+    "application_id": "gct-fraud-investigator",
+    "department_id": "fraud-risk",
+    "cost_center_id": "cc-fraud",
+    "principal_kind": "user",
+    "principal": "usr_f60efc7504e3e124",
+    "identity_mode": "simulated",
+    "source_mode": "simulated",
+    "source_policy": "net-fraud-soc",
+    "scenario_id": "fraud-management",
+    "status": "completed",
+    "outcome": "success",
+    "execution_path": "sovereign-direct",
+    "cim_state": "bypassed-policy",
+    "cache_hit": false,
+    "selected_model": "gct-qwen-finetuned",
+    "effective_classification": "confidential",
+    "policy_version": "1",
+    "environment": "local",
+    "data_designation": "synthetic",
+    "provenance": "simulated",
+    "error_code": null,
+    "created_at": "2026-10-15T06:20:16.170668Z",
+    "completed_at": "2026-10-15T06:20:16.200287Z",
+    "latency_ms": 29.823620000570372
+  },
+  "classification": {
+    "taxonomy_version": "tax-2026.10.1",
+    "classifier_version": "heuristic-v0",
+    "business_function": "fraud",
+    "predicted_task_category": "analysis",
+    "intent": "sim-swap",
+    "predicted_complexity": "simple",
+    "sensitivity": "confidential",
+    "language": "english",
+    "confidence": null,
+    "review_needed": false,
+    "reviewed": false,
+    "reported_task_category": "analysis",
+    "reported_complexity": "simple",
+    "status": "classified"
+  },
+  "usage": {
+    "request_count": 1,
+    "provenance": "synthetic",
+    "tokens": {
+      "input_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 111,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 111,
+        "provenance": "simulated"
+      },
+      "output_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 43,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 43,
+        "provenance": "simulated"
+      },
+      "upstream_input_tokens": 111,
+      "upstream_output_tokens": 43,
+      "cim_input_tokens": 0,
+      "cim_output_tokens": 0,
+      "retry_input_tokens": 0,
+      "retry_output_tokens": 0,
+      "baseline_input_tokens": 0,
+      "baseline_output_tokens": 0,
+      "other_input_tokens": 0,
+      "other_output_tokens": 0,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "spend": {
+      "api": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 0,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 0,
+        "provenance": "synthetic"
+      },
+      "upstream_micros": 0,
+      "cim_micros": 0,
+      "retry_micros": 0,
+      "baseline_comparison_micros": 0,
+      "adjustment_micros": 0,
+      "tool_call_micros": 0,
+      "other_micros": 0,
+      "gpu_estimated": {
+        "value": 0,
+        "provenance": "synthetic"
+      }
+    },
+    "avoided": {
+      "calls": 0,
+      "tokens": 0,
+      "micros": 0,
+      "provenance": "synthetic"
+    }
+  },
+  "attempts": [
+    {
+      "attempt_id": "att_01M4Z3FWE0FVJGN9H42K0K9PPH",
+      "stage": "upstream",
+      "model_id": "gct-qwen-finetuned",
+      "provider": "hf-endpoint",
+      "provider_model_version": "9216db5781bf21249d130ec9da846c4624c16137",
+      "status": "ok",
+      "retry_of": null,
+      "input_tokens": 111,
+      "output_tokens": 43,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0,
+      "latency_ms": 0.008408000212511979,
+      "provenance": "simulated",
+      "error_code": null,
+      "charges": [
+        {
+          "ledger_id": "led_01M4Z3FWEE948JTWC0228SD2PV",
+          "attempt_id": "att_01M4Z3FWE0FVJGN9H42K0K9PPH",
+          "charge_type": "upstream_inference",
+          "amount_micros": 0,
+          "provenance": "simulated",
+          "rate_card_version": "rc-2026-10-14",
+          "created_at": "2026-10-15T06:20:16.210053Z"
+        }
+      ]
+    }
+  ],
+  "other_charges": [],
+  "policy_events": [
+    {
+      "stage": "request",
+      "action": "allow",
+      "policy_version": "1",
+      "bundle_hash": "2732ba762cda07130c5942cd8281b4c06e6207eb02942a36f639d25dfa2bf16d",
+      "matched_rule_ids": [
+        "GCT-CONF-001"
+      ],
+      "effective_classification": "confidential",
+      "egress_model_id": null,
+      "tool_id": null
+    },
+    {
+      "stage": "egress",
+      "action": "allow",
+      "policy_version": "1",
+      "bundle_hash": "2732ba762cda07130c5942cd8281b4c06e6207eb02942a36f639d25dfa2bf16d",
+      "matched_rule_ids": [
+        "GCT-CONF-001"
+      ],
+      "effective_classification": "confidential",
+      "egress_model_id": "gct-qwen-finetuned",
+      "tool_id": null
+    }
+  ],
+  "optimization": {
+    "cache_type": "exact",
+    "cache_hit": false,
+    "context_strategy": "full",
+    "context_tokens_before": 66,
+    "context_tokens_after": 111,
+    "removed_passages": 0,
+    "preservation_result": "not-applicable",
+    "avoided_call": false,
+    "modeled_avoided_tokens": 0,
+    "modeled_avoided_micros": 0
+  },
+  "validation": {
+    "assurance_passed": true,
+    "output_dlp": "clean",
+    "checks": [
+      "non-empty-output",
+      "output-dlp"
+    ],
+    "context_validation": null,
+    "missing_fields": []
+  },
+  "reservation": {
+    "reservation_id": "res_01M4Z3FWDTD57XKQCW3A862TWJ",
+    "estimate_micros": 0,
+    "actual_micros": 0,
+    "released_micros": 0,
+    "status": "settled",
+    "provenance": "measured"
+  },
+  "spans": [
+    {
+      "name": "aiva.chat",
+      "status": "unset",
+      "started_at": "2026-10-15T06:20:16.170805Z",
+      "duration_ms": 29.516941,
+      "skip_reason": null
+    },
+    {
+      "name": "ingress",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.170849Z",
+      "duration_ms": 0.023743,
+      "skip_reason": null
+    },
+    {
+      "name": "policy",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.170898Z",
+      "duration_ms": 14.804503,
+      "skip_reason": null
+    },
+    {
+      "name": "cache",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.185773Z",
+      "duration_ms": 0.390165,
+      "skip_reason": null
+    },
+    {
+      "name": "rlcd1",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.186208Z",
+      "duration_ms": 0.038691,
+      "skip_reason": null
+    },
+    {
+      "name": "retrieval",
+      "status": "skipped",
+      "started_at": "2026-10-15T06:20:16.186282Z",
+      "duration_ms": 0.010437,
+      "skip_reason": "CIM bypassed by mandatory sovereignty policy"
+    },
+    {
+      "name": "cim",
+      "status": "skipped",
+      "started_at": "2026-10-15T06:20:16.186312Z",
+      "duration_ms": 0.008009,
+      "skip_reason": "CIM bypassed by mandatory sovereignty policy"
+    },
+    {
+      "name": "context_guard",
+      "status": "skipped",
+      "started_at": "2026-10-15T06:20:16.186337Z",
+      "duration_ms": 0.007782,
+      "skip_reason": "CIM bypassed by mandatory sovereignty policy"
+    },
+    {
+      "name": "rlcd2",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.186401Z",
+      "duration_ms": 0.054119,
+      "skip_reason": null
+    },
+    {
+      "name": "quota",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.186480Z",
+      "duration_ms": 3.726333,
+      "skip_reason": null
+    },
+    {
+      "name": "preflight",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.190266Z",
+      "duration_ms": 2.567929,
+      "skip_reason": null
+    },
+    {
+      "name": "inference",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.192883Z",
+      "duration_ms": 0.08701,
+      "skip_reason": null
+    },
+    {
+      "name": "assurance",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.193000Z",
+      "duration_ms": 6.17443,
+      "skip_reason": null
+    },
+    {
+      "name": "reconciliation",
+      "status": "executed",
+      "started_at": "2026-10-15T06:20:16.199232Z",
+      "duration_ms": 1.071909,
+      "skip_reason": null
+    }
+  ]
+}

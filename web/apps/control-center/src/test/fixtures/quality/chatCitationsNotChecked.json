@@ -1,0 +1,312 @@
+{
+    "run_id": "run_01M523QATKWTA8K26VDMJEXN8H",
+    "trace_id": "a57a824adcca0c450577b27f6f3d8b88",
+    "status": "blocked",
+    "outcome": "policy_denied",
+    "selected_model": null,
+    "execution_path": "none",
+    "cim_invoked": false,
+    "response": null,
+    "usage": {
+        "original_context_tokens": 22,
+        "constructed_context_tokens": 0,
+        "upstream_submitted_input_tokens": 0,
+        "upstream_output_tokens": 0,
+        "cached_input_tokens": 0,
+        "reasoning_tokens": 0,
+        "cim_input_tokens": 0,
+        "cim_output_tokens": 0,
+        "retry_tokens": 0,
+        "provenance": "measured"
+    },
+    "cost": {
+        "upstream_micros": 0,
+        "cim_micros": 0,
+        "baseline_micros": 0,
+        "gpu_estimated_micros": 0,
+        "gpu_estimated_provenance": null,
+        "total_api_micros": 0,
+        "currency": "USD",
+        "rate_card_version": "rc-2026-10-15",
+        "provenance": "measured"
+    },
+    "policy": {
+        "action": "deny",
+        "policy_version": "32",
+        "bundle_hash": "1e3379409045ac1e08adee0f39cc1a76e7b145047a2d8cb756a781fe751daa88",
+        "matched_rule_ids": [
+            "GCT-INJ-003"
+        ],
+        "declared_classification": "internal",
+        "effective_classification": "internal",
+        "allowed_models": [
+            "claude-flagship",
+            "deepseek-v4-1-flash",
+            "gct-qwen-finetuned",
+            "gemini-flash-lite"
+        ],
+        "denied_candidates": [],
+        "reasons": [
+            {
+                "rule_id": "GCT-INJ-003",
+                "message": "The request matched prompt-injection or exfiltration indicators.",
+                "remediation": "Rephrase the request without instructions that override system or policy behaviour."
+            }
+        ]
+    },
+    "identity": {
+        "application_id": "gct-knowledge-portal",
+        "identity_mode": "simulated",
+        "source_mode": "simulated",
+        "matched_network_id": "net-test-console"
+    },
+    "routing": null,
+    "cache": {
+        "checked": false,
+        "hit": false,
+        "cache_type": null,
+        "upstream_call": false
+    },
+    "cim": {
+        "state": "not-reached",
+        "message": "Not reached.",
+        "cim_revision": null,
+        "sufficiency": "not-applicable"
+    },
+    "budget": {
+        "reservation_id": null,
+        "reserved_micros": 0,
+        "committed_micros": 0,
+        "released_micros": 0,
+        "provenance": "measured"
+    },
+    "assurance": {
+        "passed": false,
+        "output_dlp": "not-run",
+        "checks": [],
+        "answer_citations": {
+            "status": "not_checked",
+            "cited": 0,
+            "unresolved": 0,
+            "unresolved_refs": []
+        }
+    },
+    "approval": {
+        "approval_id": null,
+        "status": null,
+        "expires_at": null,
+        "rule_ids": [],
+        "satisfied_by": null
+    },
+    "data_designation": "synthetic",
+    "execution_mode": "simulated",
+    "error": {
+        "code": "POLICY_DENIED",
+        "message": "Blocked by AI policy.",
+        "remediation": "Rephrase the request without instructions that override system or policy behaviour.",
+        "rule_ids": [
+            "GCT-INJ-003"
+        ],
+        "retryable": false,
+        "run_id": "run_01M523QATKWTA8K26VDMJEXN8H",
+        "details": {}
+    },
+    "trace": [
+        {
+            "span_id": "537ece8b27c7d903",
+            "parent_span_id": null,
+            "name": "aiva.chat",
+            "status": "unset",
+            "started_at": "2026-10-16T10:22:03.603807Z",
+            "duration_ms": 13.685343,
+            "attributes": {
+                "aiva.run_id": "run_01M523QATKWTA8K26VDMJEXN8H",
+                "aiva.status": "blocked",
+                "aiva.execution_path": "none"
+            }
+        },
+        {
+            "span_id": "06ba89420fa572d9",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "ingress",
+            "status": "executed",
+            "started_at": "2026-10-16T10:22:03.603879Z",
+            "duration_ms": 0.041781,
+            "attributes": {
+                "aiva.stage": "ingress",
+                "aiva.stage.status": "executed",
+                "aiva.execution_mode": "simulated",
+                "aiva.execution_mode.per_run_replay": false,
+                "aiva.application_id": "gct-knowledge-portal",
+                "aiva.identity_mode": "simulated",
+                "aiva.source_mode": "simulated",
+                "aiva.message_count": 1,
+                "aiva.evidence_count": 0,
+                "aiva.original_context_tokens": 22,
+                "aiva.scenario_id": "security-exfiltration"
+            }
+        },
+        {
+            "span_id": "15b3e34cc633600f",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "policy",
+            "status": "executed",
+            "started_at": "2026-10-16T10:22:03.603955Z",
+            "duration_ms": 12.798241,
+            "attributes": {
+                "aiva.stage": "policy",
+                "aiva.stage.status": "executed",
+                "aiva.dlp.finding_types": [],
+                "aiva.dlp.scanner_version": "presidio-2.2.364+en_core_web_md-3.8.0+telecom-v1+ner-filter-v3+tenant-vocabulary-v2+injection-heuristics-v2",
+                "aiva.dlp.injection_detected": true,
+                "aiva.dlp.evidence_injection_indicators": [],
+                "aiva.stage.halted": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "cf03ab5f461e604f",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "cache",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617148Z",
+            "duration_ms": 0.027233,
+            "attributes": {
+                "aiva.stage": "cache",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "31bef51b21eacd58",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "rlcd1",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617211Z",
+            "duration_ms": 0.011469,
+            "attributes": {
+                "aiva.stage": "rlcd1",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "e250a80f826bd3fc",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "retrieval",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617245Z",
+            "duration_ms": 0.009047,
+            "attributes": {
+                "aiva.stage": "retrieval",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "1d9bbe3ef2617483",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "cim",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617273Z",
+            "duration_ms": 0.008262,
+            "attributes": {
+                "aiva.stage": "cim",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "f44d4e7902317368",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "context_guard",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617299Z",
+            "duration_ms": 0.008912,
+            "attributes": {
+                "aiva.stage": "context_guard",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "08f91f97fdb8ff67",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "rlcd2",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617325Z",
+            "duration_ms": 0.00777,
+            "attributes": {
+                "aiva.stage": "rlcd2",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "8285784e3eb62b63",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "quota",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617352Z",
+            "duration_ms": 0.00734,
+            "attributes": {
+                "aiva.stage": "quota",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "151c18fff0e92cf2",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "preflight",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617375Z",
+            "duration_ms": 0.007523,
+            "attributes": {
+                "aiva.stage": "preflight",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "732621395a543bdc",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "inference",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617398Z",
+            "duration_ms": 0.006639,
+            "attributes": {
+                "aiva.stage": "inference",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "d3f36d787eb92fe1",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "assurance",
+            "status": "skipped",
+            "started_at": "2026-10-16T10:22:03.617419Z",
+            "duration_ms": 0.00658,
+            "attributes": {
+                "aiva.stage": "assurance",
+                "aiva.stage.status": "skipped",
+                "aiva.stage.skip_reason": "Blocked by AI policy"
+            }
+        },
+        {
+            "span_id": "e9b2ae39dd18dc19",
+            "parent_span_id": "537ece8b27c7d903",
+            "name": "reconciliation",
+            "status": "executed",
+            "started_at": "2026-10-16T10:22:03.617449Z",
+            "duration_ms": 0.028148,
+            "attributes": {
+                "aiva.stage": "reconciliation",
+                "aiva.stage.status": "executed",
+                "aiva.reconciliation.api_cost_micros": 0,
+                "aiva.reconciliation.released_micros": 0,
+                "aiva.status": "blocked"
+            }
+        }
+    ]
+}

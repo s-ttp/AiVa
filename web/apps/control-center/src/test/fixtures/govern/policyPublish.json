@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "bundle_hash": "d8ef815d092201f147a8bfb893d0e17fb386d701fb76e495df7bd3b26de8a7db",
+  "published_at": "2026-10-14T11:35:53.694433+00:00",
+  "kind": "publish",
+  "previous_version": 2,
+  "previous_bundle_hash": "28a889a6e26a659a47bcaa49ba91e5937dd4245e219aa2fe521e0d835105f7b5",
+  "changes": [
+    {
+      "target": "policy",
+      "target_id": "GCT-E2E-APPROVAL",
+      "change": "added",
+      "high_impact": false,
+      "summary": []
+    }
+  ],
+  "details": {
+    "high_impact": false,
+    "approval_note": "Adds an approval step; restricts only."
+  }
+}

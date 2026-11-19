@@ -1,0 +1,484 @@
+{
+    "metadata": {
+        "window": {
+            "from": "2026-01-01",
+            "to": "2026-01-02",
+            "timezone": "UTC"
+        },
+        "filters": {},
+        "scope": {
+            "level": "tenant",
+            "department_id": null,
+            "application_ids": [],
+            "user_identities": "pseudonymous",
+            "users_visible": true
+        },
+        "generated_at": "2026-10-16T10:21:48.748221Z",
+        "aggregates_as_of": null,
+        "granularity": "hour",
+        "taxonomy_versions": [],
+        "classifier_versions": [],
+        "rate_card_versions": [],
+        "pricing_snapshot": "rc-2026-10-15",
+        "data_designation": "none",
+        "attribution": "Usage is attributed to the UTC hour its run started."
+    },
+    "computed_at": "2026-10-16T10:21:48.748221Z",
+    "group_by": "application",
+    "totals": {
+        "request_count": 0,
+        "assurance": {
+            "checked_runs": 0,
+            "passed": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+            },
+            "output_dlp": {
+                "clean": 0,
+                "redacted": 0,
+                "blocked": 0,
+                "not_run": 0
+            },
+            "escalations": [],
+            "checks": [],
+            "provenance": "measured"
+        },
+        "sufficiency": {
+            "runs": 0,
+            "cim_invoked_runs": 0,
+            "verified": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+            },
+            "cim_selected": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+            },
+            "fallback": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+            },
+            "bypassed_by_policy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+            },
+            "skipped_sufficient": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+            },
+            "provenance": "measured"
+        },
+        "guard": {
+            "packages": 0,
+            "passed": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+            },
+            "relevance_unverified_passages": 0,
+            "recall_floor_added_runs": 0,
+            "failures": [],
+            "provenance": "measured"
+        },
+        "evidence_coverage": {
+            "status": "not_measured",
+            "measured_runs": 0,
+            "mean": null,
+            "with_unresolved": null,
+            "provenance": null
+        }
+    },
+    "rows": [],
+    "trend": [
+        {
+            "bucket": "2026-01-01T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T01:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T02:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T03:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T04:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T05:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T06:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T07:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T08:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T09:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T10:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T11:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T12:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T13:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T14:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T15:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T16:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T17:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T18:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T19:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T20:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T21:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T22:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-01T23:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T00:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T01:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T02:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T03:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T04:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T05:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T06:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T07:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T08:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T09:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T10:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T11:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T12:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T13:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T14:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T15:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T16:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T17:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T18:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T19:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T20:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T21:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T22:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        },
+        {
+            "bucket": "2026-01-02T23:00:00Z",
+            "request_count": 0,
+            "checked_runs": 0,
+            "passed_runs": 0,
+            "cim_invoked_runs": 0,
+            "verified_runs": 0
+        }
+    ]
+}

@@ -1,0 +1,951 @@
+{
+  "metadata": {
+    "window": {
+      "from": "2026-10-09",
+      "to": "2026-10-15",
+      "timezone": "UTC"
+    },
+    "filters": {},
+    "scope": {
+      "level": "tenant",
+      "department_id": null,
+      "application_ids": [],
+      "user_identities": "pseudonymous"
+    },
+    "generated_at": "2026-10-15T06:20:38.918627Z",
+    "aggregates_as_of": "2026-10-15T06:20:23.716343Z",
+    "granularity": "day",
+    "taxonomy_versions": [
+      "tax-2026.10.1"
+    ],
+    "classifier_versions": [
+      "heuristic-v0"
+    ],
+    "rate_card_versions": [
+      "rc-2026-10-14"
+    ],
+    "pricing_snapshot": "rc-2026-10-14",
+    "data_designation": "synthetic",
+    "attribution": "Usage is attributed to the UTC hour its run started."
+  },
+  "group_by": "model",
+  "rows": [
+    {
+      "group": "claude-flagship",
+      "label": "Claude Opus 5.5",
+      "request_count": 8,
+      "cim_invoked": 8,
+      "cim_bypassed_by_policy": 0,
+      "cim_skipped": 0,
+      "local_fast": 0,
+      "sovereign_direct": 0,
+      "cache_hits": 0,
+      "context_tokens_before": 163,
+      "context_tokens_after": 163,
+      "context_reduction": {
+        "numerator": 0,
+        "denominator": 163,
+        "value": 0.0
+      },
+      "packing": {
+        "packed_runs": 8,
+        "passages_retrieved": 0,
+        "passages_kept": 0,
+        "model_input_tokens": {
+          "measured": 0,
+          "estimated": 0,
+          "simulated": 142,
+          "replayed": 0,
+          "synthetic": 0,
+          "total": 142,
+          "provenance": "simulated"
+        },
+        "provenance": "synthetic"
+      },
+      "cached_input_tokens": 0,
+      "avoided": {
+        "calls": 0,
+        "tokens": 0,
+        "micros": 0,
+        "provenance": "synthetic"
+      },
+      "cim_overhead": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "api": {
+          "value": 0,
+          "provenance": "synthetic"
+        },
+        "gpu_estimated": {
+          "value": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "retries": {
+        "retries": 1,
+        "failed_attempts": 1,
+        "attempts": 20,
+        "tokens": 63,
+        "api": {
+          "value": 924,
+          "provenance": "simulated"
+        }
+      },
+      "latency": {
+        "average_attempt_ms": 0.05782670017542842,
+        "average_run_ms": 26.396643249995577,
+        "attempt_samples": 20
+      },
+      "savings": {
+        "frontier_model_id": "claude-flagship",
+        "pricing_snapshot": "rc-2026-10-14",
+        "quality_adjusted": false,
+        "steps": [
+          {
+            "step": "frontier_baseline",
+            "amount_micros": 7372,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cache",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "context",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "routing",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "prompt_cache",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cim_overhead",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "retries",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "tool_calls",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "adjustments",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "local_gpu",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "net",
+            "amount_micros": 7372,
+            "provenance": "simulated"
+          }
+        ],
+        "net_savings_micros": 0,
+        "measurement_cost": {
+          "value": 10096,
+          "provenance": "simulated"
+        },
+        "provenance": "simulated"
+      }
+    },
+    {
+      "group": "gemini-flash-lite",
+      "label": "Gemini Flash-Lite",
+      "request_count": 4,
+      "cim_invoked": 4,
+      "cim_bypassed_by_policy": 0,
+      "cim_skipped": 0,
+      "local_fast": 0,
+      "sovereign_direct": 0,
+      "cache_hits": 0,
+      "context_tokens_before": 83,
+      "context_tokens_after": 83,
+      "context_reduction": {
+        "numerator": 0,
+        "denominator": 83,
+        "value": 0.0
+      },
+      "packing": {
+        "packed_runs": 5,
+        "passages_retrieved": 0,
+        "passages_kept": 0,
+        "model_input_tokens": {
+          "measured": 0,
+          "estimated": 0,
+          "simulated": 61,
+          "replayed": 0,
+          "synthetic": 0,
+          "total": 61,
+          "provenance": "simulated"
+        },
+        "provenance": "synthetic"
+      },
+      "cached_input_tokens": 0,
+      "avoided": {
+        "calls": 0,
+        "tokens": 0,
+        "micros": 0,
+        "provenance": "synthetic"
+      },
+      "cim_overhead": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "api": {
+          "value": 0,
+          "provenance": "synthetic"
+        },
+        "gpu_estimated": {
+          "value": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "retries": {
+        "retries": 2,
+        "failed_attempts": 2,
+        "attempts": 6,
+        "tokens": 127,
+        "api": {
+          "value": 229,
+          "provenance": "simulated"
+        }
+      },
+      "latency": {
+        "average_attempt_ms": 0.33757349995115266,
+        "average_run_ms": 29.178281750319,
+        "attempt_samples": 6
+      },
+      "savings": {
+        "frontier_model_id": "claude-flagship",
+        "pricing_snapshot": "rc-2026-10-14",
+        "quality_adjusted": false,
+        "steps": [
+          {
+            "step": "frontier_baseline",
+            "amount_micros": 3772,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cache",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "context",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "routing",
+            "amount_micros": -3315,
+            "provenance": "simulated"
+          },
+          {
+            "step": "prompt_cache",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cim_overhead",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "retries",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "tool_calls",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "adjustments",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "local_gpu",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "net",
+            "amount_micros": 457,
+            "provenance": "simulated"
+          }
+        ],
+        "net_savings_micros": 3315,
+        "measurement_cost": {
+          "value": 0,
+          "provenance": "simulated"
+        },
+        "provenance": "simulated"
+      }
+    },
+    {
+      "group": "deepseek-v4-1-flash",
+      "label": "DeepSeek V4.1 Flash",
+      "request_count": 6,
+      "cim_invoked": 6,
+      "cim_bypassed_by_policy": 0,
+      "cim_skipped": 0,
+      "local_fast": 0,
+      "sovereign_direct": 0,
+      "cache_hits": 0,
+      "context_tokens_before": 118,
+      "context_tokens_after": 118,
+      "context_reduction": {
+        "numerator": 0,
+        "denominator": 118,
+        "value": 0.0
+      },
+      "packing": {
+        "packed_runs": 7,
+        "passages_retrieved": 0,
+        "passages_kept": 0,
+        "model_input_tokens": {
+          "measured": 0,
+          "estimated": 0,
+          "simulated": 116,
+          "replayed": 0,
+          "synthetic": 0,
+          "total": 116,
+          "provenance": "simulated"
+        },
+        "provenance": "synthetic"
+      },
+      "cached_input_tokens": 0,
+      "avoided": {
+        "calls": 0,
+        "tokens": 0,
+        "micros": 0,
+        "provenance": "synthetic"
+      },
+      "cim_overhead": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "api": {
+          "value": 0,
+          "provenance": "synthetic"
+        },
+        "gpu_estimated": {
+          "value": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "retries": {
+        "retries": 1,
+        "failed_attempts": 1,
+        "attempts": 7,
+        "tokens": 64,
+        "api": {
+          "value": 30,
+          "provenance": "simulated"
+        }
+      },
+      "latency": {
+        "average_attempt_ms": 0.14858514295753725,
+        "average_run_ms": 28.113925833470905,
+        "attempt_samples": 7
+      },
+      "savings": {
+        "frontier_model_id": "claude-flagship",
+        "pricing_snapshot": "rc-2026-10-14",
+        "quality_adjusted": false,
+        "steps": [
+          {
+            "step": "frontier_baseline",
+            "amount_micros": 5632,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cache",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "context",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "routing",
+            "amount_micros": -5452,
+            "provenance": "simulated"
+          },
+          {
+            "step": "prompt_cache",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cim_overhead",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "retries",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "tool_calls",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "adjustments",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "local_gpu",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "net",
+            "amount_micros": 180,
+            "provenance": "simulated"
+          }
+        ],
+        "net_savings_micros": 5452,
+        "measurement_cost": {
+          "value": 0,
+          "provenance": "simulated"
+        },
+        "provenance": "simulated"
+      }
+    },
+    {
+      "group": "enterprise-cim",
+      "label": "Enterprise CIM",
+      "request_count": 0,
+      "cim_invoked": 0,
+      "cim_bypassed_by_policy": 0,
+      "cim_skipped": 0,
+      "local_fast": 0,
+      "sovereign_direct": 0,
+      "cache_hits": 0,
+      "context_tokens_before": 0,
+      "context_tokens_after": 0,
+      "context_reduction": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "packing": {
+        "packed_runs": 0,
+        "passages_retrieved": 0,
+        "passages_kept": 0,
+        "model_input_tokens": {
+          "measured": 0,
+          "estimated": 0,
+          "simulated": 0,
+          "replayed": 0,
+          "synthetic": 0,
+          "total": 0,
+          "provenance": "synthetic"
+        },
+        "provenance": "synthetic"
+      },
+      "cached_input_tokens": 0,
+      "avoided": {
+        "calls": 0,
+        "tokens": 0,
+        "micros": 0,
+        "provenance": "synthetic"
+      },
+      "cim_overhead": {
+        "input_tokens": 1431,
+        "output_tokens": 4247,
+        "api": {
+          "value": 0,
+          "provenance": "simulated"
+        },
+        "gpu_estimated": {
+          "value": 0,
+          "provenance": "simulated"
+        }
+      },
+      "retries": {
+        "retries": 0,
+        "failed_attempts": 0,
+        "attempts": 33,
+        "tokens": 0,
+        "api": {
+          "value": 0,
+          "provenance": "simulated"
+        }
+      },
+      "latency": {
+        "average_attempt_ms": 0.08697869703389711,
+        "average_run_ms": null,
+        "attempt_samples": 33
+      },
+      "savings": {
+        "frontier_model_id": "claude-flagship",
+        "pricing_snapshot": "rc-2026-10-14",
+        "quality_adjusted": false,
+        "steps": [
+          {
+            "step": "frontier_baseline",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "cache",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "context",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "routing",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "prompt_cache",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "cim_overhead",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "retries",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "tool_calls",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "adjustments",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "local_gpu",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "net",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          }
+        ],
+        "net_savings_micros": 0,
+        "measurement_cost": {
+          "value": 0,
+          "provenance": "simulated"
+        },
+        "provenance": "simulated"
+      }
+    },
+    {
+      "group": "gct-qwen-finetuned",
+      "label": "GCT Sovereign Qwen",
+      "request_count": 40,
+      "cim_invoked": 15,
+      "cim_bypassed_by_policy": 6,
+      "cim_skipped": 19,
+      "local_fast": 19,
+      "sovereign_direct": 6,
+      "cache_hits": 0,
+      "context_tokens_before": 1761,
+      "context_tokens_after": 2511,
+      "context_reduction": {
+        "numerator": -750,
+        "denominator": 1761,
+        "value": -0.42589437819420783
+      },
+      "packing": {
+        "packed_runs": 19,
+        "passages_retrieved": 24,
+        "passages_kept": 24,
+        "model_input_tokens": {
+          "measured": 0,
+          "estimated": 0,
+          "simulated": 2665,
+          "replayed": 0,
+          "synthetic": 0,
+          "total": 2665,
+          "provenance": "simulated"
+        },
+        "provenance": "synthetic"
+      },
+      "cached_input_tokens": 0,
+      "avoided": {
+        "calls": 0,
+        "tokens": 0,
+        "micros": 0,
+        "provenance": "synthetic"
+      },
+      "cim_overhead": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "api": {
+          "value": 0,
+          "provenance": "synthetic"
+        },
+        "gpu_estimated": {
+          "value": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "retries": {
+        "retries": 1,
+        "failed_attempts": 1,
+        "attempts": 41,
+        "tokens": 60,
+        "api": {
+          "value": 0,
+          "provenance": "simulated"
+        }
+      },
+      "latency": {
+        "average_attempt_ms": 0.03170419514758467,
+        "average_run_ms": 32.35612815001332,
+        "attempt_samples": 41
+      },
+      "savings": {
+        "frontier_model_id": "claude-flagship",
+        "pricing_snapshot": "rc-2026-10-14",
+        "quality_adjusted": false,
+        "steps": [
+          {
+            "step": "frontier_baseline",
+            "amount_micros": 41444,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cache",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "context",
+            "amount_micros": 3000,
+            "provenance": "simulated"
+          },
+          {
+            "step": "routing",
+            "amount_micros": -44444,
+            "provenance": "simulated"
+          },
+          {
+            "step": "prompt_cache",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cim_overhead",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "retries",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "tool_calls",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "adjustments",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "local_gpu",
+            "amount_micros": 1,
+            "provenance": "simulated"
+          },
+          {
+            "step": "net",
+            "amount_micros": 1,
+            "provenance": "simulated"
+          }
+        ],
+        "net_savings_micros": 41443,
+        "measurement_cost": {
+          "value": 0,
+          "provenance": "simulated"
+        },
+        "provenance": "simulated"
+      }
+    },
+    {
+      "group": "",
+      "label": "No model call",
+      "request_count": 2,
+      "cim_invoked": 0,
+      "cim_bypassed_by_policy": 0,
+      "cim_skipped": 0,
+      "local_fast": 0,
+      "sovereign_direct": 0,
+      "cache_hits": 1,
+      "context_tokens_before": 0,
+      "context_tokens_after": 0,
+      "context_reduction": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "packing": {
+        "packed_runs": 0,
+        "passages_retrieved": 0,
+        "passages_kept": 0,
+        "model_input_tokens": {
+          "measured": 0,
+          "estimated": 0,
+          "simulated": 0,
+          "replayed": 0,
+          "synthetic": 0,
+          "total": 0,
+          "provenance": "synthetic"
+        },
+        "provenance": "synthetic"
+      },
+      "cached_input_tokens": 0,
+      "avoided": {
+        "calls": 1,
+        "tokens": 63,
+        "micros": 0,
+        "provenance": "simulated"
+      },
+      "cim_overhead": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "api": {
+          "value": 0,
+          "provenance": "synthetic"
+        },
+        "gpu_estimated": {
+          "value": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "retries": {
+        "retries": 0,
+        "failed_attempts": 0,
+        "attempts": 0,
+        "tokens": 0,
+        "api": {
+          "value": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "latency": {
+        "average_attempt_ms": null,
+        "average_run_ms": 10.851471499790932,
+        "attempt_samples": 0
+      },
+      "savings": {
+        "frontier_model_id": "claude-flagship",
+        "pricing_snapshot": "rc-2026-10-14",
+        "quality_adjusted": false,
+        "steps": [
+          {
+            "step": "frontier_baseline",
+            "amount_micros": 940,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cache",
+            "amount_micros": -940,
+            "provenance": "simulated"
+          },
+          {
+            "step": "context",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "routing",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "prompt_cache",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "cim_overhead",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "retries",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "tool_calls",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          },
+          {
+            "step": "adjustments",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "local_gpu",
+            "amount_micros": 0,
+            "provenance": "synthetic"
+          },
+          {
+            "step": "net",
+            "amount_micros": 0,
+            "provenance": "simulated"
+          }
+        ],
+        "net_savings_micros": 940,
+        "measurement_cost": {
+          "value": 0,
+          "provenance": "synthetic"
+        },
+        "provenance": "simulated"
+      }
+    }
+  ],
+  "packing": {
+    "packed_runs": 39,
+    "passages_retrieved": 24,
+    "passages_kept": 24,
+    "model_input_tokens": {
+      "measured": 0,
+      "estimated": 0,
+      "simulated": 2984,
+      "replayed": 0,
+      "synthetic": 0,
+      "total": 2984,
+      "provenance": "simulated"
+    },
+    "provenance": "synthetic"
+  },
+  "savings": {
+    "frontier_model_id": "claude-flagship",
+    "pricing_snapshot": "rc-2026-10-14",
+    "quality_adjusted": false,
+    "steps": [
+      {
+        "step": "frontier_baseline",
+        "amount_micros": 59160,
+        "provenance": "simulated"
+      },
+      {
+        "step": "cache",
+        "amount_micros": -940,
+        "provenance": "simulated"
+      },
+      {
+        "step": "context",
+        "amount_micros": 3000,
+        "provenance": "simulated"
+      },
+      {
+        "step": "routing",
+        "amount_micros": -53211,
+        "provenance": "simulated"
+      },
+      {
+        "step": "prompt_cache",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "cim_overhead",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "retries",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "tool_calls",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "adjustments",
+        "amount_micros": 0,
+        "provenance": "simulated"
+      },
+      {
+        "step": "local_gpu",
+        "amount_micros": 1,
+        "provenance": "simulated"
+      },
+      {
+        "step": "net",
+        "amount_micros": 8010,
+        "provenance": "simulated"
+      }
+    ],
+    "net_savings_micros": 51150,
+    "measurement_cost": {
+      "value": 10096,
+      "provenance": "simulated"
+    },
+    "provenance": "simulated"
+  },
+  "baseline": {
+    "frontier_model_id": "claude-flagship",
+    "frontier_model_name": "Claude Opus 5.5",
+    "runs": 11,
+    "baseline": {
+      "value": 10096,
+      "provenance": "simulated"
+    },
+    "actual": {
+      "value": 204,
+      "provenance": "simulated"
+    },
+    "savings": {
+      "value": 9892,
+      "provenance": "simulated"
+    },
+    "quality_passed_runs": 11,
+    "quality_failed_runs": 0,
+    "quality_gated_savings": {
+      "value": 9892,
+      "provenance": "simulated"
+    },
+    "baseline_quality": "not_graded"
+  }
+}

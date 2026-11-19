@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "bundle_hash": "28a889a6e26a659a47bcaa49ba91e5937dd4245e219aa2fe521e0d835105f7b5",
+  "published_at": "2026-10-14T11:35:55.311486+00:00",
+  "kind": "rollback",
+  "previous_version": 3,
+  "previous_bundle_hash": "d8ef815d092201f147a8bfb893d0e17fb386d701fb76e495df7bd3b26de8a7db",
+  "changes": [
+    {
+      "target": "policy",
+      "target_id": "GCT-E2E-APPROVAL",
+      "change": "removed",
+      "high_impact": true,
+      "summary": [
+        "Policy removed: its restrictions no longer apply."
+      ]
+    }
+  ],
+  "details": {
+    "high_impact": true,
+    "approval_note": "Remove the demo approval rule."
+  }
+}

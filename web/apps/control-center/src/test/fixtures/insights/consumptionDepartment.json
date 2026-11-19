@@ -1,0 +1,820 @@
+{
+  "metadata": {
+    "window": {
+      "from": "2026-10-09",
+      "to": "2026-10-15",
+      "timezone": "UTC"
+    },
+    "filters": {},
+    "scope": {
+      "level": "tenant",
+      "department_id": null,
+      "application_ids": [],
+      "user_identities": "pseudonymous"
+    },
+    "generated_at": "2026-10-15T06:20:38.682217Z",
+    "aggregates_as_of": "2026-10-15T06:20:23.716343Z",
+    "granularity": "day",
+    "taxonomy_versions": [
+      "tax-2026.10.1"
+    ],
+    "classifier_versions": [
+      "heuristic-v0"
+    ],
+    "rate_card_versions": [
+      "rc-2026-10-14"
+    ],
+    "pricing_snapshot": "rc-2026-10-14",
+    "data_designation": "synthetic",
+    "attribution": "Usage is attributed to the UTC hour its run started."
+  },
+  "group_by": "department",
+  "rows": [
+    {
+      "group": "customer-care",
+      "label": "Customer Care",
+      "usage": {
+        "request_count": 31,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 897,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 897,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 2332,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 2332,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 520,
+          "upstream_output_tokens": 1199,
+          "cim_input_tokens": 214,
+          "cim_output_tokens": 753,
+          "retry_input_tokens": 36,
+          "retry_output_tokens": 86,
+          "baseline_input_tokens": 127,
+          "baseline_output_tokens": 294,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 11222,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 11222,
+            "provenance": "simulated"
+          },
+          "upstream_micros": 4720,
+          "cim_micros": 0,
+          "retry_micros": 114,
+          "baseline_comparison_micros": 6388,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 1,
+            "provenance": "simulated"
+          }
+        },
+        "avoided": {
+          "calls": 1,
+          "tokens": 63,
+          "micros": 0,
+          "provenance": "simulated"
+        }
+      },
+      "spend_share": {
+        "numerator": 11222,
+        "denominator": 18105,
+        "value": 0.619828776581055
+      }
+    },
+    {
+      "group": "it-engineering",
+      "label": "IT & Engineering",
+      "usage": {
+        "request_count": 17,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 1858,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 1858,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 2896,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 2896,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 944,
+          "upstream_output_tokens": 557,
+          "cim_input_tokens": 763,
+          "cim_output_tokens": 2043,
+          "retry_input_tokens": 64,
+          "retry_output_tokens": 128,
+          "baseline_input_tokens": 87,
+          "baseline_output_tokens": 168,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 6883,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 6883,
+            "provenance": "simulated"
+          },
+          "upstream_micros": 2106,
+          "cim_micros": 0,
+          "retry_micros": 1069,
+          "baseline_comparison_micros": 3708,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 6883,
+        "denominator": 18105,
+        "value": 0.38017122341894505
+      }
+    },
+    {
+      "group": "network-ops",
+      "label": "Network Operations",
+      "usage": {
+        "request_count": 6,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 1188,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 1188,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 1709,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 1709,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 734,
+          "upstream_output_tokens": 258,
+          "cim_input_tokens": 454,
+          "cim_output_tokens": 1451,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    },
+    {
+      "group": "fraud-risk",
+      "label": "Fraud & Risk",
+      "usage": {
+        "request_count": 5,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 555,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 555,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 215,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 215,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 555,
+          "upstream_output_tokens": 215,
+          "cim_input_tokens": 0,
+          "cim_output_tokens": 0,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    },
+    {
+      "group": "finance",
+      "label": "Finance & Strategy",
+      "usage": {
+        "request_count": 1,
+        "provenance": "synthetic",
+        "tokens": {
+          "input_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 22,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 22,
+            "provenance": "simulated"
+          },
+          "output_tokens": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 43,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 43,
+            "provenance": "simulated"
+          },
+          "upstream_input_tokens": 22,
+          "upstream_output_tokens": 43,
+          "cim_input_tokens": 0,
+          "cim_output_tokens": 0,
+          "retry_input_tokens": 0,
+          "retry_output_tokens": 0,
+          "baseline_input_tokens": 0,
+          "baseline_output_tokens": 0,
+          "other_input_tokens": 0,
+          "other_output_tokens": 0,
+          "cached_input_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        "spend": {
+          "api": {
+            "measured": 0,
+            "estimated": 0,
+            "simulated": 0,
+            "replayed": 0,
+            "synthetic": 0,
+            "total": 0,
+            "provenance": "synthetic"
+          },
+          "upstream_micros": 0,
+          "cim_micros": 0,
+          "retry_micros": 0,
+          "baseline_comparison_micros": 0,
+          "adjustment_micros": 0,
+          "tool_call_micros": 0,
+          "other_micros": 0,
+          "gpu_estimated": {
+            "value": 0,
+            "provenance": "synthetic"
+          }
+        },
+        "avoided": {
+          "calls": 0,
+          "tokens": 0,
+          "micros": 0,
+          "provenance": "synthetic"
+        }
+      },
+      "spend_share": {
+        "numerator": 0,
+        "denominator": 18105,
+        "value": 0.0
+      }
+    }
+  ],
+  "totals": {
+    "request_count": 60,
+    "provenance": "synthetic",
+    "tokens": {
+      "input_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 4520,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 4520,
+        "provenance": "simulated"
+      },
+      "output_tokens": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 7195,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 7195,
+        "provenance": "simulated"
+      },
+      "upstream_input_tokens": 2775,
+      "upstream_output_tokens": 2272,
+      "cim_input_tokens": 1431,
+      "cim_output_tokens": 4247,
+      "retry_input_tokens": 100,
+      "retry_output_tokens": 214,
+      "baseline_input_tokens": 214,
+      "baseline_output_tokens": 462,
+      "other_input_tokens": 0,
+      "other_output_tokens": 0,
+      "cached_input_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "spend": {
+      "api": {
+        "measured": 0,
+        "estimated": 0,
+        "simulated": 18105,
+        "replayed": 0,
+        "synthetic": 0,
+        "total": 18105,
+        "provenance": "simulated"
+      },
+      "upstream_micros": 6826,
+      "cim_micros": 0,
+      "retry_micros": 1183,
+      "baseline_comparison_micros": 10096,
+      "adjustment_micros": 0,
+      "tool_call_micros": 0,
+      "other_micros": 0,
+      "gpu_estimated": {
+        "value": 1,
+        "provenance": "simulated"
+      }
+    },
+    "avoided": {
+      "calls": 1,
+      "tokens": 63,
+      "micros": 0,
+      "provenance": "simulated"
+    }
+  },
+  "series": [
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "customer-care",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "it-engineering",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "network-ops",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "fraud-risk",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-09T00:00:00Z",
+      "group": "finance",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "customer-care",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "it-engineering",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "network-ops",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "fraud-risk",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-10T00:00:00Z",
+      "group": "finance",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "customer-care",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "it-engineering",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "network-ops",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "fraud-risk",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-11T00:00:00Z",
+      "group": "finance",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "customer-care",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "it-engineering",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "network-ops",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "fraud-risk",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-12T00:00:00Z",
+      "group": "finance",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "customer-care",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "it-engineering",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "network-ops",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "fraud-risk",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-13T00:00:00Z",
+      "group": "finance",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "customer-care",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "it-engineering",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "network-ops",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "fraud-risk",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-14T00:00:00Z",
+      "group": "finance",
+      "request_count": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "customer-care",
+      "request_count": 31,
+      "input_tokens": 897,
+      "output_tokens": 2332,
+      "cim_tokens": 967,
+      "retry_tokens": 122,
+      "api_micros": 11222
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "it-engineering",
+      "request_count": 17,
+      "input_tokens": 1858,
+      "output_tokens": 2896,
+      "cim_tokens": 2806,
+      "retry_tokens": 192,
+      "api_micros": 6883
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "network-ops",
+      "request_count": 6,
+      "input_tokens": 1188,
+      "output_tokens": 1709,
+      "cim_tokens": 1905,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "fraud-risk",
+      "request_count": 5,
+      "input_tokens": 555,
+      "output_tokens": 215,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    },
+    {
+      "bucket": "2026-10-15T00:00:00Z",
+      "group": "finance",
+      "request_count": 1,
+      "input_tokens": 22,
+      "output_tokens": 43,
+      "cim_tokens": 0,
+      "retry_tokens": 0,
+      "api_micros": 0
+    }
+  ],
+  "page": {
+    "next_cursor": null,
+    "limit": 25,
+    "total_rows": 5
+  }
+}

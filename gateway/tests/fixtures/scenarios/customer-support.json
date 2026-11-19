@@ -1,0 +1,151 @@
+{
+  "scenario_id": "customer-support",
+  "notes": "Long synthetic care conversation (33 turns) ending with a tariff question answered from the KB.",
+  "request": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "Hello, I need help with my synthetic GCT Prepaid Plus line."
+      },
+      {
+        "role": "assistant",
+        "content": "Hello and welcome to GCT customer care. I can help with your Prepaid Plus line. What would you like to check today?"
+      },
+      {
+        "role": "user",
+        "content": "First, how much data do I have left this month?"
+      },
+      {
+        "role": "assistant",
+        "content": "Your synthetic balance shows 7.5 GB of data remaining, valid until the end of your billing cycle."
+      },
+      {
+        "role": "user",
+        "content": "Good. Last month I travelled to Europe. Did the roaming work properly?"
+      },
+      {
+        "role": "assistant",
+        "content": "Your synthetic usage record shows roaming data sessions in Europe on the Traveller 10 bundle, all within the bundle allowance."
+      },
+      {
+        "role": "user",
+        "content": "Can I keep the Traveller 10 bundle active for my next trip?"
+      },
+      {
+        "role": "assistant",
+        "content": "The Traveller 10 bundle is bought per trip. You can buy it again in the GCT app before you travel."
+      },
+      {
+        "role": "user",
+        "content": "Also, my mobile app sometimes asks me to log in again. Is that normal?"
+      },
+      {
+        "role": "assistant",
+        "content": "The GCT app signs you out after 30 days of inactivity for security. Signing in again keeps your settings."
+      },
+      {
+        "role": "user",
+        "content": "I also want to know whether my plan includes 5G."
+      },
+      {
+        "role": "assistant",
+        "content": "Prepaid Plus includes 5G where coverage is available, at no extra charge."
+      },
+      {
+        "role": "user",
+        "content": "Is there a family discount if I add another line?"
+      },
+      {
+        "role": "assistant",
+        "content": "The synthetic family offer gives 10 percent off each additional Prepaid Plus line on the same account."
+      },
+      {
+        "role": "user",
+        "content": "Thanks. I recently started watching series on a streaming add-on."
+      },
+      {
+        "role": "assistant",
+        "content": "Noted. Streaming add-ons can be managed in the GCT app under Add-ons."
+      },
+      {
+        "role": "user",
+        "content": "One more thing before my real question: are SMS to other GCT numbers free?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, SMS between GCT numbers are included in Prepaid Plus."
+      },
+      {
+        "role": "user",
+        "content": "Before that, can I move my line to an eSIM on a new phone?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. In the GCT app open Line settings, choose Transfer to eSIM and scan the code on the new phone. The physical SIM stops working once the eSIM is active, and your number, balance and add-ons move with it. The transfer is free of charge for Prepaid Plus lines."
+      },
+      {
+        "role": "user",
+        "content": "And which payment methods can I use to recharge?"
+      },
+      {
+        "role": "assistant",
+        "content": "You can recharge with a debit or credit card in the GCT app, through online banking with the GCT biller code, at any GCT store, or with recharge vouchers sold in supermarkets. Auto-recharge can top up your balance when it falls below a level you choose."
+      },
+      {
+        "role": "user",
+        "content": "What happens if my balance runs out in the middle of a call?"
+      },
+      {
+        "role": "assistant",
+        "content": "The call ends when the balance reaches zero, and you will receive an SMS with recharge options. Incoming calls and SMS keep working for 30 days after the balance runs out, and emergency numbers can always be called."
+      },
+      {
+        "role": "user",
+        "content": "Do unused minutes roll over to the next month?"
+      },
+      {
+        "role": "assistant",
+        "content": "Local minutes and SMS in Prepaid Plus do not roll over. Unused data rolls over once, for one billing cycle, if you recharge before the cycle ends. Rolled-over data is used first in the next cycle."
+      },
+      {
+        "role": "user",
+        "content": "Is there a cheaper plan if I mostly use data and rarely call?"
+      },
+      {
+        "role": "assistant",
+        "content": "The synthetic Data SIM plans focus on data with no voice allowance, but they do not keep your current number for calls. Prepaid Plus is usually the better fit if you still need to call. A care agent can compare your last three months of usage with you."
+      },
+      {
+        "role": "user",
+        "content": "How do I check my previous bills?"
+      },
+      {
+        "role": "assistant",
+        "content": "Open the GCT app, go to Billing and open the history tab. You can view and download the last twelve bills as PDF documents, and each bill lists the plan charge, add-ons, roaming and any one-off fees on separate lines."
+      },
+      {
+        "role": "user",
+        "content": "Does the app show roaming charges separately?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. Roaming usage appears in its own section of the bill with the country, the bundle used and any charges outside the bundle allowance. Bundle purchases appear as one line on the day you bought them."
+      },
+      {
+        "role": "user",
+        "content": "Why did my synthetic GCT Prepaid Plus bill increase by 15 AED this month?"
+      }
+    ],
+    "scenario_id": "customer-support",
+    "task": "qa",
+    "max_output_tokens": 1024,
+    "routing": {
+      "preferred_model": "gemini-flash-lite"
+    },
+    "baseline_comparison": true
+  },
+  "expect": {
+    "retrieved_doc": "KB-TARIFF-020",
+    "kept_turns": 3
+  }
+}

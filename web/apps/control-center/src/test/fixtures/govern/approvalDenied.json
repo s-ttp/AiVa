@@ -1,0 +1,42 @@
+{
+  "approval": {
+    "approval_id": "apr_01M4X354KWJPST0F9ZAV6TTW1B",
+    "kind": "policy",
+    "status": "denied",
+    "run_id": "run_01M4X354KHRR8H130744W0W4Q5",
+    "application_id": "gct-support-chatbot",
+    "tool_id": null,
+    "rule_ids": [
+      "GCT-E2E-APPROVAL"
+    ],
+    "reasons": [
+      {
+        "rule_id": "GCT-E2E-APPROVAL",
+        "message": "Requests tagged needs-approval need an approver.",
+        "remediation": "Ask an approver to review the request in the AiVa Govern Approval Queue."
+      }
+    ],
+    "carried_grants": [],
+    "effective_classification": "internal",
+    "task": "qa",
+    "scenario_id": "customer-support",
+    "matched_network_id": "net-test-console",
+    "identity_mode": "simulated",
+    "source_mode": "simulated",
+    "requested_by": "usr_7d58d5b318c46876",
+    "requested_at": "2026-10-14T11:35:55.249335Z",
+    "expires_at": "2026-10-15T11:35:55.260489Z",
+    "policy_version_at_request": "3",
+    "decided_at": "2026-10-14T11:35:55.285661Z",
+    "decided_by": "usr_aa30b1e4a5a5a11b",
+    "decision_note": "Not needed for this demo.",
+    "approved_grants": [],
+    "policy_version_at_decision": null,
+    "consumed_by_run_id": null,
+    "approved_amount_micros": null,
+    "requested_by_viewer": false,
+    "viewer_can_decide": false
+  },
+  "outcome": "denied",
+  "re_evaluation": null
+}

@@ -1,0 +1,60 @@
+{
+  "artifact_id": "art_01M4XB7Q2H8N5V3C9D1E6F0G4K",
+  "document_type": "pptx",
+  "pages": [
+    {
+      "index": 0,
+      "kind": "slide",
+      "title": "Q3 network capex",
+      "blocks": [
+        {
+          "kind": "heading",
+          "level": 1,
+          "text": "Q3 network capex: board summary"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Synthetic plan totals AED 1,284.5 m <b>across</b> three programmes [capex-plan-q3]."
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "kind": "slide",
+      "title": "Programmes",
+      "blocks": [
+        {
+          "kind": "bullet",
+          "level": 1,
+          "text": "5G densification"
+        },
+        {
+          "kind": "bullet",
+          "level": 2,
+          "text": "Riyadh and Jeddah clusters"
+        },
+        {
+          "kind": "table",
+          "rows": [
+            [
+              "Programme",
+              "AED m"
+            ],
+            [
+              "5G densification",
+              "702.0"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sandbox": {
+    "renderer": "python-pptx",
+    "network": "disabled",
+    "isolated_interpreter": true,
+    "timeout_ms": 10000,
+    "duration_ms": 182.4,
+    "verified_sha256": "9f2c1e7a4b8d0c3f5a6e2d1b7c9f0a3e8d4b6c2a1f5e7d9c0b3a8f6e4d2c1b0a"
+  }
+}
