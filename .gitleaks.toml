@@ -1,0 +1,19 @@
+title = "AiVa gitleaks configuration"
+
+# gitleaks' default rules, plus reviewed false positives. Each allowlist names exactly what it covers and why it
+# is not a secret. Never add a broad path or rule exception; fix or remove a real secret instead.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Synthetic prompt-injection test data: an encoded 'hidden token' inside an attack example."
+paths = ['''^gateway/tests/data/injection/heldout\.jsonl$''']
+
+[[allowlists]]
+description = "Control Center test fixtures: application key ids are public handles, never key secrets."
+paths = ['''^web/apps/control-center/src/test/fixtures/govern/adminCredential(s|Issued)\.json$''']
+
+[[allowlists]]
+description = "Simulated adapter: keyword arguments (output_tokens, provenance), not a credential."
+regexTarget = "line"
+regexes = ['''output_tokens=output_tokens, provenance=Provenance\.SIMULATED''']

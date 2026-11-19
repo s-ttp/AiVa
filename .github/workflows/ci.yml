@@ -35,9 +35,10 @@ jobs:
           curl -sSfLO "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/${archive}"
           echo "${GITLEAKS_SHA256}  ${archive}" | sha256sum -c -
           tar xzf "${archive}" gitleaks
-      # --redact keeps any match out of the log.
+      # .gitleaks.toml: the default rules plus reviewed false positives. --redact keeps any match out of the log;
+      # --verbose names the file, line and rule of a finding.
       - name: Scan
-        run: ./gitleaks git --no-banner --redact .
+        run: ./gitleaks git --no-banner --redact --verbose --config .gitleaks.toml .
 
   gateway:
     name: Gateway, policies and contracts
